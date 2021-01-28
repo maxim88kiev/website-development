@@ -1,0 +1,33 @@
+.author-detail {
+  width: 100%;
+  max-width: 1170px;
+  margin: auto;
+  padding: 60px 15px 0;
+  box-sizing: border-box;
+
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+
+  &__info {
+    float: left;
+    width: 100%;
+    max-width: 270px;
+    padding: 0 24px 0 0;
+
+    @media (max-width: 767px) {
+      max-width: none;
+    }
+  }
+
+  &__articles {
+    float: left;
+    width: 100%;
+    max-width: calc(100% - 270px);
+    @media (max-width: 767px) {
+      max-width: none;
+    }
+  }
+}

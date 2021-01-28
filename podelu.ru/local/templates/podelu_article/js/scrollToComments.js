@@ -1,0 +1,1 @@
+function goToCommentsBlock(){document.getElementById("goToCommentsBlock").addEventListener("click",function(e){e.preventDefault,document.getElementById("commentsBlock").scrollIntoView({behavior:"smooth"})},!1)}document.addEventListener("DOMContentLoaded",goToCommentsBlock);

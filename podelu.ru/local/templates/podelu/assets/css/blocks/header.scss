@@ -1,0 +1,46 @@
+.header {
+  position: fixed;
+  z-index: 994;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: #fff;
+  min-height: 80px!important;
+
+
+  &__container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: 100%;
+    max-width: 1120px;
+  }
+
+  &__city {
+    margin: 0 0 0 57px;
+  }
+
+  &__menu {
+    margin: 0 0 0 auto;
+  }
+}
+
+
+.bx-panel-fixed ~ .header {
+  top: 147px;
+}
+
+.bx-panel-fixed.bx-panel-folded ~ .header {
+  top: 39px;
+}
+
+.header__container-menu-mob{
+  display: none;
+}
+
+.background_header_about{
+  background: #FAF5F2;
+}

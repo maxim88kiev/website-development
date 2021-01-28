@@ -1,0 +1,393 @@
+{{ header }}
+		<script src="view/javascript/bootstrap/js/bootstrap-switch.js"></script>
+		<script src="view/javascript/bootstrap/js/highlight.js"></script>
+		<script src="view/javascript/bootstrap/js/bootstrap-switch.js"></script>
+    <script src="view/javascript/bootstrap/js/main.js"></script>
+		<link href="view/javascript/bootstrap/css/bootstrap-switch.css" rel="stylesheet">
+		<link href="view/stylesheet/suport.css" rel="stylesheet">
+		<link type="text/css" href="view/stylesheet/blog.css" rel="stylesheet" media="screen" />
+{{ column_left }}
+
+<div id="content">
+  
+  <div class="container-fluid">
+    {% if error_warning %}
+    <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> {{ error_warning }}
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+    {% endif %}
+	<div class="row">
+	<div class="logopart">
+      <div class="col-lg-3 col-md-3 col-sm-3">
+		<h1>{{ heading_title }}</h1>
+	  </div>
+      <div class="col-lg-9 col-md-9 col-sm-9">
+		{{ dashmenu }}
+	  </div>
+    </div>
+    </div>
+	<div class="page-header">
+    <div class="container-fluid">
+      <div class="pull-right">
+        <button type="submit" form="form-category" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
+        <a href="{{ cancel }}" data-toggle="tooltip" title="{{ button_cancel }}" class="btn btn-default"><i class="fa fa-reply"></i></a></div>
+      
+      <ul class="breadcrumb">
+        {% for breadcrumb in breadcrumbs %}
+        <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <form action="{{ action }}" method="post" enctype="multipart/form-data" id="form-category" class="form-horizontal">
+			<ul id="setting_menu" class="nav nav-tabs menu col-sm-3">
+				<li class="active"><a href="#tab-general" data-toggle="tab">{{ tab_main }}</a></li>	
+				<li class=""><a href="#tab-blogpage" data-toggle="tab"><i class="fa fa-newspaper-o"></i> {{ text_blogpage }}</a></li>	
+					
+				<li class=""><a href="#tab-category" data-toggle="tab"><i class="fa fa-link"></i> {{ text_categorypage }}</a></li>	
+				
+				<li class=""><a href="#tab-color" data-toggle="tab"><i class="fa fa-pencil"></i>&nbsp;{{ tab_color }}</a></li>
+			</ul>
+         
+          <div class="tab-content col-sm-9">
+            <div class="tab-pane active in" id="tab-general">
+              <ul class="nav nav-tabs" id="language">
+                {% for language in languages %}
+                <li><a href="#language{{ language.language_id }}" data-toggle="tab"><img src="language/{{ language.code }}/{{ language.code }}.png" title="{{ language.name }}" /> {{ language.name }}</a></li>
+                {% endfor %}
+              </ul>
+              <div class="tab-content">
+                {% for language in languages %}
+                <div class="tab-pane" id="language{{ language.language_id }}">
+                  <div class="form-group required">
+                    <label class="col-sm-2 control-label" for="input-name{{ language.language_id }}">{{ entry_name }}</label>
+                    <div class="col-sm-10">
+                      <input type="text" name="tmdblogsetting_description[{{ language.language_id }}][name]" value="{{ tmdblogsetting_description[language.language_id] ? tmdblogsetting_description[language.language_id].name }}" placeholder="{{ entry_name }}" id="input-name{{ language.language_id }}" class="form-control" />
+					 {% if error_name[language.language_id] %}
+                      <div class="text-danger">{{ error_name[language.language_id] }}</div>
+                      {% endif %}
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label" for="input-description{{ language.language_id }}">{{ entry_description }}</label>
+                    <div class="col-sm-10">
+                      <textarea name="tmdblogsetting_description[{{ language.language_id }}][description]" placeholder="{{ entry_description }}" id="input-description{{ language.language_id }}" data-toggle="summernote" class="form-control">{{ tmdblogsetting_description[language.language_id] ? tmdblogsetting_description[language.language_id].description }}</textarea>
+                    </div>
+                  </div>
+                  <div class="form-group required">
+                    <label class="col-sm-2 control-label" for="input-meta-title{{ language.language_id }}"><span data-toggle="tooltip" title="{{ help_meta_title }}">{{ entry_meta_title }}</span></label>
+                    <div class="col-sm-10">
+                      <input type="text" name="tmdblogsetting_description[{{ language.language_id }}][meta_title]" value="{{ tmdblogsetting_description[language.language_id] ? tmdblogsetting_description[language.language_id].meta_title }}" placeholder="{{ entry_meta_title }}" id="input-meta-title{{ language.language_id }}" class="form-control" />
+					{% if error_meta_title[language.language_id] %}
+                      <div class="text-danger">{{ error_meta_title[language.language_id] }}</div>
+                      {% endif %}
+                    </div>
+                  </div>
+				  
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label" for="input-meta-description{{ language.language_id }}"><span data-toggle="tooltip" title="{{ help_meta_description }}">{{ entry_meta_description }}</span></label>
+                    <div class="col-sm-10">
+                      <textarea name="tmdblogsetting_description[{{ language.language_id }}][meta_description]" rows="5" placeholder="{{ entry_meta_description }}" id="input-meta-description{{ language.language_id }}" class="form-control">{{ tmdblogsetting_description[language.language_id] ? tmdblogsetting_description[language.language_id].meta_description }}</textarea>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label" for="input-meta-keyword{{ language.language_id }}"><span data-toggle="tooltip" title="{{ help_meta_keyword }}">{{ entry_meta_keyword }}</span></label>
+                    <div class="col-sm-10">
+                      <textarea name="tmdblogsetting_description[{{ language.language_id }}][meta_keyword]" rows="5" placeholder="{{ entry_meta_keyword }}" id="input-meta-keyword{{ language.language_id }}" class="form-control">{{ tmdblogsetting_description[language.language_id] ? tmdblogsetting_description[language.language_id].meta_keyword }}</textarea>
+                    </div>
+                  </div>
+                </div>
+               {% endfor %}
+              </div>
+			  <div class="form-group">
+                <label class="col-sm-2 control-label">{{ entry_image }}</label>
+                <div class="col-sm-10"><a href="" id="thumb-image" data-toggle="image" class="img-thumbnail"><img src="{{ thumb }}" alt="" title="" data-placeholder="{{ placeholder }}" /></a>
+                  <input type="hidden" name="tmdblogsetting_image" value="{{ tmdblogsetting_image }}" id="input-image" />
+                </div>
+              </div>
+            </div>
+			<div class="tab-pane fade" id="tab-category">
+				<div class="tab-pane active in" id="tab-postseting">
+						<div class="form-group">
+						<label class="col-sm-3 control-label"><span data-toggle="tooltip" title="{{ help_article }}">{{ entry_article }}</span></label>
+						<div class="col-sm-9"><label class="radio-inline">
+						  <input type="radio" name="tmdblogsetting_blogarticle" value="1" {% if tmdblogsetting_blogarticle %} checked="checked" {% endif %} data-radio-all-off="true" class="switch-radio2"  /></label>
+						</div>
+						</div>	
+					
+						<div class="form-group">
+							<label class="col-sm-3 control-label"><span data-toggle="tooltip" title="{{ help_descp }}">{{ entry_descp }}</span></label>
+							<div class="col-sm-9"><label class="radio-inline">
+							 <input type="radio" name="tmdblogsetting_blogdescp" value="1" {% if tmdblogsetting_blogdescp %} checked="checked" {% endif %} data-radio-all-off="true" class="switch-radio2"  /></label>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="col-sm-3 control-label"><span data-toggle="tooltip" title="{{ help_feedbackrow }}">{{ entry_feedbackrow }}</span></label>
+							<div class="col-sm-9"><label class="radio-inline">
+							  <input type="radio" name="tmdblogsetting_blogfeedbackrow" value="1" {% if tmdblogsetting_blogfeedbackrow %} checked="checked" {% endif %} data-radio-all-off="true" class="switch-radio2"  /></label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label"><span data-toggle="tooltip" title="{{ help_facebook }}">{{ entry_facebook }}</span></label>
+							<div class="col-sm-9"><label class="radio-inline">
+							  <input type="radio" name="tmdblogsetting_blogfacebook" value="1" {% if tmdblogsetting_blogfacebook %} checked="checked" {% endif %} data-radio-all-off="true" class="switch-radio2"  /></label>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="col-sm-3 control-label"><span data-toggle="tooltip" title="{{ help_twitter }}">{{ entry_twitter }}</span></label>
+							<div class="col-sm-9">
+							  <label class="radio-inline">
+								<input type="radio" name="tmdblogsetting_blogtwitter" value="1" {% if tmdblogsetting_blogtwitter %} checked="checked" {% endif %} data-radio-all-off="true" class="switch-radio2"  />
+							  </label>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="col-sm-3 control-label"><span data-toggle="tooltip" title="{{ help_pinterest }}">{{ entry_pinterest }}</span></label>
+							<div class="col-sm-9">
+							  <label class="radio-inline">
+								<input type="radio" name="tmdblogsetting_blogpinterest" value="1" {% if tmdblogsetting_blogpinterest %} checked="checked" {% endif %} data-radio-all-off="true" class="switch-radio2"  />
+							  </label>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="col-sm-3 control-label"><span data-toggle="tooltip" title="{{ help_google }}">{{ entry_google }}</span></label>
+							<div class="col-sm-9">
+							  <label class="radio-inline">
+								<input type="radio" name="tmdblogsetting_bloggoogle" value="1" {% if tmdblogsetting_bloggoogle %} checked="checked" {% endif %} data-radio-all-off="true" class="switch-radio2"  />
+							  </label>
+							</div>
+						</div>
+					</div>	
+			</div>
+			<div class="tab-pane fade" id="tab-blogpage">
+				<div class="form-group">
+						<label class="col-sm-3 control-label"><span data-toggle="tooltip" title="{{ help_article }}">{{ entry_article }}</span></label>
+						<div class="col-sm-9">
+						  <label class="radio-inline">
+							<input type="radio" name="tmdblogsetting_article" value="1" {% if tmdblogsetting_article %} checked="checked" {% endif %} data-radio-all-off="true" class="switch-radio2"  />
+						</label>
+						</div>
+						</div>	
+					
+						<div class="form-group">
+							<label class="col-sm-3 control-label"><span data-toggle="tooltip" title="{{ help_descp }}">{{ entry_descp }}</span></label>
+							<div class="col-sm-9">
+							  <label class="radio-inline">
+								 <input type="radio" name="tmdblogsetting_descp" value="1" {% if tmdblogsetting_descp %} checked="checked" {% endif %} data-radio-all-off="true" class="switch-radio2"  />
+							  </label>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="col-sm-3 control-label"><span data-toggle="tooltip" title="{{ help_feedbackrow }}">{{ entry_feedbackrow }}</span></label>
+							<div class="col-sm-9">
+							 <label class="radio-inline">
+							 <input type="radio" name="tmdblogsetting_feedbackrow" value="1" {% if tmdblogsetting_feedbackrow %} checked="checked" {% endif %} data-radio-all-off="true" class="switch-radio2"  />
+							  </label>
+							  
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label"><span data-toggle="tooltip" title="{{ help_facebook }}">{{ entry_facebook }}</span></label>
+							<div class="col-sm-9">
+							 <label class="radio-inline">
+							  <input type="radio" name="tmdblogsetting_facebook" value="1" {% if tmdblogsetting_facebook %} checked="checked" {% endif %} data-radio-all-off="true" class="switch-radio2"  />
+							   </label>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="col-sm-3 control-label"><span data-toggle="tooltip" title="{{ help_twitter }}">{{ entry_twitter }}</span></label>
+							<div class="col-sm-9">
+							 <label class="radio-inline">
+
+							 <input type="radio" name="tmdblogsetting_twitter" value="1" {% if tmdblogsetting_twitter %} checked="checked" {% endif %} data-radio-all-off="true" class="switch-radio2"  />
+							 </label>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="col-sm-3 control-label"><span data-toggle="tooltip" title="{{ help_pinterest }}">{{ entry_pinterest }}</span></label>
+							<div class="col-sm-9">
+							 <label class="radio-inline">
+
+							  <input type="radio" name="tmdblogsetting_pinterest" value="1" {% if tmdblogsetting_pinterest %} checked="checked" {% endif %} data-radio-all-off="true" class="switch-radio2"  /> </label>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="col-sm-3 control-label"><span data-toggle="tooltip" title="{{ help_google }}">{{ entry_google }}</span></label>
+							<div class="col-sm-9"> <label class="radio-inline">
+
+							 <input type="radio" name="tmdblogsetting_google" value="1" {% if tmdblogsetting_google %} checked="checked" {% endif %} data-radio-all-off="true" class="switch-radio2"  /></label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label"><span data-toggle="tooltip" title="{{ help_articleimg }}">{{ entry_articleimg }}</span></label>
+							<div class="col-sm-9"><label class="radio-inline">
+							  <input type="radio" name="tmdblogsetting_articleimg" value="1" {% if tmdblogsetting_articleimg %} checked="checked" {% endif %} data-radio-all-off="true" class="switch-radio2"  /></label>
+							</div>
+						</div>
+						
+							<div class="form-group">
+							<label class="col-sm-3 control-label"><span data-toggle="tooltip" title="{{ help_articleimg }}">{{ entry_articleimg }}</span></label>
+							<div class="col-sm-9">
+							  <label class="radio-inline">
+								<input type="radio" name="tmdblogsetting_blogarticleimg" value="1" {% if tmdblogsetting_blogarticleimg %} checked="checked" {% endif %} data-radio-all-off="true" class="switch-radio2"  />
+							  </label>
+							</div>
+						</div>
+						
+						<div class="form-group">
+						  <label class="col-sm-3 control-label"><span data-toggle="tooltip" title="{{ help_blogcomment }}">{{ entry_blogcomments }}</span></label>
+						  <div class="col-sm-9">
+							<label class="radio-inline">
+										<input type="radio" name="tmdblogsetting_globalcoment" value="1" {% if tmdblogsetting_globalcoment %} checked="checked" {% endif %} data-radio-all-off="true" class="switch-radio2"  />
+							 </label>
+						  </div>
+						</div>
+						
+						<div class="form-group">
+						  <label class="col-sm-3 control-label">{{ entry_commentlimit }}</label>
+						  <div class="col-sm-9">
+							<input type="text" name="tmdblogsetting_commentlimit" value="{{ tmdblogsetting_commentlimit }}" placeholder="{{ entry_blogcomments }}" id="input-image-comntthumb" class="form-control" />
+						  </div>
+						</div>
+
+					<div class="form-group">
+                <label class="col-sm-3 control-label" for="input-image-comntthumb">{{ entry_thumbimg }}</label>
+                <div class="col-sm-9">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <input type="text" name="tmdblogsetting_image_comntthumb_width" value="{{ tmdblogsetting_image_comntthumb_width }}" placeholder="{{ entry_width }}" id="input-image-comntthumb" class="form-control" />
+                    </div>
+                    <div class="col-sm-6">
+                      <input type="text" name="tmdblogsetting_image_comntthumb_height" value="{{ tmdblogsetting_image_comntthumb_height }}" placeholder="{{ entry_height }}" class="form-control" />
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+
+			  <div class="form-group">
+                <label class="col-sm-3 control-label" for="input-image-comntbanner">{{ entry_comntbanner }}</label>
+                <div class="col-sm-9">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <input type="text" name="tmdblogsetting_image_comntbanner_width" value="{{ tmdblogsetting_image_comntbanner_width }}" placeholder="{{ entry_width }}" id="input-image-comntbanner" class="form-control" />
+                    </div>
+                    <div class="col-sm-6">
+                      <input type="text" name="tmdblogsetting_image_comntbanner_height" value="{{ tmdblogsetting_image_comntbanner_height }}" placeholder="{{ entry_height }}" class="form-control" />
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>	
+			</div>
+			<div class="tab-pane fade" id="tab-color">
+				<div class="form-group">
+                    <label class="col-sm-4 control-label" for="input-titletextcolor">{{ entry_titletextcolor }}</label>
+                    <div class="col-sm-8">
+                      <input type="text" name="tmdblogsetting_titletextcolor" value="{{ tmdblogsetting_titletextcolor }}"  id="input-titletextcolor" class="form-control color" />
+                    </div>
+                </div>
+				<div class="form-group">
+                    <label class="col-sm-4 control-label" for="input-blogtextcolor">{{ entry_blogtextcolor }}</label>
+                    <div class="col-sm-8">
+                      <input type="text" name="tmdblogsetting_headinghovercolor" value="{{ tmdblogsetting_headinghovercolor }}"  id="input-blogtextcolor" class="form-control color" />
+                    </div>
+                </div>
+				
+				<div class="form-group">
+                    <label class="col-sm-4 control-label" for="input-titlebgcolor">{{ entry_titlebgcolor }}</label>
+                    <div class="col-sm-8">
+                      <input type="text" name="tmdblogsetting_themecolor" value="{{ tmdblogsetting_themecolor }}"  id="input-titlebgcolor" class="form-control color" />
+                    </div>
+                </div>
+				
+				<div class="form-group">
+                    <label class="col-sm-4 control-label" for="input-themehovercolor">{{ entry_themehovercolor }}</label>
+                    <div class="col-sm-8">
+                      <input type="text" name="tmdblogsetting_themehovercolor" value="{{ tmdblogsetting_themehovercolor }}"  id="input-themehovercolor" class="form-control color" />
+                    </div>
+                </div>
+				
+				<div class="form-group">
+                    <label class="col-sm-4 control-label" for="input-containerbgcolor">{{ entry_containerbgcolor }}</label>
+                    <div class="col-sm-8">
+                      <input type="text" name="tmdblogsetting_containerbgcolor" value="{{ tmdblogsetting_containerbgcolor }}"  id="input-containerbgcolor" class="form-control color" />
+                    </div>
+                </div>
+				
+				<div class="form-group">
+                    <label class="col-sm-4 control-label" for="input-postboxbgcolor">{{ entry_postboxbgcolor }}</label>
+                    <div class="col-sm-8">
+                      <input type="text" name="tmdblogsetting_postboxbgcolor" value="{{ tmdblogsetting_postboxbgcolor }}"  id="input-postboxbgcolor" class="form-control color" />
+                    </div>
+                </div>
+				
+				<div class="form-group">
+                    <label class="col-sm-4 control-label" for="input-articletextcolor">{{ entry_articletextcolor }}</label>
+                    <div class="col-sm-8">
+                      <input type="text" name="tmdblogsetting_articletextcolor" value="{{ tmdblogsetting_articletextcolor }}"  id="input-articletextcolor" class="form-control color" />
+                    </div>
+                </div>
+				
+				<div class="form-group">
+                    <label class="col-sm-4 control-label" for="input-descptextcolor">{{ entry_descptextcolor }}</label>
+                    <div class="col-sm-8">
+                      <input type="text" name="tmdblogsetting_descptextcolor" value="{{ tmdblogsetting_descptextcolor }}"  id="input-descptextcolor" class="form-control color" />
+                    </div>
+                </div>
+
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+ <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+  <link href="view/javascript/summernote/summernote.css" rel="stylesheet" />
+  <script type="text/javascript" src="view/javascript/summernote/opencart.js"></script> 
+  <script type="text/javascript"><!--
+$('#language a:first').tab('show');
+//--></script></div>
+
+<script src="view/javascript/colorbox/jquery.minicolors.js"></script>
+<link rel="stylesheet" href="view/stylesheet/jquery.minicolors.css">
+<script>
+		$(document).ready( function() {
+			
+            $('.color').each( function() {
+               		$(this).minicolors({
+					control: $(this).attr('data-control') || 'hue',
+					defaultValue: $(this).attr('data-defaultValue') || '',
+					inline: $(this).attr('data-inline') === 'true',
+					letterCase: $(this).attr('data-letterCase') || 'lowercase',
+					opacity: $(this).attr('data-opacity'),
+					position: $(this).attr('data-position') || 'bottom left',
+					change: function(hex, opacity) {
+						if( !hex ) return;
+						if( opacity ) hex += ', ' + opacity;
+						try {
+							console.log(hex);
+						} catch(e) {}
+					},
+					theme: 'bootstrap'
+				});
+                
+            });
+			
+		});
+</script>
+<style>
+.minicolors-theme-bootstrap .minicolors-input{width:100%; height:35px;}
+</style>
+
+{{ footer }}

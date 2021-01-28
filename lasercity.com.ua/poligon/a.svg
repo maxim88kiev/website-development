@@ -1,0 +1,10 @@
+<svg id="desktop" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 70">
+    <g fill="transparent" stroke="black" stroke-width="10">
+        <path d="M120 5H-120M5 10V35H115V65H-120" stroke="#009B95"/>
+        <path d="M190 5H135V65H190M140 35H190" stroke="#1142AA"/>
+        <path d="M205 40V5H315V35H215V50M205 50V70M220 55H315V70" stroke="#2D9B27"/>
+        <path d="M390 5H335V65H390M340 35H390" stroke="#1142AA"/>
+        <path d="M400 5H515V65H405V20" stroke="#BF6F30"/>
+        <path d="M535 70V5H645V70M540 35H640" stroke="#4573D5"/>
+    </g>
+</svg>

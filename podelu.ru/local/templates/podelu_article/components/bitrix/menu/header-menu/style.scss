@@ -1,0 +1,40 @@
+.header-menu {
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+
+    @media (max-width: 957px) {
+        display: none;
+    }
+
+    &__item {
+        margin: 0 0 0 20px;
+
+        color: #25292e;
+
+        font-size: 16px;
+        font-weight: 400;
+        text-transform: uppercase;
+        transition: all .2s;
+
+        &:first-of-type {
+            margin: 0;
+        }
+
+        &:hover {
+            color: #005559;
+            text-decoration: none;
+            text-shadow: .25px 0 .2px, -.25px 0 .2px;
+        }
+
+        &:active {
+            transform: scale(0.8);
+        }
+    }
+}
+
+
+
+
+
+
+

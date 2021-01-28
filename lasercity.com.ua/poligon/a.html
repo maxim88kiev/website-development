@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function camelize(s) {
+        return s.split('-').map((item, i) => i > 0 ? item.charAt(0).toUpperCase() + item.slice(1) : item).join('');
+    }
+
+    console.log(camelize("background-color"));
+
+    /*var arr = [1, 2, 3, 4, 5];
+
+    function randFor(arr) {
+        return arr.sort(() => Math.random() - 0.5);
+    }
+
+    arr = randFor(arr);
+
+    console.log(arr);*/
+
+    /*var arr = [5, 3, 8, 1];
+
+    function filterRangeInPlace(arr, a, b) {
+        for (let i = 0, length = arr.length; i < length; i++) {
+            if (arr[i] >= a || arr[i] <= b) {
+                arr.splice(i, 1);
+            }
+        }
+    }
+
+    filterRangeInPlace(arr, 1, 4); // удалены числа вне диапазона 1..4
+
+    console.log(arr);
+
+    //alert( arr ); // массив изменился: остались [3, 1]
+
+
+
+
+*/
+    /*var vasya = { name: "Вася", age: 23 };
+    var masha = { name: "Маша", age: 18 };
+    var vovochka = { name: "Вовочка", age: 6 };
+
+    var people = [ vasya , masha , vovochka ];
+
+    function sortPeoples(arr) {
+        return arr.sort((a, b) => a.age - b.age);
+    }
+
+    console.log(sortPeoples(people));*/
+    /*const arr = ["воз", "киборг", "корсет", "ЗОВ", "гробик", "костер", "сектор"]
+    function aclean(arr) {
+        let sortedArr = [];
+        return arr.filter(function (item) {
+            const sItem = item.split('').sort().join('').toLowerCase();
+            if (sortedArr.indexOf(sItem) === -1) {
+                sortedArr.push(sItem);
+                return true;
+            }
+            return false;
+        });
+    }
+    console.log(aclean(arr));
+
+    const strings = ["кришна", "кришна", "харе", "харе",
+        "харе", "харе", "кришна", "кришна", "8-()"
+    ];
+
+    function unique(arr) {
+        return arr.filter((item, i) => arr.indexOf(item) === i);
+    }
+
+    console.log(unique(strings));*/
+
+    /*let result = [];
+    let sortedArr = [];
+    for (let i = 0, length = arr.length; i < length; i++) {
+        const item = arr[i].split('').sort().join('').toLowerCase();
+        if (sortedArr.indexOf(item) === -1) {
+            result.push(arr[i]);
+            sortedArr.push(item);
+        }
+    }
+    return result;*/
+</script>
+</body>
+</html>

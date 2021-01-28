@@ -1,0 +1,1 @@
+<img alt="Логотип в подвале" src="/upload/medialibrary/df2/df2ee6fa4f3c0a3ab9a17e27d9d22dfb.png" title="Логотип в подвале">

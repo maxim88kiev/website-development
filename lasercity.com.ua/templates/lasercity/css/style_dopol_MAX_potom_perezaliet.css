@@ -1,0 +1,932 @@
+.section-404{
+    text-align: center;
+    padding: 65px 15px 170px 15px;
+}
+.wrap-404{
+    display: inline-block;
+    max-width: 765px;
+    vertical-align: top;
+}
+.title-404{
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+    margin: 0;
+    padding: 0;
+    font-size: 36px;
+    color:#000;
+}
+.conteiner-img-404{
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+}
+.conteiner-img-404 img{
+    display: inline-block;
+    vertical-align: top;
+    margin: 45px 0 65px 0;
+}
+.conteiner-txt-404{
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+    font-size: 16px;
+    color: #757575;
+    line-height: 25px;
+    text-align: center;
+}
+.conteiner-txt-404 span{
+    text-align: justify;
+    display: inline-block;
+    vertical-align: top;
+    border-bottom: 1px solid #e9e9e9;
+    padding-bottom: 13px;
+}
+
+@media (max-width:585px){
+    /*.title-404{
+        font-size: 18px;
+    }*/
+}
+
+/*календарь*/
+.g_back,.g_next {
+    height: 20px;
+    line-height: 20px;
+    width: 15px;
+    background: url('/templates/lasercity/img/button-corner.svg') no-repeat 50% 50%;
+    background-size: contain;
+    transform: rotate(90deg)
+}
+.g_next{
+    transform: rotate(270deg)
+}
+.n_chd{
+    background: rgba(220, 2, 94, 0.4);
+    color: #fff;
+}
+#send_date_uslug{
+    background: #fff5f9 url("/images/calendar.png") no-repeat 95% center;
+    width: 210px;
+    margin-left: 0;
+    outline: none;
+}
+.popup-recording__wish-info .select-date__wish-day span, .order__wish-info .select-date__wish-day span{
+    margin-left: 10px;
+}
+.dtime-active{
+    box-shadow: -2px 1px 5px rgba(0,0,0,0.25), 2px 1px 5px rgba(0,0,0,0.45);
+}
+.dtime{
+    margin-top: 20px;
+    width: 100%;
+    -moz-box-sizing: border-box; /* Для Firefox */
+    box-sizing: border-box;
+    box-shadow: -2px 3px 2px rgba(0,0,0,0.25), 2px 3px 2px rgba(0,0,0,0.45);
+}
+.dtime .d_con_ym{
+    margin-top: 0;
+    padding-top: 3px;
+    border-top: 1px solid #fff;
+    width: 100%;
+    color: #000000;
+    font-size: 13px;
+}
+.dtime .dt_button{
+    display: none;
+}
+.dtime .cont_ch{
+    border-spacing: 5px;
+}
+.dtime .cont_ch th{
+    font-size: 12px;
+    color: #999999;
+}
+.dtime .cont_ch td{
+    font-size: 13px;
+    color: #666666;
+}
+.dtime .g_back,.dtime .g_next{
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+    margin-right: 5px;
+}
+.dtime .g_next{
+    margin-right: 0;
+    margin-left: 5px;
+}
+/*.dtime .no_chd{
+    color: #ff92b8;
+}*/
+/*календарь*/
+
+/*запись на услугу*/
+.popup-recording__form .popup-recording__rules{
+    padding: 0 13px 0 13px;
+}
+.popup-recording__wish-info input{
+    font-weight: bold;
+}
+.recording__form__services .select-date .select-date__wish-day input {
+    margin: 7px 0 0 10px;
+    width: 140px;
+}
+.recording__form__services .select-date__wish-day input {
+    display: block;
+    padding: 9px 35px 9px 15px;
+    font-size: 15px;
+    color: #000;
+    background-color: #fff5f9;
+    border: none;
+}
+.show-box-next-textarea{
+    cursor: pointer;
+    text-decoration: underline;
+}
+.box-hidden{
+    display: none;
+}
+
+ul.dropdown-menu {
+    display: none;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+    height: 180px;
+    border: 1px solid #d7d7d7;
+    text-align: left;
+    list-style: none;
+    padding: 0;
+    margin-top: 0;
+    z-index: 3;
+}
+
+ul.dropdown-menu li {
+    padding: 15px 0 10px 15px;
+    list-style: none;
+    width: 100%;
+}
+
+.recording__form__services .autocomplete__item span {
+    font-size: 14px;
+    color: #6f6f6f;
+}
+
+.recording__form__services .autocomplete__item:hover::after{
+    list-style-type: none!important;
+    background-color: transparent;
+}
+
+.recording__form__services .autocomplete__item:hover {
+    font-weight: 400;
+    background-color: #f1f1f1;
+}
+
+.recording__form__services .autocomplete__item a {
+    padding: 0;
+    text-align: left;
+    font-weight: 500;
+    font-size: 16px;
+    background-color: transparent;
+    border: 0;
+}
+
+.recording__form__services .autocomplete__item {
+    display: inline-block;
+    vertical-align: top;
+    padding: 8px 13px 8px 50px;
+    background: no-repeat;
+}
+.recording__form__services .autocomplete__item:hover a,.recording__form__services .autocomplete__item:hover span.box-autocompile-price{
+    font-weight: bold;
+}
+
+.recording__form__services .popup-recording__selected-item--men, .recording__form__services .popup-recording__selected-item--women{
+    display: inline-block;
+    vertical-align: top;
+}
+
+/*в заявке*/
+.recording__form__services.in-client-services .select-date .select-date__wish-day input{
+    margin: 0 0 0 10px!important;
+}
+.records-calendar .records-calendar__item span{
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    text-align: center;
+}
+.records-calendar .records-calendar__item{
+    display: inline-block;
+    vertical-align: top;
+}
+.records-client .record-offer__slider.slider{
+    justify-content: unset;
+    align-items: unset;
+    display: inline-grid;
+    padding: 0;
+}
+.records-client .records-calendar__header {
+    display: unset;
+    flex-direction: unset;
+    align-items: unset;
+}
+.records-client .records-calendar__buttons,.records-client .records-calendar__title{
+    display: inline-block;
+    vertical-align: middle;
+}
+.records-client__calendar.records-calendar{
+    padding: 0;
+}
+/*в заявке*/
+
+
+/*сохранение услуг в форме регистрации*/
+.recording__form__services .order__option-forgot{
+    text-decoration: underline;
+    margin-top: -4px;
+}
+.recording__form__services .register__info-inputs label{
+    border-top: 1px solid #e9e9e9;
+    font-size: 15px;
+    margin-top: 15px;
+    font-weight: bold;
+    padding-top: 12px;
+    text-align: center;
+    width: 100%;
+}
+.recording__form__services .register__info-inputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 15px 0 15px;
+    margin-bottom: 0;
+}
+.recording__form__services .register__either-description{
+    font-weight: bold;
+}
+
+.recording__form__services .accept-rules__rule{
+    max-width: none;
+    width: 90%;
+    text-align: justify;
+}
+.recording__form__services .order__services-item{
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    position: relative;
+    padding: 0 15px 10px 40px;
+}
+.recording__form__services .order__services-item-button{
+    position: absolute;
+    right: 5px;
+    top:5px;
+}
+.recording__form__services .order__services-item--man b, .recording__form__services .order__services-item--woman b{
+    display: inline-block;
+    vertical-align: top;
+    width: 60%;
+    margin-right: -5px;
+    font-weight: normal;
+    font-size: 18px;
+}
+.recording__form__services .order__services-item span+span{
+    color: #acacac;
+}
+.recording__form__services .order__services-item .box-autocompile-price{
+    padding-right: 15px;
+    font-weight: normal!important;
+    font-size: 18px;
+}
+.recording__form__services .order__services-item--man:before,.recording__form__services .order__services-item--woman:before{
+    background-image: url(/templates/lasercity/img/man_fill.svg);
+    width: 35px;
+    height: 35px;
+    left:0;
+    top: 3px;
+}
+.recording__form__services .order__services-item--woman:before{
+    background-image: url(/templates/lasercity/img/woman_fill.svg);
+}
+
+.recording__form__services .login-social__link--facebook:after,.register .login-social__link--google:after {
+    background-image: none;
+}
+
+.recording__form__services .login-social__link::after{
+    background: none;
+}
+
+.recording__form__services .login-social__link{
+    display: inline-block;
+    vertical-align: top;
+    border-radius: unset;
+    margin-right: -4px;
+}
+
+.recording__form__services .login-social {
+    display: block;
+    flex-direction: unset;
+    align-items: normal;
+    text-align: center;
+    margin: 0;
+    padding-left: 0!important;
+}
+
+.recording__form__services .login-social__link.login-social__link--google{
+    width: 160px;
+    height: 40px;
+    /*background: #4285f4 url("/images/btn-google.png");*/
+    background: #4285f4 url("/images/btn-google.png") no-repeat;
+    border-radius: 20px 0 0 20px;
+    text-align: left;
+    text-indent: 47px;
+    margin-left: -4px;
+    margin-top: 11px;
+}
+.recording__form__services .login-social__link.login-social__link--facebook{
+    width: 160px;
+    height: 40px;
+    border-radius: 0 20px 20px 0;
+    /*background: #4a73c7 url("/images/btn-facebook.png");*/
+    background: #4a73c7 url("/images/btn-facebook.png") no-repeat right;
+    text-align: left;
+    text-indent: 19px;
+    margin-left: 0;
+    margin-top: 11px;
+}
+
+.recording__form__services h2.order__services-title, .recording__form__services h2.order__contact-title{
+    margin-bottom: 25px;
+}
+.recording__form__services .order__contact-type.type-choices span{
+    text-transform: uppercase;
+    display: inline-block;
+    vertical-align: top;
+    white-space: normal;
+    padding-top: 0;
+    text-align: left;
+    width: auto;
+    padding-right: 0;
+    padding-left: 5px;
+}
+.recording__form__services .type-choices__choice{
+    float: left;
+    text-align: right;
+    width: 37%;
+    white-space: nowrap;
+    margin-left: 0;
+}
+.recording__form__services .type-choices__choice:first-child{
+    float: right;
+    text-align: left;
+    width: 63%
+}
+
+.recording__form__services .order__contact-type input {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+}
+.recording__form__services input[type=checkbox], input[type=radio] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.recording__form__services .order__contact-type input:checked:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    content: '';
+    width: 14px;
+    height: 14px;
+    background-color: #000;
+    border-radius: 50%;
+}
+/*сохранение услуг в форме регистрации*/
+
+
+.recording__form__services .popup-recording__selected-item--men b, .recording__form__services .popup-recording__selected-item--women b{
+    display: inline-block;
+    vertical-align: top;
+    width: 60%;
+    margin-right: -5px;
+}
+.recording__form__services .conteiner-recording span.box-autocompile-price{
+    font-weight: 700;
+}
+
+.recording__form__services .autocomplete__item--man a, .recording__form__services .autocomplete__item--woman a{
+    display: inline-block;
+    vertical-align: top;
+    width: 60%;
+    margin-right: -5px;
+}
+.recording__form__services ul.dropdown-menu li span+span{
+    float: left;
+    clear: both;
+    width: 60%;
+}
+.recording__form__services span.box-autocompile-price{
+    display: inline-block;
+    vertical-align: top;
+    width: 40%;
+    font-weight: 500;
+    font-size: 16px;
+    color: #000;
+    text-align: right!important;
+    white-space: nowrap;
+}
+
+.recording__form__services .autocomplete__item--man,
+.recording__form__services .autocomplete__item--woman,
+.recording__form__services .popup-recording__selected-item--men,
+.recording__form__services .popup-recording__selected-item--women{
+    background-image: url(/templates/lasercity/img/man_fill.svg);
+    background-position: 15px 10px;
+    background-size: 30px;
+}
+.recording__form__services .autocomplete__item--woman,
+.recording__form__services .popup-recording__selected-item--women
+{
+    background-image: url(/templates/lasercity/img/woman_fill.svg);
+}
+
+.recording__form__services .order__contact-inputs-all{
+    padding: 0 15px
+}
+
+@media (max-width: 1052px) {
+
+    .popup-recording__wish-info .select-date__wish-day span{
+        margin-left: 0;
+    }
+
+    .recording__form__services .button{
+        width: 95%!important;
+    }
+
+    .recording__form__services .autocomplete__item {
+        padding: 3px 5px 5px 40px;
+    }
+
+    .recording__form__services .popup-recording__selected-item--women,.recording__form__services .popup-recording__selected-item--men{
+        background-position: 4px 3px;
+        padding: 3px 5px 5px 40px;
+    }
+    .recording__form__services .popup-recording__selected-item--men b, .recording__form__services .popup-recording__selected-item--women b{
+        min-height: 33px;
+    }
+    .recording__form__services .popup-recording__selected-del {
+        top: 4px;
+        right: 5px;
+    }
+    .recording__form__services .conteiner-recording span.box-autocompile-price{
+        padding: 2px 15px 0 0;
+    }
+
+    .recording__form__services .autocomplete__item--man, .recording__form__services .autocomplete__item--woman {
+        background-position: 5px 5px!important;
+    }
+
+    .recording__form__services .autocomplete__item--man a, .recording__form__services .autocomplete__item--woman a{
+        font-weight: 300;
+        min-height: 33px;
+        font-size: 15px!important;
+    }
+    .recording__form__services ul.dropdown-menu li span+span, .recording__form__services .conteiner-recording li span+span{
+        width: 80%;
+        font-size: 12px!important;
+        margin-left: -35px;
+    }
+
+    /*сохранение услуг в форме регистрации*/
+    .recording__form__services .order__services-item--man:before,.recording__form__services .order__services-item--woman:before{
+        top:2px;
+    }
+    .recording__form__services .order__services-item b{
+        font-weight: 300;
+        font-size: 15px!important;
+    }
+    .recording__form__services .order__services-item span+span{
+        width: 100%;
+        margin-left: 0!important;
+    }
+    /*.recording__form__services .order__contact-type.type-choices span{
+        width: 75%!important;
+        min-width: 0!important;
+    }*/
+    /*сохранение услуг в форме регистрации*/
+
+    .recording__form__services span.box-autocompile-price{
+        font-weight: 300;
+        font-size: 15px!important;
+    }
+
+    .recording__form__services .autocomplete__item--man, .recording__form__services .autocomplete__item--woman {
+        background-position: 15px 5px;
+        background-size: 30px;
+    }
+}
+/*запись на услугу*/
+
+.salon-price__offer-table.salon-prices tbody tr:hover .salon-prices__order-button {
+    display: block;
+}
+
+.salon-map__button{
+    width: 39px;
+    height: 39px;
+}
+
+.salon-map__button::before{
+    position:absolute;
+    top:4px;left:4px;
+    content:url("/images/full-screen.png");
+    border:none;
+    -webkit-transform:none;
+    transform:none;
+}
+
+.map-popup {
+    z-index: 1000;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    left: 50%;
+    top: 100px;
+    -webkit-transform: translate(-50%,0);
+    transform: translate(-50%,0);
+    min-width: 290px;
+    min-height: 310px;
+    width: 100%;
+    height: 100%;
+    max-width: 1010px;
+    max-height: 630px;
+    padding-bottom: 35px;
+    background-color: #fff;
+    border-top: 7px solid #dc025e;
+}
+
+.map-popup__title {
+    margin: 0;
+    padding: 16px 0 16px 30px;
+    width: 100%;
+    font-size: 16px;
+    text-align: left;
+    background-color: #fef2f7;
+}
+
+@media (min-width: 1170px) {
+    .map-popup__closed {
+        top: 17px;
+        right: 20px;
+    }
+
+    .popup-recording__form .popup-recording__rules{
+        padding: 0 67px 0 67px;
+    }
+
+    .recording__form__services .order__rules.accept-rules{
+        margin-top: 10px;
+    }
+    .recording__form__services .login-social__link{
+        padding: 0;
+        padding-top: 9px;
+        font-size: 18px;
+    }
+    .recording__form__services .login-social__link--google{
+        padding-left: 0;
+    }
+    .recording__form__services .login-social__link--facebook{
+        padding-left: 0;
+    }
+}
+
+    .map-popup__closed {
+        top: 7px;
+        right: 7px;
+    }
+
+    .map_box_popup{
+        float: left;
+        clear: both;
+        width: 100%;
+        height: 100%;
+    }
+
+.error {
+    border: 1px solid #fc2a82;
+}
+
+.text-danger {
+    color: #fc2a82;
+    font-size: 16px;
+}
+
+.text-success {
+    color: #09dd7f;
+}
+
+.status {
+    display: none;
+    color: #000;
+    padding: 15px;
+    background: #09f28c;
+    border-radius: 3px;
+    margin-top: 10px;
+    text-align: center;
+    width: 100%;
+    float: left;
+    clear: both;
+}
+
+.organizations__show-all {
+    position: relative;
+    padding-right: 40px;
+    font-size: 18px;
+    color: #333;
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+}
+.organizations__show-all::before {
+    position: absolute;
+    top: 0;
+    right: 3px;
+    content: '';
+    width: 15px;
+    height: 15px;
+    border-right: 3px solid #333;
+    border-bottom: 3px solid #333;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+@media (min-width: 1170px) {
+    .select-date {
+        display: flex;
+        align-items: normal;
+    }
+}
+
+.box-active{
+    display: block;
+}
+
+.salon-prices__row-time,.salon-prices__row-price,.salon-price__offer-zona-header,.box-write-zone,.salon-price__offer-header,.salon-prices__row-part label input{
+    cursor: pointer;
+}
+
+.salon-price__offer-table thead td{
+    cursor: default!important;
+}
+
+.wrapper-youtube-video{
+    position:relative;
+}
+.iframe-youtube-video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/*регистрация*/
+h1.register__title{
+    margin:0 0 25px 0;
+    padding: 0;
+}
+.register{
+    padding-top: 20px;
+}
+
+.register .register__who-choices.type-choices{
+    margin: 25px 0 25px 0;
+}
+
+
+.register .register__who-choices.type-choices span{
+    text-transform: uppercase;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.register .register__who-choices input {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+}
+.register input[type=checkbox], input[type=radio] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.register .register__who-choices input:checked:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    content: '';
+    width: 14px;
+    height: 14px;
+    background-color: #000;
+    border-radius: 50%;
+}
+
+.register .register__who-inputs-wrapper input{
+    width: 422px;
+}
+
+.register h2.register__who-title.title-lines{
+    font-weight: normal;
+}
+
+.register .login-social__link--facebook:after,.register .login-social__link--google:after {
+    background-image: none;
+}
+
+.register .login-social__link::after{
+    background: none;
+}
+
+.register .login-social__link{
+    display: inline-block;
+    vertical-align: top;
+    border-radius: unset;
+    margin-right: -4px;
+}
+
+.register .login-social {
+    display: block;
+    flex-direction: unset;
+    align-items: normal;
+    text-align: center;
+    margin: 0;
+}
+
+.register .login-social__link.login-social__link--google{
+    width: 160px;
+    height: 40px;
+    /*background: #4285f4 url("/images/btn-google.png");*/
+    background: #4285f4 url("/images/btn-google.png") no-repeat;
+    border-radius: 20px 0 0 20px;
+    text-align: left;
+    text-indent: 47px;
+    margin-left: -4px;
+}
+.register .login-social__link.login-social__link--facebook{
+    width: 160px;
+    height: 40px;
+    border-radius: 0 20px 20px 0;
+    /*background: #4a73c7 url("/images/btn-facebook.png");*/
+    background: #4a73c7 url("/images/btn-facebook.png") no-repeat right;
+    text-align: left;
+    text-indent: 19px;
+}
+
+.register .register__either-rules {
+    margin-top: 0;
+}
+
+.register .accept-rules__rule{
+    max-width: 380px;
+    text-align: justify;
+}
+
+
+.register .register__either-description{
+    font-weight: bold;
+}
+
+.register .register__who-inputs-wrapper label:first-child{
+    padding-top: 12px;
+    border-top: 1px solid #e9e9e9;
+    max-width: 424px;
+    width: 100%;
+    font-size: 15px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.register .register__sent-button{
+    max-width: 422px;
+    width: 100%;
+}
+
+.register .text-danger{
+    width: 100%;
+    text-align: left;
+}
+
+.register .error-tip+span{
+    text-align: center;
+    margin-top: 0;
+}
+
+@media (max-width: 365px) {
+    .register .register__who-inputs-wrapper input{
+        width: 270px;
+    }
+    .register .register__who-choices.type-choices{
+        margin: 15px 0 15px 0;
+    }
+
+    .register .register__who-inputs-wrapper label:first-child{
+        width: 270px;
+    }
+
+    .register .type-choices__choice span{
+        font-size: 14px;
+        width: 100px;
+    }
+
+    .register .type-choices__choice--partner {
+        margin-left: 15px;
+    }
+
+    .register .accept-rules__rule{
+        max-width: 200px;
+    }
+
+    .register .register__sent-button{
+        max-width: 320px;
+        width: 100%;
+    }
+}
+
+@media (min-width: 365px) and (max-width: 500px) {
+    .register .register__who-inputs-wrapper input{
+        width: 270px;
+    }
+
+    .register .text-danger{
+        width: 270px;
+    }
+    .register .register__who-choices.type-choices{
+        margin: 15px 0 15px 0;
+    }
+
+    .register .register__who-inputs-wrapper label:first-child{
+        width: 270px;
+    }
+
+    .register .type-choices__choice span{
+        font-size: 14px;
+        width: 100px;
+    }
+
+    .register .type-choices__choice--partner {
+        margin-left: 15px;
+    }
+
+    .register .accept-rules__rule{
+        max-width: 280px;
+    }
+
+    .register .register__sent-button{
+        max-width: 320px;
+        width: 100%;
+    }
+}
+
+@media (min-width: 1170px) {
+    .register .register__who-inputs-wrapper {
+        margin-top: 5px;
+    }
+
+    .register .login-social__link--facebook {
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    .register .login-social__link--google {
+        padding-left: 0;
+    }
+
+    .register .login-social__link{
+        margin-top: 11px;
+        padding:0;
+        line-height: 40px;
+    }
+}
+/*регистрация*/

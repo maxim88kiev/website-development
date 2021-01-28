@@ -1,0 +1,42 @@
+.author-list {
+  width: 100%;
+  max-width: 1170px;
+  margin: auto;
+  padding: 20px 15px 60px;
+  box-sizing: border-box; }
+  .author-list__title {
+    margin: 0;
+    font-family: 'FreeSet Demi Bold', sans-serif;
+    font-size: 24px;
+    line-height: 1.42857143;
+    text-transform: uppercase;
+    color: #333; }
+  .author-list__items {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 40px 0 0; }
+  .author-list__item {
+    width: 100%;
+    margin: 0 0 20px 0;
+    font-size: 14px;
+    font-family: 'FreeSet Book', sans-serif;
+    color: #333333;
+    text-align: center; }
+  .author-list__item-image {
+    position: relative;
+    width: 142px;
+    height: 142px;
+    margin: auto;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.4);
+    cursor: pointer; }
+  .author-list__item-name {
+    margin: 25px 0 0;
+    font-family: 'FreeSet Demi Bold', sans-serif; }
+    .author-list__item-name a {
+      color: #000000; }
+      .author-list__item-name a:hover {
+        color: #005559; }
+
+/*# sourceMappingURL=author-list.css.map */

@@ -1,0 +1,25 @@
+<link type="text/css" href="view/stylesheet/blog.css" rel="stylesheet" media="screen" />
+<ul id="dashmenu" class="list-inline">
+			<li class="yellow {% if dashboard_menu==1 %} active {% endif %}"><a href="{{ dashboard }}"><i class="fa fa-dashboard"></i> 
+			<div>{{ text_dash }}</div></a></li>
+			<li class="blue{% if setting_menu==1 %} active {% endif %}"><a href="{{ tmdblogsetting }}"><i class="fa fa-cogs"></i> 
+			<div>{{ text_sett }}</div></a></li>
+			<li class="orange{% if category_menu==1 %} active {% endif %}"><a  href="{{ blogcategory }}"><i class="fa fa-link"></i>
+			<div>{{ text_cate }}</div></a></li>
+			<li class="green{% if blogs_menu==1 %} active {% endif %}"><a href="{{ blog }}"><i class="fa fa-pencil-square-o"></i> 
+			<div>{{ text_blog }}</div></a></li>
+			<li class="pink{% if comment_menu==1 %} active {% endif %}"><a href="{{ comment }}"><i class="fa fa-comments-o"></i> 
+			<div>{{ text_comm }}</div></a></li>
+			<li class="darkpink{% if module_menu==1 %} active {% endif %}"><a href="{{ addmodule }}"><i class="fa fa-puzzle-piece"></i> 
+			<div>{{ text_addmodule }}</div></a></li>
+			
+		</ul>
+<script>
+$("#dashmenu").on('click','li',function(){
+    $("#dashmenu li.active").removeClass("active"); 
+    $(this).addClass("active"); 
+});
+</script>
+
+
+

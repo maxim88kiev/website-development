@@ -1,0 +1,314 @@
+.filter .mobile-title{
+    display: none;
+}
+
+.filter .controls {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 10px 14px 0 0;
+    text-align: center;
+}
+
+.filter .controls:before {
+    content: '';
+    display: block;
+
+    position: absolute;
+    top: 0;
+    left: -1px;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+
+    width: 1px;
+    height: 11px;
+
+    background-color: #005559;
+}
+
+.filter .controls .link {
+    font-size: 12px;
+
+    color: #005559;
+    text-align: center;
+
+    cursor: pointer;
+}
+
+.filter .controls .link:hover {
+    text-decoration: underline;
+}
+
+.filter .extra-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    margin: 15px 0 0;
+}
+
+.filter .extra-links span {
+    display: block;
+    position: relative;
+    margin: 8px 0 0;
+    padding: 0 0 0 17px;
+
+    font-size: 12px;
+    font-weight: 300;
+
+    color: #010101;
+
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.filter .extra-links span:hover {
+    text-decoration: none;
+
+}
+
+.filter .extra-links span:nth-of-type(1) {
+    margin: 0;
+}
+
+.filter .extra-links span:before {
+    content: '';
+    position: absolute;
+    left:0;
+    display: inline-block;
+    background-image: url(../image/arrow-filter.png);
+    width: 9px;
+    height: 7px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.navbar-menu__mobile-banks {
+    font-family: "FreeSet Light";
+    font-size: 12px;
+    line-height: 15px;
+    margin: 0;
+    padding: 0;
+    max-height: 265px;
+    overflow: scroll;
+}
+
+
+
+.banks-container {
+    margin: 15px 0 0;
+    position: relative;
+}
+
+.result-table {
+    font-size: 13px;
+    text-align: center;
+    padding: 15px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.result-table .main-table th::after{
+    display: none;
+}
+.result-table .main-table tbody tr:nth-child(2n){
+    background: none;
+}
+
+.result-table .main-table tbody tr:hover {
+    background: none;
+}
+
+.result-table .main-table thead th ,
+.result-table .main-table tbody th ,
+.result-table .main-table tbody th small ,
+.result-table .main-table tbody th .link
+{
+    font-size: 1em;
+}
+
+.result-table .main-table th .row-block{
+    font-family: "FreeSet Light";
+    font-size: 1em;
+}
+
+.result-table .main-table .show-detail, .result-table .main-table .hide-detail{
+    position: relative;
+    color: #807f7f;
+    text-decoration: underline;
+}
+
+.result-table .main-table tbody th .btn {
+    margin-bottom:11px;
+    white-space: nowrap;
+}
+
+.result-table .main-table tbody th .cell-header {
+    font-family: "FreeSet Book";
+    font-size: 1em;
+    color: #005559;
+}
+
+.result-table .main-table .show-detail ,
+.result-table .main-table .hide-detail{
+    white-space: nowrap;
+}
+
+.result-table .main-table .show-detail:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    background-image: url(../image/arrow-point-to-right-down.png);
+    width: 7px;
+    height: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 5px;
+    white-space: nowrap;
+}
+
+.result-table .main-table .hide-detail:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    background-image: url(../image/arrow-point-to-right-up.png);
+    width: 7px;
+    height: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 5px;
+}
+
+.result-table table tr.main-row:hover {
+    border-top: 2px solid #005559;
+    border-left: 2px solid #005559;
+    border-bottom: 2px solid #005559;
+}
+
+.result-table table tr.main-row:hover th:last-child{
+    border-right: 2px solid #005559;
+}
+
+
+.result-table table tr.tariff-info-row{
+    vertical-align: top;
+}
+
+.result-table table tr.main-row.selected {
+    border-top: 2px solid #005559;
+    border-left: 2px solid #005559;
+/*border-right: 2px solid #005559;*/
+    border-bottom: 1px #959595 dashed;
+}
+
+.result-table table tr.main-row.selected th:last-child{
+    border-right: 2px solid #005559;
+}
+
+.result-table table tr.tariff-info-row.info.selected {
+    border-left: 2px solid #005559;
+    /*border-right: 2px solid #005559;*/
+}
+
+.result-table table tr.tariff-info-row.info.selected th:last-child{
+    border-right: 2px solid #005559;
+}
+
+.result-table table tr.tariff-info-row.extra-info.selected {
+    border-bottom: 2px solid #005559;
+    border-left: 2px solid #005559;
+    /*border-right: 2px solid #005559;*/
+    background-color: #f3f3f3;
+}
+.result-table table tr.tariff-info-row.extra-info.selected th:last-child{
+    border-right: 2px solid #005559;
+}
+
+.result-table .bold-font {
+    color: #005559;
+    font-family: 'FreeSet Demi Bold';
+}
+
+.result-table .footer-info {
+    margin: 0 20px 0 20px;
+}
+
+
+.result-table img {
+    max-height: 20px;
+}
+
+.checkbox {
+    line-height:1.8;
+}
+.checkbox input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+.checkbox__text {
+    font-size: 1em;
+    position: relative;
+    cursor: pointer;
+    padding-left:25px;
+    text-align: left;
+    white-space: normal;
+}
+
+.checkbox__text:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 15px;
+    height: 15px;
+    border: 1px #000 solid;
+    background: #fff;
+    transition: .2s;
+}
+
+.checkbox input:checked + .checkbox__text:after {
+    background: #004B4F;
+}
+
+.result-table .main-table tbody th:nth-last-child(2),
+.result-table .main-table tbody th:nth-last-child(3),
+.result-table .main-table tbody th:nth-last-child(4){
+    white-space: nowrap;
+}
+
+@media (max-width: 861px) {
+    .checkbox__text .prefix{
+        display: none;
+    }
+
+    .filter .desktop-title{
+        display: none;
+    }
+
+    .filter .mobile-title {
+        display: block;
+    }
+}
+
+@media (max-width: 1370px) {
+    .calculator-container .result-table {
+        font-size: 12px;
+        width: 85%;
+    }
+
+    .filter h2 , .filter h3 {
+        white-space: normal;
+    }
+
+    .result-table .main-table tbody th:nth-last-child(2),
+    .result-table .main-table tbody th:nth-last-child(3),
+    .result-table .main-table tbody th:nth-last-child(4){
+        white-space: normal;
+    }
+}

@@ -1,0 +1,22 @@
+.see-also__title {
+  font-size: 18px;
+  font-family: 'FreeSet Demi Bold', sans-serif; }
+
+.see-also__links {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+  @media (max-width: 767px) {
+    .see-also__links {
+      flex-direction: column; } }
+
+.see-also__link {
+  color: #005559;
+  text-decoration: underline; }
+  @media (max-width: 767px) {
+    .see-also__link {
+      margin-top: 10px; } }
+  .see-also__link:hover {
+    color: #005559;
+    text-decoration: none; }

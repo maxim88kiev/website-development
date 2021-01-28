@@ -1,0 +1,225 @@
+<style>
+#links{{ module }} .prog_title {
+  font-size: {{ setting.thumb_title_font_size }};
+  color: {{ setting.thumb_title_font_color }};
+  background-color: {{ setting.thumb_title_background_color }};
+  padding: {{ setting.thumb_title_padding }}px;
+  {% if setting.thumb_title_position %}position:absolute;{% endif %}
+  {% if (setting.thumb_title_position and setting.thumb_title_display) %}display:none;{% endif %}
+}
+
+{% if setting.hover_animation %}
+#links{{ module }} img {
+  -webkit-transition: all {{ setting.hover_animation_speed }}s ease-in-out;
+  -moz-transition: all {{ setting.hover_animation_speed }}s ease-in-out;
+  -ms-transition: all {{ setting.hover_animation_speed }}s ease-in-out;
+  -o-transform: all {{ setting.hover_animation_speed }}s ease-in-out;
+  transition: all {{ setting.hover_animation_speed }}s ease-in-out;
+}
+#links{{ module }} img:hover {
+  -webkit-transform: scale({{ setting.hover_animation_zoom }}) rotate({{ setting.hover_animation_rotate }}deg);
+  -moz-transform: scale({{ setting.hover_animation_zoom }}) rotate({{ setting.hover_animation_rotate }}deg);
+  -ms-transform: scale({{ setting.hover_animation_zoom }}) rotate({{ setting.hover_animation_rotate }}deg);
+  -o-transform: scale({{ setting.hover_animation_zoom }}) rotate({{ setting.hover_animation_rotate }}deg);
+  transform: scale({{ setting.hover_animation_zoom }}) rotate({{ setting.hover_animation_rotate }}deg);
+}
+{% endif %}
+
+{% if setting.border %}
+#links{{ module }} .prog_container {
+  border-radius: {{ setting.border_radius_top_left }}px {{ setting.border_radius_top_right }}px {{ setting.border_radius_bottom_right }}px {{ setting.border_radius_bottom_left }}px;
+  -moz-border-radius: {{ setting.border_radius_top_left }}px {{ setting.border_radius_top_right }}px {{ setting.border_radius_bottom_right }}px {{ setting.border_radius_bottom_left }}px;
+  -webkit-border-radius: {{ setting.border_radius_top_left }}px {{ setting.border_radius_top_right }}px {{ setting.border_radius_bottom_right }}px {{ setting.border_radius_bottom_left }}px;
+  {% if setting.thumb_style != 1 %}border: {{ setting.border_width }}px solid {{ setting.border_color }};{% endif %}
+  z-index:1;
+   
+}
+{% endif %}
+
+{% if setting.box_shadow %}
+#links{{ module }} .prog_container {
+  -webkit-box-shadow: {{ setting.box_shadow_horizontal_length }}px {{ setting.box_shadow_vertical_length }}px {{ setting.box_shadow_blur_radius }}px {{ setting.box_shadow_spread_radius }}px {{ setting.box_shadow_color }};
+  -moz-box-shadow: {{ setting.box_shadow_horizontal_length }}px {{ setting.box_shadow_vertical_length }}px {{ setting.box_shadow_blur_radius }}px {{ setting.box_shadow_spread_radius }}px {{ setting.box_shadow_color }};
+  box-shadow: {{ setting.box_shadow_horizontal_length }}px {{ setting.box_shadow_vertical_length }}px {{ setting.box_shadow_blur_radius }}px {{ setting.box_shadow_spread_radius }}px {{ setting.box_shadow_color }};
+}
+{% endif %}
+
+</style>
+{% if heading_title is not empty %}
+  <h3>{{ heading_title }}</h3>
+{% endif %}
+<div class="row">
+  <div id="prog_loader{{ module }}" class="fs_loader">
+    <span class="loading" style="color: {{ setting.loading_text_color }};">{{ loading_text }}</span>
+    <div class="loader">
+      <div class="inner one" style="border-color: {{ setting.loading_text_color }};"></div>
+      <div class="inner two" style="border-color: {{ setting.loading_text_color }};"></div>
+      <div class="inner three" style="border-color: {{ setting.loading_text_color }};"></div>
+    </div>
+  </div>
+  <div id="links{{ module }}">
+	{% if setting.thumb_style == 0 %}
+     <div id="0links{{ module }}" style="display: none;">
+	  {% for gimage in images %}
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+          <div class="prog_container" style="margin-bottom: {{ setting.bmargin_bottom }}px;">
+          <div class="image" style="overflow: hidden;"><a href="{% if setting.click_function == 0 %}{{ gimage.image }}{% endif %}{% if setting.click_function == 1 %}{{ gimage.link }}{% endif %}" {% if setting.gallery_title %}title="{{ gimage.title }}"{% endif %}{% if setting.click_function == 0 %}data-gallery="#blueimp-gallery-links{{ module }}"{% endif %}><img src="{{ gimage.thumb }}" class="img-responsive" /></a></div>
+		  {% if setting.thumb_title %}
+            <div class="prog_title">{{ gimage.title }}</div>
+          {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+     </div>
+    {% endif %}
+    {% if setting.thumb_style == 1 %}
+    <div class="col-xs-12">
+      <div id="Collage{{ module }}" style="padding: {{ setting.justify_margin }}px; margin: -{{ setting.justify_margin }}>px;">
+        {% for gimage in images %}
+        <div class="prog_container" style="opacity: 0;">
+          <a href="{% if setting.click_function == 0 %}{{ gimage.image }}{% endif %}{% if setting.click_function == 1 %}{{ gimage.link }}{% endif %}" {% if setting.gallery_title %}title="{{ gimage.title }}"{% endif %}{% if setting.click_function == 0 %}data-gallery="#blueimp-gallery-links{{ module }}"{% endif %}><img src="{{ gimage.thumb }}" style="vertical-align:bottom; opacity:1;"></a>
+		  {% if setting.thumb_title and setting.thumb_title_position %}
+            <div class="prog_title">{{ gimage.title }}</div>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+     </div>  
+    {% endif %}
+    {% if setting.thumb_style == 2 %}
+    <div class="col-xs-12">
+      <div id="pinto{{ module }}" style="opacity: 0; margin-bottom: 10px;">
+        {% for gimage in images %}
+        <div class="prog_container">
+          <a href="{% if setting.click_function == 0 %}{{ gimage.image }}{% endif %}{% if setting.click_function == 1 %}{{ gimage.link }}{% endif %}" {% if setting.gallery_title %}title="{{ gimage.title }}"{% endif %}{% if setting.click_function == 0 %}data-gallery="#blueimp-gallery-links{{ module }}"{% endif %}><img src="{{ gimage.thumb }}" style="padding: 0px; display: block; width: 100%;"></a>
+          {% if setting.thumb_title %}
+            <div class="prog_title">{{ gimage.title }}</div>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+     </div>  
+    {% endif %}
+  </div>                     
+</div>
+{% if module is same as(0) %}
+<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+      <div id="blueimp-gallery" class="blueimp-gallery">
+        <!-- The container for the modal slides -->
+        <div class="slides"></div>
+        <!-- Controls for the borderless lightbox -->
+        <h3 class="title"></h3>
+        <a class="prev">‹</a>
+        <a class="next">›</a>
+        <a class="close" style="-webkit-transform: scale(2); -moz-transform: scale(2); -ms-transform: scale(2); -o-transform: scale(2); transform: scale(2);">×</a>
+        <a class="play-pause" style="-webkit-transform: scale(2); -moz-transform: scale(2); -ms-transform: scale(2); -o-transform: scale(2); transform: scale(2);"></a>
+        <ol class="indicator"></ol>
+      </div>
+<script type="text/javascript"><!--
+$('#blueimp-gallery').data('useBootstrapModal', 0);
+$('#blueimp-gallery').toggleClass('blueimp-gallery-controls', 0);
+var resizeTimer{{ module }} = null;
+--></script>
+{% endif %}
+{% if setting.thumb_title and setting.thumb_title_position and setting.thumb_title_display %}
+<script type="text/javascript"><!--
+
+$( "#links{{ module }} .prog_container" )
+  .mouseenter(function() {
+    $(this).find(".prog_title").css({'margin-bottom': 0});
+  })
+  .mouseleave(function() {
+    height = parseInt($(this).find(".prog_title").height()) + parseInt($(this).find(".prog_title").css("padding-top")) + parseInt($(this).find(".prog_title").css("padding-bottom"));
+    $(this).find(".prog_title").css({'margin-bottom': -height});
+  });
+
+ 
+--></script>
+{% endif %}
+<script type="text/javascript"><!--
+
+{% if setting.thumb_style == 1 %}
+function collage{{ module }}() {
+    $('#Collage{{ module }}').removeWhitespace().collagePlus(
+        {
+            'targetHeight'    : {{ setting.justify_row_height }},
+            'fadeSpeed'       : "slow",
+            'effect'          : '{{ setting.justify_effect }}',
+            'direction'       : '{{ setting.justify_direction }}',
+            'allowPartialLastRow' : {% if setting.justify_allow_parital %}true{% else %}false{% endif %}
+        }
+    );
+}
+
+$(window).bind('resize', function() {
+  // hide all the images until we resize them
+  $('#Collage{{ module }} .prog_container').css("opacity", 0);
+  // set a timer to re-apply the plugin
+  if (resizeTimer{{ module }}) clearTimeout(resizeTimer{{ module }});
+    resizeTimer{{ module }} = setTimeout(collage{{ module }}, 200);
+  });
+
+{% endif %}
+
+$( window ).load( function() {
+
+// remove spinner
+  
+  if ($('#prog_loader{{ module }}').length > 0) {
+	  $('#prog_loader{{ module }}').remove();
+	}
+  
+  {% if setting.thumb_style == 0 %}
+  
+  $('#0links{{ module }}').fadeIn('slow', function() { //no height with display none parent
+    
+    {% if setting.thumb_title and setting.thumb_title_position and setting.thumb_title_display %}
+    $("#links{{ module }} .prog_title").each(function( i ) {
+      height = parseInt($(this).height()) + parseInt($(this).css("padding-top")) + parseInt($(this).css("padding-bottom"));
+      $(this).css({'margin-bottom': -height, display:'inline'});
+    });
+    {% endif %}
+    
+  });
+  
+  {% endif %}
+  
+  {% if setting.thumb_style == 1 %}
+  
+     collage{{ module }}();
+    
+    {% if setting.thumb_title and setting.thumb_title_position and setting.thumb_title_display %}
+     $("#links{{ module }} .prog_title").each(function( i ) {
+      height = parseInt($(this).height()) + parseInt($(this).css("padding-top")) + parseInt($(this).css("padding-bottom"));
+      $(this).css({'margin-bottom': -height, display:'inline'});
+     });
+    {% endif %}
+      
+  {% endif %}
+  
+  {% if setting.thumb_style == 2 %}
+  
+    $('#pinto{{ module }}').pinto({
+      itemSelector: "> div", 
+      itemWidth: {{ setting.pinto_width }}, 
+      gapX: {{ setting.pinto_gap_x }}, 
+      gapY: {{ setting.pinto_gap_y }}, 
+      align: "{{ setting.pinto_align }}", 
+      fitWidth: true, 
+      autoResize: true, 
+      resizeDelay: 50, 
+      onItemLayout: function($item, column, position) {$('#pinto{{ module }}').animate({opacity: '1'},{duration: 700});},
+    });
+    
+  
+  {% if setting.thumb_title and setting.thumb_title_position and setting.thumb_title_display %}
+     $("#links{{ module }} .prog_title").each(function( i ) {
+        height = parseInt($(this).height()) + parseInt($(this).css("padding-top")) + parseInt($(this).css("padding-bottom"));
+        $(this).css({'margin-bottom': -height, display:'inline'});
+     });
+  {% endif %}
+  
+  {% endif %}
+  
+});
+--></script>

@@ -1,0 +1,13 @@
+.row-bank div img {
+  height: auto;
+}
+
+.section-btn-index .btn {
+  padding: 8px 54px;
+  font-size: 18px;
+
+  @media (max-width: 360px) {
+    display: block;
+    padding: 8px 0 4px;
+  }
+}

@@ -1,0 +1,13 @@
+<div class="roll_group">
+    <input id="ac-1" name="acc97897" type="checkbox">
+    <label for="ac-1" class="roll_group__title">
+        <span class="roll_group__title__text1">#TITLE#</span> <br>
+        <span class="roll_group__title__text">#TEXT#</span>
+
+    </label>
+    <div class="roll_group__content">
+        <div class="roll_group__content_wrap">
+            #HIDDEN_TEXT#
+        </div>
+    </div>
+</div>

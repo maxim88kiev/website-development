@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="content" method="upgrade">
+    <name>Логирование</name>
+    <author>KRENG</author>
+    <creationDate>05.10.2018</creationDate>
+    <copyright>@copyright</copyright>
+    <license>GNU</license>
+    <authorEmail>bluelionez@gmail.com</authorEmail>
+    <version>1.0.0</version>
+    <description>Плагин для логирования</description>
+
+    <files>
+        <filename plugin="logs">logs.php</filename>
+        <filename>index.html</filename>
+    </files>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field
+                        name="components"
+                        type="subform"
+                        layout = "joomla.form.field.subform.repeatable-table"
+                        multiple="true"
+                        label="Где вести лог"
+                >
+                    <form>
+                        <field
+                            name="name"
+                            type="sql"
+                            label="Компонент"
+                            query="SELECT UPPER(`element`) as `name` FROM `#__extensions` WHERE `type`='component' ORDER BY `element`"
+                            key_field="name"
+                            value_field="name"
+                        />
+                    </form>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>

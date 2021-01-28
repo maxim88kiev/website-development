@@ -1,0 +1,10 @@
+<phpunit
+        bootstrap="phpunit-bootstrap.php"
+        colors="true"
+        cacheResult="false">
+    <testsuites>
+        <testsuite name="podelu.ru">
+            <directory>./tests</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>

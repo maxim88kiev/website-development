@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {box-sizing: border-box;}
+
+        div {
+            position: relative;
+            height: 60px;
+            width: 50px;
+            margin: 400px;
+            background: #000;
+        }
+
+        div:before {
+            border: 60px solid orange;
+            position: absolute;
+            border-radius: 100%;
+            bottom: 0;
+            height: 250px;
+            content: '';
+            z-index: -1;
+            width: 152px;
+            left: -50px;
+        }
+    </style>
+</head>
+<body>
+<div>
+
+</div>
+</body>
+</html>

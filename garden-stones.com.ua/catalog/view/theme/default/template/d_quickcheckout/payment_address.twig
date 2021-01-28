@@ -1,0 +1,243 @@
+<div id="payment_address" class="qc-step" data-col="{{ col }}" data-row="{{ row }}"></div>
+<script type="text/html" id="payment_address_template">
+<div class="<%= parseInt(model.config.display) ? '' : 'hidden' %>">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				<span class="icon">
+					<i class="<%= model.config.icon %>"></i>
+				</span>
+				<span class="text"><%= model.config.title %></span>
+			</h4>
+		</div>
+		<div class="panel-body">
+			<% if(model.config.description){ %><p class="description"><%= model.config.description %></p><% } %>
+			<% if(model.account == 'logged'){ %>
+				<% if(_.size(model.addresses) > 0){ %>
+					<p>{{ text_address_existing }}</p>
+
+					<% if(config.design.address_style == 'list') { %>
+					<div class="list-group">
+					<% _.each (model.addresses, function(address) { %>
+						<div class="list-group-item <%= address.address_id == model.payment_address.address_id ? 'active' : '' %>">
+				            <label for="payment_address_exists_<%= address.address_id %>">
+				            	<input type="radio" name="payment_address[address_id]" class="payment-address"  value="<%= address.address_id %>" id="payment_address_exists_<%= address.address_id %>" <%= address.address_id == model.payment_address.address_id ? 'checked="checked"' : '' %> data-refresh="2" autocomplete='off' />
+				              	<div class="address-item" ><%= sformat(address.address_format, address) %> </div>
+				            </label>
+				        </div>
+			        <% }) %>
+					</div>
+					<% }else{ %>
+						<% _.each (model.addresses, function(address) { %>
+						<div class="radio-input">
+							<label for="payment_address_exists_<%= address.address_id %>">
+				            	<input type="radio" name="payment_address[address_id]" class="payment-address" value="<%= address.address_id %>" id="payment_address_exists_<%= address.address_id %>" <%= address.address_id == model.payment_address.address_id ? 'checked="checked"' : '' %> data-refresh="2" autocomplete='off' />
+				                <strong> <%= address.firstname %>
+				                <%= address.lastname %></strong>
+				                <%= address.address_1 %>
+				                <%= address.address_2 %>
+				                <%= address.city %>
+				                <%= address.zone %>
+				                <%= address.country %>,
+				                <%= address.postcode %>
+				            </label>
+			            </div>
+			            <% }) %>
+					<% } %>
+				<% } %>
+				<div class="radio-input">
+		            <input type="radio" name="payment_address[address_id]" class="payment-address" value="new" id="payment_address_exists_new" <%= (model.payment_address.address_id == 'new' || model.payment_address.address_id == 0) ? 'checked="checked"' : '' %> data-refresh="2" autocomplete='off' />
+		            <label for="payment_address_exists_new">
+		                {{ text_address_new }}
+		            </label>
+		        </div>
+		        <form id="payment_address_form" class="form-horizontal <%= (model.payment_address.address_id == 'new' || model.payment_address.address_id == '0') ? '' : 'hidden' %>">
+
+				</form>
+
+			<% }else{ %>
+			<form id="payment_address_form" class="form-horizontal">
+
+			</form>
+			<% } %>
+		</div>
+	</div>
+</div>
+</script>
+
+<!-- -->
+		
+		<div class="block__bottom">
+			
+				<div class="block__bottom_delivery">
+					<label class="block__bottom_delivery">Доставка</label>
+					<select id="block__bottom_delivery" onchange="bottomFunction()">
+						<option value=""> --- Выберите --- </option>
+						<option value="Самовывоз">Самовывоз</option>
+						<option value="Новая Почта">Новая Почта</option>
+						<option value="Интертайм">Интертайм</option>
+						<option value="Деливери">Деливери</option>
+					</select>
+				</div>
+			
+				<div class="block__bottom_payment">
+					<label class="block__bottom_payment">Метод оплаты</label>
+					<select id="block__bottom_payment" onchange="bottomFunction()">
+						<option value=""> --- Выберите --- </option>
+						<option value="оплата рр">оплата рр</option>
+					</select>
+				</div>
+				
+				<div class="block__number_branch">
+					<label class="number_branch">№ отделения</label>
+					<input type="text" name="number_branch" id="number_branch" value="" onchange="bottomFunction()">
+				</div>
+				
+				<div class="block__bottom_contact">
+					<label class="bottom_contact">Как связаться</label>
+					<p><input type="checkbox" name="tel" id="bottom_contact_tel" value="Телефон" onchange="bottomFunction()"> Телефон</p>
+					<p><input type="checkbox" name="Vib" id="bottom_contact_vib" value="Viber" onchange="bottomFunction()"> Viber</p>
+				</div>
+			
+			</div>
+		
+		<!-- -->
+			
+			<script>
+			
+				function bottomFunction() {
+
+					var bottom_payment =  document.getElementById("block__bottom_payment").value;
+					var bottom_delivery = document.getElementById("block__bottom_delivery").value;
+					var number_branch =   document.getElementById("number_branch").value;
+					
+					if($("#bottom_contact_tel").is(':checked')){
+						var contact_tel = document.getElementById("bottom_contact_tel").value;
+					}else{
+						var contact_tel = 0;
+					}
+					
+					if($("#bottom_contact_vib").is(':checked')){
+						var contact_vib = document.getElementById("bottom_contact_vib").value;
+					}else{
+						var contact_vib = 0;
+					}
+					
+var result_bottom = "Метод оплаты: " + bottom_payment + " ; Доставка: " +  bottom_delivery + " ; № отделения: " +  number_branch + " ; Как связаться: " + contact_tel + " | " + contact_vib + " ;";      		
+				
+				
+				console.log(result_bottom);
+				
+					document.getElementById("payment_address_address_2").value = result_bottom;
+					$("#payment_address_address_2").change();
+				}
+			
+				
+			</script>
+			
+			<style>
+			#payment_address_address_2_input{
+				display: none;
+			}
+			
+			.block__bottom{
+				float: right;
+				width: 750px;
+				padding: 10px;
+				margin-bottom: 10px;
+				background-color: #fff;
+				border: 1px solid #eaeaea;
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				border-color: #dddddd;
+				border-radius: 4px;
+			}
+			
+			div.block__bottom_delivery, div.block__number_branch{
+				margin-right: 96px;
+				margin-left: 17px;
+			}
+			
+			.block__bottom_contact > p{
+				margin-right: 10px !important;
+			}
+			
+			#block__bottom_payment, #block__bottom_delivery, #number_branch{
+				width: 191px;
+				height: 34px;
+				padding: 6px 12px;
+				font-size: 14px;
+				line-height: 1.42857143;
+				color: #555;
+				background-color: #fff;
+				background-image: none;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+				box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+				-webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+				-o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+				transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+				border-color: #dddddd;
+			}
+			
+			.block__bottom_payment, .block__bottom_delivery, .number_branch, .bottom_contact{
+				min-width: 100px;
+			}
+			
+			.block__bottom_payment, .block__bottom_delivery, .block__number_branch{
+				margin-bottom: 5px;
+			}
+			
+			.block__bottom_contact{
+				display: flex;
+				justify-content: space-between;
+				max-width: 260px;
+			}
+			
+			@media (max-width: 1200px) {
+				.block__bottom{
+					margin-right: -2px;
+					width: 619px;
+				}
+				
+				#d_quickcheckout .btn-group > .btn, #d_quickcheckout .btn-group > .dropdown-menu, #d_quickcheckout .btn-group > .popover {
+					font-size: 10px;
+				}
+				
+				div.block__bottom_delivery, div.block__number_branch {
+					margin-right: 9px;
+					margin-left: 0px;
+				}
+			}
+			
+			@media (max-width: 992px) {
+				.block__bottom{
+					width: 100%;
+					margin-right: 0px;
+				}
+			}
+			
+			@media (max-width: 768px) {
+				#block__bottom_payment, #block__bottom_delivery, #number_branch {
+					width: 156px;
+				}
+			}
+			
+			</style>
+			
+
+<script>
+$(function() {
+	qc.paymentAddress = $.extend(true, {}, new qc.PaymentAddress({{ json }}));
+	qc.paymentAddressView = $.extend(true, {}, new qc.PaymentAddressView({
+		el:$("#payment_address"),
+		model: qc.paymentAddress,
+		template: _.template($("#payment_address_template").html())
+	}));
+	qc.paymentAddressView.setZone(qc.paymentAddress.get('payment_address.country_id'));
+
+})
+
+</script>

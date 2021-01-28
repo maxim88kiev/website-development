@@ -1,0 +1,32 @@
+.content-article {
+
+  &__row {
+    display: flex;
+
+    @media (max-width: 1139px) {
+      display: block;
+    }
+  }
+
+  .container-article-text .article-banner_type_horizontal {
+    @media (max-width: 749px) {
+      display: none;
+    }
+  }
+
+  .container-article-text .article-banner_type_vertical {
+    @media (min-width: 750px) {
+      display: none;
+    }
+  }
+
+
+
+  .article-aside__content {
+    position: sticky;
+    z-index: 1;
+    top: 65px;
+  }
+
+
+}

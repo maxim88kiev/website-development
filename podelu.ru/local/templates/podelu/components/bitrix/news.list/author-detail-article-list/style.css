@@ -1,0 +1,4 @@
+.author-detail-article-list {
+	display: flex;
+	flex-wrap: wrap;
+}

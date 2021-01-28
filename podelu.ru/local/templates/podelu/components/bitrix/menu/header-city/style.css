@@ -1,0 +1,2 @@
+.header-city{display:flex;font-size:16px}.header-city__title{margin:0 16px 0 0;color:#B0AFB7}@media (max-width: 479px){.header-city__title{display:none}}.header-city__name{position:relative;padding:0 16px 0 0;font-weight:600;color:#005559;cursor:pointer}.header-city__name:hover{text-decoration:underline}.header-city__name:after{content:'';display:block;position:absolute;top:-2px;right:0;bottom:0;margin:auto;width:0;height:0;border-style:solid;border-width:4px 4px 0 4px;border-color:#005559 transparent transparent transparent}
+/*# sourceMappingURL=style.css.map */

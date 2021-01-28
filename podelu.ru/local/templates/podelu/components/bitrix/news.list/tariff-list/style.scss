@@ -1,0 +1,20 @@
+.extended-calculator {
+  text-align: right;
+
+  margin: 0 0 15px;
+
+  &__link {
+    font-family: 'FreeSet', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+
+    color: #f34942;
+
+    &:hover {
+      color: #f34942;
+    }
+  }
+}
+
+#content-bank-ajax .section-title {
+  margin-bottom: 5px;
+}

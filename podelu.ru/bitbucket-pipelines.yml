@@ -1,0 +1,54 @@
+# This is a sample build configuration for PHP.
+# Check our guides at https://confluence.atlassian.com/x/e8YWN for more examples.
+# Only use spaces to indent your .yml configuration.
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+image: alpine
+
+pipelines:
+  custom:
+    deploy_to_dev1:
+      - step:
+          name: deploy
+          deployment: development
+          image: alpine
+          script:
+            - apk update
+            - apk add --no-cache bash openssh-client ca-certificates
+            - mkdir -p ~/.ssh
+            - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+            - echo $DEV1_SSH_KEY > ~/.ssh/id_rsa.tmp
+            - base64 -d ~/.ssh/id_rsa.tmp > ~/.ssh/id_rsa
+            - chmod 600 ~/.ssh/id_rsa
+            - ssh $DEV1_SSH_HOST "cd /home/web/dev1.podelu.ru/www; git fetch --all; git reset --hard $BITBUCKET_COMMIT"
+    deploy_to_staging:
+      - step:
+          name: deploy
+          deployment: staging
+          image: alpine
+          script:
+            - apk update
+            - apk add --no-cache bash openssh-client ca-certificates
+            - mkdir -p ~/.ssh
+            - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+            - echo $DEV1_SSH_KEY > ~/.ssh/id_rsa.tmp
+            - base64 -d ~/.ssh/id_rsa.tmp > ~/.ssh/id_rsa
+            - chmod 600 ~/.ssh/id_rsa
+            - ssh $DEV1_SSH_HOST "cd /home/web/u81207.na4u.ru/www; git fetch --all; git reset --hard $BITBUCKET_COMMIT"
+            - ssh $DEV1_SSH_HOST "cd /home/web/u81207.na4u.ru/www/local; composer install"
+            - ssh $DEV1_SSH_HOST "cd /home/web/u81207.na4u.ru/www/local; ./vendor/bin/phinx migrate -e staging"
+    deploy_to_production:
+      - step:
+          name: Deploy to production
+          deployment: production
+          script:
+            - apk update
+            - apk add --no-cache bash openssh-client ca-certificates
+            - mkdir -p ~/.ssh
+            - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+            - echo $PROD_SSH_KEY > ~/.ssh/id_rsa.tmp
+            - base64 -d ~/.ssh/id_rsa.tmp > ~/.ssh/id_rsa
+            - chmod 600 ~/.ssh/id_rsa
+            - ssh $PROD_SSH_HOST "cd $APP_PATH; git fetch --all; git reset --hard $BITBUCKET_COMMIT"
+            - ssh $PROD_SSH_HOST "cd $APP_PATH/local; composer install --no-dev"
+            - ssh $PROD_SSH_HOST "cd $APP_PATH/local; ./vendor/bin/phinx migrate -e production"

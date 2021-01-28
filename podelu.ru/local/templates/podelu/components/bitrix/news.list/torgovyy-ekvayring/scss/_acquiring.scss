@@ -1,0 +1,1023 @@
+.acquiring {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  //font-family: 'FreeSet Book', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'FreeSet', "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  width: 100%;
+  max-width: 1180px;
+  margin: 30px auto 45px;
+
+  @include media($md) {
+    margin-left: 0!important;
+    margin-right: 0!important;
+    flex-direction: column;
+  }
+
+  &__title {
+    width: 100%;
+  }
+
+  &__filter {
+    position: sticky;
+    top: 65px;
+
+    width: 100%;
+    max-width: 205px;
+
+    height: calc(100vh - 65px);
+
+    overflow-y: auto;
+
+    @include media($md) {
+      position: static;
+      max-width: 100%;
+      height: auto;
+      margin: auto;
+    }
+  }
+
+  &__banks {
+    flex: 1;
+    padding: 0 0 0 20px;
+
+    width: 100%;
+    max-width: calc(100% - 205px);
+
+    @include media($md) {
+      padding: 0;
+      margin: auto;
+
+      width: calc(100% - 20px);
+      max-width: 100%;
+
+    }
+  }
+
+  &__bank-list {
+    box-shadow: 0 0 20px rgba(0, 0, 0, .16);
+
+    @include media($md) {
+      box-shadow: none;
+    }
+  }
+
+  &__bank {
+    border: 2px solid transparent;
+
+    @include media($md) {
+      width: 100%;
+      max-width: 360px;
+
+      margin: 20px auto 0;
+      background-color: #ffffff;
+      border: 1px solid #d9d9d9;
+    }
+
+    &:hover {
+      border-color: #005559;
+
+      @include media($md) {
+        border-color: #d9d9d9;
+      }
+    }
+
+    &:nth-of-type(even) {
+      background: #f7f7f7;
+
+      @include media($md) {
+        background: none;
+      }
+    }
+
+    &_header {
+      position: sticky;
+      top: 65px;
+      z-index: 3;
+
+      color: #ffffff;
+      background-color: #005559;
+
+      font-size: 14px;
+      font-weight: 700;
+      text-align: center;
+
+      @include media($md) {
+        display: none;
+      }
+    }
+
+    &_empty {
+      padding: 15px;
+
+      text-align: center;
+
+      &:hover {
+        border-color: transparent;
+      }
+    }
+  }
+
+  &__bank-row {
+    position: relative;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    cursor: pointer;
+
+    @include media($md) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__bank-col {
+    position: relative;
+    padding: 12px;
+    box-sizing: border-box;
+
+    @include media($md) {
+      position: static;
+      padding: 10px 12px;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+
+      width: 1px;
+      height: 27px;
+      background-color: #005559;
+
+      @include media($md) {
+        content: none;
+      }
+    }
+
+    &_info {
+      width: 150px;
+
+      @include media($md) {
+        width: 100%;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      &:before {
+        content: none;
+      }
+    }
+
+    &_rate {
+      width: 140px;
+
+      @include media($md) {
+        width: 100%;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+      }
+    }
+
+    &_equipment-options {
+      width: 155px;
+
+      padding-left: 5px;
+      padding-right: 5px;
+
+      text-align: center;
+
+      @include media($md) {
+        width: 100%;
+        padding: 10px 12px;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+    }
+
+    &_equipment {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      flex: 1;
+      flex-wrap: wrap;
+      width: 100%;
+      max-width: calc(100% - 585px);
+      box-sizing: border-box;
+
+      @include media($md) {
+        max-width: none;
+      }
+    }
+
+    &_link {
+      width: 140px;
+      text-align: center;
+
+      margin: 0 0 0 auto;
+
+      @include media($md) {
+        width: 100%;
+        text-align: left;
+
+        padding-bottom: 15px;
+      }
+    }
+  }
+
+  &__bank_header &__bank-col:before {
+    background-color: #ffffff;
+  }
+
+  &__bank-logo {
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    @include media($md) {
+      flex: 1;
+    }
+  }
+
+  &__bank-industry {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    position: relative;
+    margin: 5px 0 0;
+
+    font-size: 11px;
+    font-weight: 300;
+    line-height: 1;
+
+    color: #000000;
+
+    @include media($md) {
+      flex: 1;
+      margin: 0 0 0 10px;
+
+      white-space: nowrap;
+    }
+
+    &_select {
+      width: 125px;
+      min-height: 25px;
+
+      padding: 2px 10px 0;
+      box-sizing: border-box;
+
+      background-color: #ffffff;
+      border: 1px solid #005559;
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      cursor: pointer;
+
+      &:before {
+        content: '';
+        width: 5px;
+        height: 3px;
+
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 10px;
+        margin: auto;
+
+        background: no-repeat center url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAECAYAAABGM/VAAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAADJJREFUeJxjYAiNZAdiLiDmAWI+IBZkABLOQPwfCU9gAIPQyFyowBEGFBAaOR2IdUBMAA9XETJQD2SoAAAAAElFTkSuQmCC');
+      }
+    }
+
+    .nice-select {
+      .list {
+        @include media($md) {
+          left: auto;
+          right: 0;
+        }
+      }
+
+      @include media($md) {
+        width: 100%;
+      }
+    }
+  }
+
+  &__bank-industry-select {
+    display: none;
+  }
+
+
+  &__bank-link-detail,
+  &__bank-detail-hide {
+    position: relative;
+    display: inline-block;
+
+    margin: 10px 0 0;
+
+    font-size: 11px;
+    font-weight: 300;
+
+    color: #807f7f;
+    border-bottom: 1px solid #807f7f;
+
+    cursor: pointer;
+
+    @include media($md) {
+      position: absolute;
+      right: 11px;
+      bottom: 20px;
+    }
+
+    &:hover {
+      border-bottom-color: transparent;
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: -13px;
+      margin: auto;
+
+      width: 7px;
+      height: 5px;
+      background: transparent no-repeat 100% center;
+      background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAFCAYAAACJmvbYAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAADRJREFUeJxjqK+vzwZiLgYkAOKDxEGM3UC8D6YAKgHi70bmgLAIEpuLAU31FxQJNHvykCUAEV8vTPqo7lsAAAAASUVORK5CYII=');
+
+      @include media($md) {
+        content: none;
+      }
+    }
+  }
+
+  &__bank-link-detail {
+    opacity: 1;
+    transition: all .4s;
+  }
+  &__bank_opened &__bank-link-detail {
+    opacity: 0;
+  }
+
+
+  &__bank-detail-hide {
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+
+    opacity: 0;
+    transition: all .4s;
+
+    &:before {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__bank_opened &__bank-detail-hide {
+    opacity: 1;
+  }
+
+
+  &__bank-rate {
+    font-size: 11px;
+    font-weight: 700;
+    text-align: center;
+
+    color: #005559;
+
+    @include media($md) {
+      position: absolute;
+      left: 0;
+      right: 0;
+    }
+  }
+
+
+  &__bank-link,
+  &__bank-detail-modal {
+    display: inline-block;
+
+    padding: 4px 15px 2px;
+    box-sizing: border-box;
+
+    font-size: 12px;
+    text-align: center;
+
+    color: #f34942;
+    border: 1px solid #f34942;
+    border-radius: 11px;
+
+    transition: all .2s;
+
+    outline: none;
+    text-decoration: none;
+
+    &:hover,
+    &:hover:focus {
+      color: #ffffff;
+      background-color: #f34942;
+      text-decoration: none;
+    }
+
+    &:focus {
+      color: #f34942;
+
+      outline: none;
+      text-decoration: none;
+    }
+  }
+
+  &__bank-detail-modal {
+    margin: 25px 0 0;
+  }
+
+
+  &__bank-equipment-option-list {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  &__bank-equipment-option {
+    padding: 0 0 0 13px;
+    box-sizing: border-box;
+
+    font-size: 11px;
+    font-weight: 300;
+
+    color: #000000;
+    background: no-repeat 0 center;
+
+    &_yes {
+      background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAD1JREFUeJxjYMAHQiMZ8UlGA/FufJLfgdgPxLEDYi7skhCBw0C8D6wIQxKigB+ITwLxJUxJVEWHsUsS8BIAVMYdh5aHHIUAAAAASUVORK5CYII=');
+    }
+
+    &_no {
+      background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAADFJREFUeJxj+OzpuAqIzRmQAIgPEocxHsEUoPORBTJQJJCMAkn8B9HoEth14rUTn2sB1H5A5bKLNb4AAAAASUVORK5CYII=');
+    }
+  }
+
+  &__bank-detail {
+    position: relative;
+    display: none;
+
+    padding: 18px 14px 30px;
+    box-sizing: border-box;
+
+    @include media($md) {
+      display: none;
+      background: #ffffff;
+
+      flex-direction: column;
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+
+      width: 100%;
+      height: 1px;
+
+      background-position: 0 center;
+      background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAABCAYAAAAMwoR9AAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAABVJREFUeJxjmDp16n8QZkADMHEQBgDkwQ233kgSkQAAAABJRU5ErkJggg==');
+
+      @include media($md) {
+        content: none;
+      }
+    }
+  }
+
+  &__bank-detail {
+    display: flex;
+  }
+
+  &__bank-detail-col {
+    flex: 1;
+
+    padding: 0 15px 0 0;
+    box-sizing: border-box;
+
+    @include media($md) {
+      padding: 0;
+    }
+
+    &_link {
+      @include media($md) {
+        text-align: center;
+      }
+    }
+  }
+
+  &__bank-detail-title {
+    position: relative;
+    margin: 0 0 3px;
+
+    font-size: 12px;
+    font-weight: 300;
+
+    color: #000000;
+
+    &_icon-card {
+      &:before {
+        content: '';
+        display: block;
+        width: 100px;
+        height: 13px;
+
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+
+        background: no-repeat center;
+        background-image: url('data:image/png;base64,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');
+      }
+    }
+  }
+
+  &__bank-tariff-list {
+
+  }
+
+  &__bank-tariff {
+    margin: 0 0 12px;
+    padding: 10px;
+    box-sizing: border-box;
+
+    //background-color: #ffffff;
+    border: 1px solid #e8e8e8;
+
+    font-size: 11px;
+    font-weight: 300;
+  }
+
+  &__bank-tariff-name {
+    span {
+      display: inline-block;
+      margin: 0 5px 0 0;
+      color: #245659;
+
+      font-weight: 700;
+    }
+  }
+
+  &__bank-tariff-description {
+    margin: 10px 0 0;
+  }
+
+  &__bank-options {
+    width: 100%;
+    max-width: 300px;
+
+    font-size: 11px;
+    font-weight: 300;
+
+    color: #000000;
+  }
+
+  &__bank-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &__bank-option-name {
+    min-width: 140px;
+  }
+
+  &__bank-tariff-rate-list {
+
+  }
+
+  &__bank-tariff-rate {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__bank-tariff-rate-name {
+    flex: 1;
+  }
+
+  &__bank-tariff-rate-value {
+    flex: 1;
+
+    font-size: 11px;
+    font-weight: 700;
+    text-align: right;
+
+    color: #245659;
+  }
+
+
+  &__bank-rate-title,
+  &__bank-equipment-title {
+    display: none;
+
+    @include media($md) {
+      display: block;
+      width: 100%;
+      max-width: 85px;
+
+      color: #000000;
+
+      font-size: 11px;
+      font-weight: 300;
+
+      text-align: left;
+    }
+  }
+
+  &__bank-equipment-scroll {
+    overflow-x: auto;
+
+    @include media($md) {
+      width: 100%;
+      max-width: calc(100% - 40px);
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f3f3f3;
+      border-radius: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #dddddd;
+      border-radius: 3px;
+
+      cursor: pointer;
+    }
+  }
+
+
+  &__bank-equipment-list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    width: 100%;
+    max-width: 100%;
+
+    @include media($md) {
+      overflow-x: auto;
+    }
+
+    &::-webkit-scrollbar {
+      @include media($md) {
+        display: none;
+      }
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f3f3f3;
+      border-radius: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #dddddd;
+      border-radius: 3px;
+
+      cursor: pointer;
+    }
+  }
+
+  &__bank-equipment-prev,
+  &__bank-equipment-next {
+    display: none;
+    position: relative;
+
+    width: 20px;
+    height: 20px;
+
+    @include media($md) {
+      display: block;
+    }
+
+    &:before {
+      content: '';
+      display: block;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+
+      width: 9px;
+      height: 7px;
+      background-repeat: no-repeat;
+      background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAHCAYAAAAF1R1/AAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAIFJREFUeJxjYEAC27dvLwBidgYCAKQGpBaXxGIg/g/EAkQYJABVuxhuMZAhDMSHoRIg/BGIPyDhxVCMLPYRST1IrzDIoElIgtjwBijGp2YSyCAuIF4PFfgHxA/Q8EwoRhf/B9UD0ssF8x4zEM8AOZtQ+CCF0weoHmZskpkkGISiFgDI7tN/NXNv9AAAAABJRU5ErkJggg==');
+    }
+  }
+
+  &__bank-equipment-prev:before {
+    background-position: left center;
+  }
+
+  &__bank-equipment-next:before {
+    background-position: right center;
+  }
+
+  &__bank-col_equipment-count_1 &__bank-equipment-prev,
+  &__bank-col_equipment-count_1 &__bank-equipment-next {
+    display: none;
+  }
+
+  &__bank-equipment-baloon-list {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    margin: 7px 0 0;
+
+    @media (min-width: 1023px) {
+      display: none;
+    }
+  }
+
+  &__bank-equipment-baloon {
+    display: block;
+    width: 4px;
+    height: 4px;
+    margin: 0 3px;
+    border-radius: 50%;
+    background: #b8b8b8;
+
+    &_active {
+      background: #005559;
+    }
+  }
+
+
+  &__bank-equipment {
+    display: block;
+
+    position: relative;
+    min-width: 125px;
+    padding: 0 5px;
+    box-sizing: border-box;
+
+    @include media($md) {
+      min-height: 34px;
+      min-width: 100%;
+
+      padding: 0 0 0 30px;
+
+      justify-content: center;
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 27px;
+
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+
+      background: #005559;
+
+      @include media($md) {
+        content: none;
+      }
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    &:nth-of-type(1) {
+      &:before {
+        content: none;
+      }
+    }
+
+    &_no-img {
+      @include media($md) {
+        padding: 0;
+      }
+    }
+  }
+
+  &__bank-equipment-list_common-price &__bank-equipment {
+    @include media($md) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+
+      padding: 0;
+    }
+  }
+
+  &__bank-equipment-img {
+    float: left;
+    width: 100%;
+    max-width: 30px;
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    @include media($md) {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &__bank-equipment-list_common-price &__bank-equipment-img {
+    @include media($md) {
+      position: static;
+    }
+  }
+
+  &__bank-equipment-info {
+    float: left;
+    width: 100%;
+    max-width: calc(100% - 30px);
+
+    padding: 0 0 0 5px;
+    box-sizing: border-box;
+  }
+
+  &__bank-equipment_no-img &__bank-equipment-info {
+    max-width: none;
+    padding: 0;
+  }
+
+  &__bank-equipment-list_common-price &__bank-equipment-info {
+    @include media($md) {
+      width: auto;
+      max-width: none;
+    }
+  }
+
+  &__bank-equipment-name {
+    flex: 1;
+    font-size: 11px;
+    font-weight: 700;
+
+    color: #000000;
+  }
+
+  &__bank-equipment_no-img &__bank-equipment-name {
+    text-align: center;
+
+    @include media($md) {
+      width: 100%;
+      max-width: none;
+    }
+  }
+
+  &__bank-equipment-specification {
+    display: none;
+  }
+
+  &__bank-equipment-price {
+    float: left;
+    width: 100%;
+
+    box-sizing: border-box;
+
+    font-size: 11px;
+    font-weight: 300;
+    text-align: center;
+
+    color: #000000;
+
+    @include media($md) {
+      width: 100%;
+      max-width: calc(100% - 30px);
+      padding: 0 0 0 5px;
+
+      text-align: left;
+    }
+  }
+
+  &__bank-equipment_no-img &__bank-equipment-price {
+    text-align: center;
+
+    @include media($md) {
+      max-width: none;
+      padding: 0;
+    }
+  }
+
+  &__bank-equipment-list-price,
+  &__bank-equipment-list-specification {
+    font-size: 11px;
+    font-weight: 300;
+  }
+
+  &__bank-equipment-list-price {
+    text-align: center;
+  }
+
+  &__bank-equipment-list-specification {
+    color: #b8b8b8;
+  }
+
+  &__bank-equipment-price,
+  &__bank-equipment-list-price {
+    b {
+      color: #245659;
+    }
+  }
+
+
+  .nice-select .option {
+    white-space: nowrap;
+  }
+
+  &__bank-detail-equipment-card {
+    margin: 0 0 12px;
+    padding: 10px;
+    box-sizing: border-box;
+
+    background-color: #ffffff;
+    border: 1px solid #e8e8e8;
+
+    font-size: 11px;
+    font-weight: 300;
+    text-align: center;
+
+
+    color: #000000;
+  }
+
+  &__bank-detail-equipment-list {
+    margin: 10px 20px 0;
+  }
+
+  &__bank-detail-equipment {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  &__bank-detail-equipment-img {
+    display: inline-block;
+    vertical-align: top;
+
+    max-width: 30px;
+  }
+
+  &__bank-detail-equipment-info {
+    display: inline-block;
+    vertical-align: top;
+
+    max-width: calc(100% - 30px);
+
+    padding: 0 0 0 10px;
+    box-sizing: border-box;
+  }
+
+  &__bank-detail-equipment-name {
+    text-align: left;
+
+    color: #005559;
+  }
+
+  &__bank-detail-equipment-specification {
+    color: #b8b8b8;
+    text-align: left;
+  }
+
+}

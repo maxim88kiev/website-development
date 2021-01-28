@@ -1,0 +1,1979 @@
+/**handles:style_home**/
+@font-face {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+
+    src: url("http://endosfera.com.ua/wp-content/themes/endosphere/catalog/view/stylesheet/fonts/roboto-v18-latin-regular.woff2") format("woff2"),
+    url("http://endosfera.com.ua/wp-content/themes/endosphere/catalog/view/stylesheet/fonts/roboto-v18-latin-regular.woff") format("woff");
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+
+    src: url("http://endosfera.com.ua/wp-content/themes/endosphere/catalog/view/stylesheet/fonts/roboto-v18-latin-700.woff2")
+}
+
+form *, *::before, *::after {
+    box-sizing: inherit;
+}
+
+html {
+    position: relative;
+    box-sizing: border-box;
+
+    overflow-x: hidden;
+}
+
+body {
+    position: relative;
+    min-width: 320px;
+    margin: 0;
+    padding: 0;
+
+    font-family: "Roboto", "Arial", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+
+    overflow: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.top__header {
+    background-image: url(http://endosfera.com.ua/wp-content/themes/endosphere/catalog/view/img/advantages-header.webp);
+    min-height: 402px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #f4f4f4;
+}
+
+.top__line {
+    background-image: url(http://endosfera.com.ua/wp-content/themes/endosphere/catalog/view/img/advantages_line.jpg);
+    min-height: 4px;
+    background-repeat: repeat-x;
+}
+
+.top__slogan {
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: 93px;
+    line-height: 1;
+    color: rgb(0, 0, 0);
+    padding-top: 98px;
+    max-width: 1127px;
+    margin: auto;
+}
+
+
+.wait_img{
+    margin: auto;
+    left: 0px !important;
+    right: 0px;
+    top: 50% !important;
+    transform: translateY(-50%);
+    margin-top: 23px;
+}
+#formID_1{
+    min-height: 64px;
+}
+#formID_3{
+    min-height: 58px;
+}
+.button__popup_3{
+	margin-top: 0px !important;
+}
+.top__slogan b {
+    font-weight: 700;
+    font-size: 67px;
+}
+
+.advantages__img {
+    margin-top: -105px;
+    margin-left: -160px;
+}
+
+.advantages__txt {
+    max-width: 748px;
+    padding-top: 36px;
+    font-size: 16px;
+    line-height: 1.3;
+    text-align: justify;
+    margin-left: 20px;
+}
+
+.advantages {
+    display: flex;
+    justify-content: center;
+}
+
+.slider {
+    background-image: url(http://endosfera.com.ua/wp-content/themes/endosphere/catalog/view/img/advantages-slider.jpg);
+    background-repeat: repeat-x;
+    margin-top: -105px;
+    padding-bottom: 50px;
+}
+
+.slider__txt {
+    color: #fff;
+    text-align: center;
+    padding-top: 26px;
+    text-transform: uppercase;
+    font-size: 35px;
+}
+
+.slider__block {
+    display: flex;
+    justify-content: center;
+}
+
+.slider__block div {
+    height: 283px;
+    width: 333px;
+    background-repeat: no-repeat;
+    margin: 47px 34px;
+}
+
+.slider__block .slider__block--1 {
+    background-image: url(http://endosfera.com.ua/wp-content/themes/endosphere/catalog/view/img/slider_img_1.webp);
+}
+
+.slider__block .slider__block--2 {
+    background-image: url(http://endosfera.com.ua/wp-content/themes/endosphere/catalog/view/img/slider_img_2.webp);
+}
+
+/* */
+button.slider-bottom__button__popup{
+    margin: 20px auto;
+}
+
+.top-rating__slider {
+    margin-top: 21px;
+}
+.popup-singup, .popup-singup__slider, .popup-singup__video, .popup__feedback-dopinfo{
+    text-align: center;
+}
+/* */
+#formID_2{
+	min-height: 60px;
+}
+#formID_4{
+    display: flex;
+    flex-direction: column;
+}
+.slider__block .slider__block--3 {
+    background-image: url(http://endosfera.com.ua/wp-content/themes/endosphere/catalog/view/img/slider_img_3.webp);
+}
+
+.slider_3 {
+    display: none;
+}
+.slider__block-button:hover{
+    color: #8A8A8A;
+}
+
+.slider__block-button {
+    margin: 0 auto;
+    margin-top: 46px;
+    color: #fff;
+    display: flex;
+    background-color: #ff892a;
+    height: 50px;
+    width: 555px;
+    border-radius: 19px;
+    text-transform: uppercase;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.slider__block-button--img {
+    background-image: url(http://endosfera.com.ua/wp-content/themes/endosphere/catalog/view/img/advantages-slider__block-button--img.png);
+    height: 35px;
+    width: 35px;
+    background-repeat: no-repeat;
+}
+
+.testimony__column-img-left {
+    background-image: url(http://endosfera.com.ua/wp-content/themes/endosphere/catalog/view/img/testimony__column-img-left.webp);
+    height: 98px;
+    width: 98px;
+    background-repeat: no-repeat;
+    position: absolute;
+    margin-top: -50px;
+}
+
+.testimony__column-img-right {
+    background-image: url(http://endosfera.com.ua/wp-content/themes/endosphere/catalog/view/img/testimony__column-img-right.webp);
+    height: 98px;
+    width: 98px;
+    background-repeat: no-repeat;
+    position: absolute;
+    margin-top: -50px;
+}
+
+.number-procedures {
+    background-image: url(http://endosfera.com.ua/wp-content/themes/endosphere/catalog/view/img/number-procedures_img.webp);
+    height: 630px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.slider__block-button--txt {
+    font-size: 25px;
+    font-weight: 100;
+    margin-left: 12px;
+    margin-right: -19px;
+}
+
+.slider__block-switch {
+    width: 555px;
+    height: 6px;
+    border-radius: 5px;
+    background-color: #1eafa4;
+    margin: 0 auto;
+    margin-top: 44px;
+}
+
+.shape {
+    background-image: url(http://endosfera.com.ua/wp-content/themes/endosphere/catalog/view/img/advantages-shape.jpg);
+    padding-bottom: 11px;
+    background-repeat: repeat-x;
+    margin-top: 5px;
+}
+
+.shape > ul {
+    margin-top: 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.shape > ul > li {
+    padding: 30px 21px 0 21px;
+    list-style-type: none;
+}
+
+.shape__block-txt {
+    color: #fff;
+	font-size: 18px;
+	text-align: center;
+	max-width: 146px;
+	margin: 0 auto;
+	line-height: 1;
+	margin-top: 3px;
+	font-weight: 400;
+}
+.field-mail_send {
+	display: flex !important;
+	justify-content: flex-end !important;
+}
+.rating__star{
+	display: flex;
+	justify-content: center;
+}
+.testimony {
+    background-color: #f1f1f1;
+    height: 711px;
+    display: flex;
+    justify-content: center;
+}
+
+.testimony__column {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    margin-top: 84px;
+}
+
+.testimony__column--contraindications {
+    margin-left: 30px;
+}
+
+.testimony__column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 65px;
+    padding-left: 65px;
+    max-height: 578px;
+}
+
+.testimony__title {
+    margin: 0px;
+    margin-top: 86px;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 24px;
+}
+
+.testimony__title span {
+    font-weight: bold;
+}
+
+.testimony__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px;
+    margin-top: 35px;
+    padding: 0px;
+    list-style: none;
+}
+
+.wpmtst-submit{
+	margin-top: -69px;
+}
+
+.field-google_tcha .field-wrap.error{
+	display:none !important;
+}
+
+.testimony__item {
+    font-size: 21px;
+    position: relative;
+    min-width: 420px;
+    max-width: 420px;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #ffffff;
+    text-align: center;
+}
+
+.testimony__item:first-child {
+    border-top: 2px solid #ffffff;
+}
+
+.testimony__item::before {
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    content: '';
+    width: 9px;
+    height: 9px;
+    background-color: #0ab18b;
+    border-radius: 50%;
+}
+
+.testimony__column--contraindications .testimony__item::before {
+    background-color: #c9c9c9;
+}
+
+.number-procedures__block-text {
+    border-top: 4px double #bff9f4;
+    border-bottom: 4px double #bff9f4;
+    margin: auto;
+    max-width: 965px;
+    font-size: 16px;
+}
+
+.number-procedures__block-text-2 {
+    padding-top: 13px;
+    padding-bottom: 6px;
+}
+
+.number-procedures__block-text-3 {
+    border-top: 4px double #bff9f4;
+    font-size: 24px;
+    padding-top: 31px;
+    padding-bottom: 13px;
+}
+
+.number-procedures__block-text-3 span {
+    color: #58e4d9;
+}
+
+.number-procedures__txt {
+    font-size: 36px;
+    text-transform: uppercase;
+    padding-top: 110px;
+    padding-bottom: 50px;
+    text-align: center;
+    margin: 0px;
+}
+
+.number-procedures__block-text p {
+    line-height: 26px;
+    text-align: justify;
+}
+
+.number-procedures__block-text-1 {
+    padding-top: 4px;
+}
+
+.slider-bottom {
+    background-color: #f8f8f8;
+    height: 684px;
+}
+
+.slider-bottom__txt {
+    margin: 0px;
+    text-align: center;
+    font-size: 36px;
+    text-transform: uppercase;
+    padding-top: 48px;
+    padding-bottom: 50px;
+}
+
+.slider-bottom__list {
+    display: flex;
+    justify-content: center;
+
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+}
+
+.slider-bottom__item {
+    margin-left: 34px;
+}
+
+.slider-bottom__item:first-child {
+    margin-left: 0;
+}
+.slider-bottom__button-add:hover {
+    color: #8A8A8A;
+}
+.slider-bottom__button-add {
+    margin: 0 auto;
+    margin-top: 52px;
+    color: #fff;
+    display: flex;
+    background-color: #ff892a;
+    height: 50px;
+    width: 394px;
+    border-radius: 19px;
+    text-transform: uppercase;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.slider-bottom__button-add--img {
+    background-image: url(http://endosfera.com.ua/wp-content/themes/endosphere/catalog/view/img/advantages-slider__block-button--img.png);
+    height: 35px;
+    width: 35px;
+    background-repeat: no-repeat;
+}
+
+.slider-bottom__button-add--txt {
+    font-size: 25px;
+    font-weight: 100;
+    margin-left: 12px;
+    margin-right: -19px;
+}
+
+
+.slider-bottom__button {
+    width: 166px;
+    padding: 3px 25px;
+    text-align: center;
+    color: #fff;
+    font-size: 23px;
+    font-weight: 400;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    background-color: #94cac6;
+
+    border: 0;
+    border-radius: 8px;
+}
+.slider-bottom__button--curent{
+	background-color: #58e4d9;
+}
+.slider-bottom__button:hover{
+    background-color: #58e4d9;
+}
+
+/*.slider-bottom__button--curent {
+    background-color: #58e4d9;
+}*/
+/*.slider__list-img--current{
+    border-top: 6px solid #58e4d9 !important;
+}*/
+
+
+/*slider*/
+
+.top-rating__slider {
+    margin-top: 21px;
+}
+
+.slider__list {
+    display: flex;
+    justify-content: center;
+    padding-right: 15px;
+    padding-left: 15px;
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+.slider__list-wrapper, .slider__video-list-wrapper, .slider__list-wrapper-kharkov, 
+.slider__list-wrapper-lviv {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-right: 15px;
+    margin-left: 15px;
+    overflow: hidden
+}
+
+.slider__list-item {
+    cursor: pointer;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+}
+
+.slider__list-item:first-child {
+    margin-left: 0;
+}
+.slider__bottom-kharkov , .slider__bottom-lviv{
+	display:none;
+}
+.slider__list-img {
+    border-top: 6px solid #1eafa4;
+    width: 260px;
+    height: 180px;
+}
+
+
+.slider__next:hover,
+.slider__prev:hover, .slider-video__next:hover, .slider-video__prev:hover {
+    background-image: url(http://endosfera.com.ua/wp-content/themes/endosphere/catalog/view/img/scroll-arrow-hover.png);
+}
+
+.slider__list-item:hover .slider__list-item-wrapper picture .slider__list-img {
+    border-top: 6px solid #58e4d9 !important;
+}
+
+.slider__next, .slider__prev, .slider-video__next, .slider-video__prev {
+    min-width: 10px;
+    margin-top: 61px;
+    padding: 0;
+    background-color: transparent;
+    background-image: url(http://endosfera.com.ua/wp-content/themes/endosphere/catalog/view/img/scroll-arrow.png);
+    background-repeat: no-repeat;
+    border: 0;
+}
+
+.slider__prev, .slider-video__prev {
+    order: -1;
+    transform: rotate(180deg);
+}
+
+.slider__list-title-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8px;
+}
+
+.slider__list-title {
+    margin: 0;
+    font-size: 17px;
+    font-weight: initial;
+}
+
+.slider__list-title a {
+    color: #000;
+    text-decoration: none;
+}
+
+.slider__list-rating {
+    margin-top: 15px;
+}
+
+.slider__list-city {
+    align-self: center;
+    margin: 0 0 0 10px;
+    font-size: 15px;
+}
+
+.slider__list-description {
+    display: block;
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #000;
+    background-size: 19px;
+    background-repeat: no-repeat;
+    padding-left: 28px;
+}
+
+.slider__list-description--green {
+    background-image: url(http://endosfera.com.ua/wp-content/themes/endosphere/catalog/view/img/metro_green.png);
+}
+
+.slider__list-description--blue {
+    background-image: url(http://endosfera.com.ua/wp-content/themes/endosphere/catalog/view/img/metro_blue.png);
+}
+
+.slider__list-description--red {
+    background-image: url(http://endosfera.com.ua/wp-content/themes/endosphere/catalog/view/img/metro_red.png);
+}
+
+.rating-salon {
+    display: flex;
+    justify-content: space-between;
+}
+
+.slider__list-city {
+    align-self: flex-start;
+    margin-left: 0;
+    font-size: 18px;
+    margin: 0 0 0 10px;
+}
+
+.rating-salon__point-wrapper {
+    display: flex;
+}
+
+.rating-salon__point {
+    font-size: 18px;
+    color: #000;
+    font-weight: 700;
+}
+
+.rating-salon-stars {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    list-style: none;
+    margin: 0 0 0 10px;
+}
+
+.rating-salon__star:first-child {
+    margin-left: 0;
+}
+
+.rating-salon__star--silver {
+    /*background-position: -15px 0 !important;*/
+}
+
+.rating-salon__star {
+    width: 15px;
+    height: 15px;
+    background: url(http://endosfera.com.ua/wp-content/themes/endosphere/catalog/view/img/stars-icon.png) no-repeat;
+	padding: 0px 2px;
+}
+.rating-salon__star--transparent{
+	    width: 15px;
+    height: 15px;
+    background: url(http://endosfera.com.ua/wp-content/themes/endosphere/catalog/view/img/stars-hide.png) no-repeat;
+}
+.visually-hidden, legend {
+    border: 0;
+    padding: 0;
+}
+
+.rating-salon__star--transparent {
+    /*background-position: 0 -15px;*/
+}
+
+.rating-salon__reviews {
+    align-self: center;
+    margin: 0;
+    color: #6f6f6f;
+}
+#wpmtst_google_tcha{
+	visibility: hidden;
+}
+.slider__next, .slider__prev, .slider-video__next, .slider-video__prev {
+    height: 100px;
+    width: 34px;
+    background-size: contain;
+    cursor: pointer;
+}
+.commemt__blockquote{
+    width: 100%;
+}
+.slider__list-item-wrapper {
+    padding: 9px;
+}
+.procedure__video--youtube{
+    display: none;
+}
+.procedure {
+    background-image: url(http://endosfera.com.ua/wp-content/themes/endosphere/catalog/view/img/procedure_img.webp);
+    height: 1473px;
+    background-repeat: no-repeat;
+}
+
+.field-like span:first-child{
+    background-image: url(http://endosfera.com.ua/wp-content/themes/endosphere/catalog/view/img/plus_img.webp);
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    background-size: 30px 30px;
+    height: 30px;
+    position: absolute;
+    width: 30px;
+}
+
+#wpmtst_mail_send:checked::before {
+    position: absolute;
+    top: 3px;
+    content: '';
+    width: 24px;
+    background-image: url(http://endosfera.com.ua/wp-content/themes/endosphere/catalog/view/img/input_checked.png);
+    background-repeat: no-repeat;
+    left: 1px;
+    height: 22px;
+    background-size: 18px 15px;
+}
+
+.field-not_like span:first-child{
+    background-image: url(http://endosfera.com.ua/wp-content/themes/endosphere/catalog/view/img/minus_img.webp);
+    background-repeat: no-repeat;
+    background-position: 0 73%;
+    background-size: 30px 30px;
+    height: 30px;
+    position: absolute;
+    width: 30px;
+}
+
+
+.procedure__txt {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 36px;
+    text-transform: uppercase;
+    padding-top: 103px;
+    padding-bottom: 50px;
+}
+
+.procedure__block-text {
+    border-top: 4px double #bff9f4;
+    border-bottom: 4px double #bff9f4;
+    margin: auto;
+    max-width: 965px;
+    font-size: 16px;
+    line-height: 30px;
+}
+.procedure__button-add:hover {
+    color: #8A8A8A;
+}
+.procedure__button-add {
+    margin: 0 auto;
+    margin-top: 52px;
+    color: #fff;
+    display: flex;
+    background-color: #ff892a;
+    height: 50px;
+    width: 394px;
+    border-radius: 19px;
+    text-transform: uppercase;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.procedure__button-add--img {
+    background-image: url(http://endosfera.com.ua/wp-content/themes/endosphere/catalog/view/img/advantages-slider__block-button--img.png);
+    height: 35px;
+    width: 35px;
+    background-repeat: no-repeat;
+}
+
+.procedure__button-add--txt {
+    font-size: 25px;
+    font-weight: 100;
+    margin-left: 12px;
+    margin-right: -19px;
+}
+
+.procedure__video {
+    background-color: #f8f8f8;
+    border-radius: 23px;
+    height: 513px;
+    width: 947px;
+    margin: auto;
+    margin-top: 33px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.procedure__video picture {
+    position: relative;
+}
+
+.procedure__video--button {
+    background-image: url(http://endosfera.com.ua/wp-content/themes/endosphere/catalog/view/img/procedure__video--button.png);
+    height: 128px;
+    width: 128px;
+    background-repeat: no-repeat;
+    display: flex;
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.procedure__border {
+    border-bottom: 4px double #bff9f4;
+    margin: auto;
+    max-width: 965px;
+    margin-top: 38px;
+}
+
+/* ui-slider-handle */
+
+.slider_2 {
+    margin-top: 44px;
+    width: 555px;
+    height: 6px;
+    border-radius: 5px;
+    background: #eee;
+    position: relative;
+    margin: 0 auto;
+}
+
+.ui-slider-handle {
+    height: 39px;
+    width: 24px;
+    position: absolute;
+    top: -18px;
+    margin-left: -12px;
+    z-index: 200;
+    background-image: url(http://endosfera.com.ua/wp-content/themes/endosphere/catalog/view/img/ui-slider-handle.png);
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    background-repeat: no-repeat;
+}
+
+.ui-widget-header {
+    border-radius: 50px;
+    background: #1eafa4;
+    height: 6px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+}
+
+#slider-result {
+    text-align: center;
+    position: absolute;
+    top: 27px;
+    left: -8px;
+    background: #eee;
+    color: #000;
+    font: 16px sans-serif;
+    padding: 5px 0;
+    width: 40px;
+}
+
+.reviews {
+    background-color: #fbfbfb;
+}
+
+.reviews__txt {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 36px;
+    text-transform: uppercase;
+    padding-top: 55px;
+    padding-bottom: 15px;
+}
+
+.reviews__stars ul {
+    display: flex;
+    padding: 0;
+    list-style: none;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.reviews__stars--li-last .reviews__stars--li-block {
+    background-image: url(http://endosfera.com.ua/wp-content/themes/endosphere/catalog/view/img/reviews__stars--li-last.webp);
+    height: 40px;
+    width: 40px;
+    background-repeat: no-repeat;
+    margin: 0 21px;
+}
+
+.reviews__stars--li-block {
+    background-image: url(http://endosfera.com.ua/wp-content/themes/endosphere/catalog/view/img/stars.webp);
+    height: 40px;
+    width: 40px;
+    background-repeat: no-repeat;
+    margin: 0 21px;
+}
+
+.reviews__stars--li {
+    text-align: center;
+    line-height: 35px;
+}
+
+.reviews__stars--li span {
+    color: rgb(168, 168, 168);
+    font-size: 13px;
+}
+
+.reviews__form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 780px;
+    margin: auto;
+    padding-bottom: 50px;
+}
+
+.reviews__form-block-cont {
+    display: flex;
+    justify-content: space-between;
+}
+
+.field-mail_send{
+	display: none !important;
+}
+
+.reviews__form-block-bot {
+    display: flex;
+    justify-content: space-between;
+}
+
+.reviews__form textarea {
+    height: 31px;
+    padding-top: 10px;
+    padding-left: 19px;
+    border-radius: 0px;
+    border: 1px solid rgb(177, 177, 177);
+    font: inherit;
+    font-size: 17px;
+    resize: none;
+}
+
+textarea.reviews__form-description {
+    height: 130px;
+    margin-top: 18px;
+}
+
+.reviews__form-block-cont {
+    margin-top: 18px;
+}
+
+.reviews__form-block-bot {
+    margin-top: 18px;
+}
+
+.reviews__form-block-cont textarea {
+    min-width: 356px;
+}
+
+.reviews__form-quesion-plus {
+    min-width: 715px;
+    margin-left: 43px;
+}
+
+.reviews__form-quesion-minus {
+    margin-left: 43px;
+    min-width: 715px;
+    margin-top: 18px;
+}
+
+.reviews__form-img-plus {
+    background-image: url(http://endosfera.com.ua/wp-content/themes/endosphere/catalog/view/img/plus_img.webp);
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+}
+
+.reviews__form-img-minus {
+    background-image: url(http://endosfera.com.ua/wp-content/themes/endosphere/catalog/view/img/minus_img.webp);
+    background-repeat: no-repeat;
+    background-position: 0 73%;
+}
+
+.reviews__form-button {
+    padding: 7px 54px;
+    text-align: center;
+    color: #fff;
+    font-size: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: #ff892a;
+    border: 0;
+    border-radius: 8px;
+}
+
+.reviews__label {
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+}
+
+.reviews__label input {
+    position: relative;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 27px;
+    height: 27px;
+    margin-right: 11px;
+    background-color: #fff;
+    border: 1px solid #d6d6d6;
+    cursor: pointer;
+}
+
+.reviews__label input:checked::before {
+    position: absolute;
+    top: 3px;
+    content: '';
+    width: 24px;
+    background-image: url(http://endosfera.com.ua/wp-content/themes/endosphere/catalog/view/img/input_checked.png);
+    background-repeat: no-repeat;
+    left: 3px;
+    height: 20px;
+    background-size: 23px 21px;
+}
+
+label.reviews__label:nth-child(2) {
+    margin-left: -67px;
+}
+
+.reviews__form-button {
+    cursor: pointer;
+}
+
+.faq-discussion {
+    /*height: 738px;*/
+}
+
+.faq-discussion__txt {
+    margin: auto;
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-top: 32px;
+    text-decoration: underline;
+}
+
+.faq-discussion__comments-list {
+    max-width: 946px;
+    margin: auto;
+    margin-top: 35px;
+}
+.comment__autor__point-wrapper{
+    display: flex;
+    margin-left: 50px;
+}
+.faq-discussion__comment {
+    padding-top: 38px;
+    display: flex;
+    /*border-bottom: 4px double #e2e2e2;*/
+    padding-bottom: 30px;
+}
+
+.comment__autor-image {
+    cursor: pointer;
+}
+
+.comment__autor-stars {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    list-style: none;
+    margin: 0 0 0 10px;
+}
+
+.comment__autor-fact-block {
+    display: flex;
+    align-items: center;
+}
+
+.comment__autor__star {
+    width: 15px;
+    height: 15px;
+    background: url(http://lasercity.com.ua/templates/lasercity/img/stars-icon.png) no-repeat;
+    background-position: -15px 0 !important;
+    cursor: pointer;
+}
+
+.comment__autor__star:first-child {
+    margin-left: 0;
+}
+
+.comment__autor__star--transparent {
+    background-position: 0 -15px !important;
+}
+
+.comment__autor-fact-plus {
+    display: flex;
+    align-items: center;
+    justify-content: normal;
+    position: relative;
+}
+
+.comment__autor-fact-minus {
+    display: flex;
+    align-items: center;
+}
+
+.comment__autor-name {
+    font-style: normal;
+    align-self: center;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.comment__autor-time {
+    margin-left: 18px;
+    color: rgb(155, 155, 155);
+    font-size: 14px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.comment__autor {
+    min-width: 128px;
+}
+
+.comment__autor span {
+    position: absolute;
+}
+
+.comment__autor {
+    position: relative;
+}
+
+.comment__autor span {
+    position: absolute;
+}
+
+.comment__autor span span {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    text-transform: uppercase;
+    font-size: 36px;
+}
+
+.comment__text {
+    font-size: 14px;
+    color: rgb(51, 51, 51);
+    line-height: 1.5;
+}
+
+.comment__autor-fact-minus .reviews__form-img-plus {
+    height: 30px;
+    width: 30px;
+    margin-right: 16px;
+}
+
+.comment__autor-fact-plus .reviews__form-img-minus {
+    height: 30px;
+    width: 30px;
+    margin-right: 16px;
+}
+
+.comment__autor-fact-plus p {
+    color: rgb(51, 51, 51);
+    font-size: 14px;
+}
+
+.comment__autor-fact-minus p {
+    color: rgb(51, 51, 51);
+    font-size: 14px;
+}
+
+.faq-discussion__comments-border {
+    border-bottom: 4px double #e2e2e2;
+}
+.testimonial-success{
+    text-align: center;
+}
+.comment__feedback-like {
+    border: 0;
+    background-image: url(http://endosfera.com.ua/wp-content/themes/endosphere/catalog/view/img/like.png);
+    background-repeat: no-repeat;
+    height: 18px;
+    width: 19px;
+    background-color: #fff;
+    color: rgb(155, 155, 155);
+}
+
+.comment__feedback-dislake {
+    border: 0;
+    background-image: url(http://endosfera.com.ua/wp-content/themes/endosphere/catalog/view/img/dislike.png);
+    background-repeat: no-repeat;
+    height: 18px;
+    width: 19px;
+    background-color: #fff;
+    margin-left: 14px;
+    color: rgb(155, 155, 155);
+}
+
+.comment__feedback-dopinfo {
+    border: 0;
+    background-image: url(http://endosfera.com.ua/wp-content/themes/endosphere/catalog/view/img/dopinfo.png);
+    background-repeat: no-repeat;
+    height: 18px;
+    width: 19px;
+    background-color: #fff;
+    margin-left: 38px;
+}
+
+.comment__feedback {
+    position: absolute;
+    right: 0px;
+    display: flex;
+}
+
+.comment__feedback button{
+    cursor: pointer;
+}
+
+
+.page-footer {
+    background-color: #2b6964;
+    height: 66px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-footer__navigation-item {
+    font-size: 16px;
+    font-family: "Times New Roman";
+    color: rgb(220, 220, 220);
+    text-transform: uppercase;
+}
+
+.page-footer__navigation-item a {
+    text-decoration: none;
+    color: #ffffff;
+    margin: 0 14px;
+}
+
+.page-footer__navigation-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.page-footer__navigation-item--hr {
+    padding-top: 4px;
+}
+
+.slider_3 {
+    width: 300px;
+    height: 6px;
+    border-radius: 5px;
+    background: #eee;
+    position: relative;
+    margin: 0 auto;
+}
+
+/*popap*/
+
+.show {
+    display: block !important;
+}
+.popup-singup, .popup-singup__slider, .popup-singup__video, .popup__feedback-dopinfo {
+    display: none;
+    z-index: 1000;
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    width: 447px;
+    background-color: #fff;
+    border-top: 7px solid #58e4d9;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: auto;
+
+}
+
+.popup-singup form, .popup-singup__slider form, .popup-singup__video form{
+    padding: 34px;
+    text-align: center;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    white-space: nowrap;
+    -webkit-clip-path: inset(100%);
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+.modal-overlay {
+    display: none;
+    z-index: 900;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: .7;
+}
+
+.popup-singup__closed::after, .popup-singup__closed::before {
+    width: 17px;
+    height: 2px;
+}
+.button-corner, .button-cross::after {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.button-cross::after, .button-cross::before {
+    position: absolute;
+    left: 0px;
+    content: "";
+    width: 14px;
+    height: 2px;
+    background-color: #b4b0b2;
+}
+.button-cross::before {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+.popup-singup__closed {
+    cursor: pointer;
+    top: 18px;
+    right: 21px;
+}
+.popup-singup__closed {
+    top: 5px;
+    right: 5px;
+}
+.button-cross:hover:before , .button-cross:hover:after{
+    background-color: #4e4e4e;
+}
+.button-cross {
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    padding-right: 0;
+    padding-left: 0;
+    background-color: transparent;
+    border: 0;
+}
+
+.popup-singup__title {
+    margin: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    text-transform: uppercase;
+    background-color: #dcfefe;
+}
+
+#formID_4 .slider-bottom__button__popup{
+    margin: 10px auto 10px auto;
+
+}
+.popup-comment__feedback-dopinfo{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 14px;
+    font-size: 12px;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    border: 1px solid #b1b1b1;
+    margin: 10px;
+}
+.slider-bottom__button__popup{
+	width: 182px;
+    padding: 3px 25px;
+    text-align: center;
+    color: #fff;
+    font-size: 23px;
+    font-weight: 400;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    background-color: #94cac6;
+    border: 0;
+    border-radius: 8px;
+    margin-top: 39px;
+}
+.slider-bottom__button__popup:hover {
+    background-color: #58e4d9;
+}
+.popup-singup__slider form{
+    display: flex;
+    flex-direction: column;
+}
+.popup-singup__slider form .popup-register__input, .slider-file__popup, .popup-video__input{
+    margin-top: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 14px;
+    font-size: 16px;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    border: 1px solid #b1b1b1;
+}
+
+
+
+
+
+
+
+@media (max-width: 1460px) {
+    .advantages__img img {
+        max-height: 258px;
+    }
+
+    .advantages__img {
+        margin-top: 19px;
+    }
+
+    .slider {
+        margin-top: 0px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .testimony__column {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .slider__block div {
+        background-size: 246px;
+        height: 209px;
+        width: 246px;
+    }
+
+    .advantages__img {
+        margin-left: -20px;
+    }
+
+    .advantages__img img {
+        max-height: 196px;
+    }
+
+    .top__slogan {
+        padding-left: 21px;
+    }
+
+    .advantages__txt {
+        font-size: 14px;
+    }
+
+}
+
+@media (max-width: 991px) {
+	
+    .slider__next, .slider__prev, .slider-video__next, .slider-video__prev{
+        height: 77px;
+        margin-top: 75px;
+    }
+    /*.slider__list{*/
+        /*max-width: 333px;*/
+    /*}*/
+    .faq-discussion{
+        /*height: 590px;*/
+    }
+    .faq-discussion__comments-list{
+        max-width: 746px;
+    }
+    .comment__text{
+        font-size: 11px;
+    }
+    .comment__autor-fact-minus p{
+        font-size: 11px;
+    }
+    .comment__autor-fact-plus p{
+        font-size: 11px;
+    }
+
+    .procedure{
+        height: 1016px;
+    }
+    .procedure__video{
+        padding: 0 20px;
+        height: 433px;
+        width: 694px;
+    }
+    .procedure__block-text{
+        font-size: 12px;
+        line-height: 21px;
+    }
+    .procedure__block-text{
+        max-width: 726px;
+    }
+    .procedure__txt{
+        font-size: 25px;
+    }
+    .testimony__list {
+        margin-bottom: 22px;
+    }
+
+    .slider-bottom__txt {
+        font-size: 22px;
+    }
+
+    .slider__list-item {
+        width: 35%;
+    }
+
+    .advantages__txt {
+        max-width: 526px;
+    }
+
+    .shape__block picture img {
+        height: 110px;
+    }
+
+    .shape__block-txt {
+        font-size: 14px;
+    }
+
+    .number-procedures__block-text {
+        max-width: 693px;
+    }
+
+    .number-procedures__block-text-3 {
+        font-size: 17px;
+    }
+
+    .number-procedures__txt {
+        font-size: 21px;
+    }
+
+    .testimony {
+        flex-direction: column;
+        align-items: center;
+        height: 1106px;
+    }
+
+    .testimony__column--contraindications {
+        margin-left: 0px;
+    }
+
+    .slider__block div {
+        background-size: 157px;
+        height: 135px;
+        width: 158px;
+    }
+
+    .advantages__img {
+        margin-left: -72px;
+    }
+
+    .top__slogan {
+        font-size: 62px;
+        padding-top: 143px;
+        padding-left: 15px;
+    }
+
+    .top__slogan b {
+        font-size: 43px;
+    }
+    .reviews__txt{
+        font-size: 24px;
+    }
+    .reviews__form{
+        max-width: 691px;
+    }
+    .reviews__form-quesion-plus{
+        min-width: 626px;
+    }
+    .reviews__form-quesion-minus{
+        min-width: 626px;
+    }
+    .reviews__label{
+        font-size: 13px;
+    }
+    .reviews__form-block-cont textarea{
+        min-width: 287px;
+    }
+    .procedure {
+        height: auto !important;
+    }
+    .procedure__button-add{
+        margin-bottom: 50px !important;
+    }
+	.procedure__video--youtube iframe{
+		height:366px;
+		weight:632px;
+	}
+}
+
+@media (max-width: 768px) {
+	.wait_img{
+		height: 80px;
+		width: 80px;
+	}
+	.procedure__video--youtube iframe{
+		height: 175px;
+		width: 273px;
+	}
+	.popup-singup, .popup-singup__slider, .popup-singup__video, .popup__feedback-dopinfo{
+		width: 311px;
+	}
+	.popup-singup__slider form .popup-register__input, .slider-file__popup, .popup-video__input{
+		width: 227px;
+		font-size: 12px;
+	}
+	.popup-singup form, .popup-singup__slider form, .popup-singup__video form{
+		padding: 15px 34px 15px 34px;
+	}
+	.slider-bottom__button__popup{
+		margin: auto;
+		margin-top: 9px;
+	}
+	
+    .strong-rating label::before{
+		font-size: 17px !important;
+        padding: 0px !important;
+    }
+
+    .procedure {
+        height: auto !important;
+    }
+    .procedure__button-add{
+        margin-bottom: 50px !important;
+    }
+    .page-footer__navigation-item{
+        font-size: 9px !important;
+    }
+    .top__header{
+        height: 252px;
+        min-height: 252px;
+        background-position: bottom;
+    }
+    .top__slogan{
+        padding-top: 72px !important;
+    }
+    .comment__autor-fact-plus{
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+    }
+    .comment__autor-fact-plus p{
+        max-width: 195px;
+		min-width: 195px;
+    }
+    .comment__feedback{
+        position: initial;
+		margin-top: 5px;
+    }
+    .comment__autor span span{
+        font-size: 24px;
+    }
+    .comment__autor-image{
+        height: 57px;
+    }
+    .comment__autor-time{
+        font-size: 10px;
+		margin: 6px auto;
+    }
+    .comment__autor-name{
+        font-size: 13px;
+    }
+    .comment__autor{
+        min-width: 66px;
+    }
+    .faq-discussion__comments-list {
+        max-width: 312px;
+    }
+    .faq-discussion{
+        /*height: 884px;*/
+    }
+    #wpmtst_email{
+        float: inherit !important;
+        margin-top: 0px !important;
+    }
+    .wpmtst-submit label{
+        float: inherit !important;
+        margin-top: 0px !important;
+    }
+    .field-mail_send{
+        font-size: 12px !important;
+    }
+    #wpmtst_post_content {
+        max-width: 259px !important;
+        height: 130px;
+    }
+    #wpmtst_name1, #wpmtst_email {
+        max-width: 259px !important;
+    }
+    .reviews__form-block-cont{
+        flex-direction: column;
+    }
+    .reviews__form-block-bot{
+        flex-direction: column;
+    }
+    .reviews__label{
+        font-size: 12px;
+    }
+    label.reviews__label:nth-child(2){
+        margin-left: 0px;
+        margin-bottom: 18px;
+    }
+    .reviews__form textarea{
+        font-size: 12px;
+    }
+    .reviews__form-block-cont textarea{
+        min-width: 129px;
+    }
+    .reviews__form-quesion-minus{
+        min-width: 239px;
+    }
+    .reviews__form-quesion-plus{
+        min-width: 239px;
+    }
+    .reviews__form{
+        max-width: 304px;
+    }
+    .reviews__stars--li-last .reviews__stars--li-block{
+        margin: 0 17px;
+        height: 21px;
+        width: 21px;
+    }
+    .reviews__stars--li span{
+        font-size: 9px;
+    }
+
+    .reviews__stars--li-block{
+        height: 21px;
+        width: 21px;
+        margin: 0 17px;
+        background-size: 19px;
+    }
+    .reviews__txt{
+        font-size: 19px;
+    }
+    .procedure__txt{
+        font-size: 18px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .procedure__button-add{
+        width: 293px;
+    }
+    .procedure__video{
+        height: 208px;
+        width: 273px;
+    }
+    .procedure__button-add--txt{
+        font-size: 16px;
+        margin-right: 0px;
+    }
+    .procedure{
+        height: 828px;
+    }
+    .procedure__block-text{
+        max-width: 289px;
+    }
+    .procedure__block-text {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .testimony {
+        height: 920px;
+    }
+
+    .slider-bottom {
+        height: 580px;
+    }
+
+    .slider-bottom__button {
+        font-size: 15px;
+        width: 74px;
+        padding: 3px 3px;
+    }
+
+    .slider-bottom__txt {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .slider-bottom__button-add--txt {
+        font-size: 14px;
+        margin-left: 12px;
+        margin-right: 0px;
+    }
+
+    .slider-bottom__button-add {
+        width: 300px;
+    }
+
+    .shape__block picture img {
+        height: 187px;
+    }
+
+    .slider__list-item {
+        cursor: pointer;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .slider-bottom__txt {
+        font-size: 13px;
+    }
+
+    .number-procedures__block-text-3 {
+        font-size: 13px;
+        padding-top: 26px;
+    }
+
+    .number-procedures__block-text p {
+        line-height: 21px;
+    }
+
+    .number-procedures__block-text {
+        font-size: 11px;
+        max-width: 298px;
+    }
+
+    .number-procedures__txt {
+        padding-top: 36px;
+        font-size: 18px;
+    }
+
+    .testimony__title {
+        font-size: 12px;
+    }
+
+    .testimony__item {
+        min-width: 283px;
+        font-size: 12px;
+    }
+
+    .shape ul li:not(:first-child) {
+        display: none;
+    }
+
+    .shape > ul {
+        min-height: 280px;
+        margin-left: -39px;
+    }
+
+    .shape__block-txt {
+        font-size: 13px;
+    }
+
+    .slider_3 {
+        display: block;
+        width: 272px;
+    }
+
+    .shape {
+		height: 315px;
+    }
+
+    .slider__block div:nth-child(3), .slider__block div:nth-child(2) {
+        display: none;
+    }
+
+    .slider__block div {
+        background-size: 245px;
+        height: 208px;
+        width: 246px;
+    }
+
+    .slider_2 {
+        width: 275px;
+    }
+
+    .slider__txt {
+        font-size: 21px;
+    }
+    .slider__block-button {
+        width: 294px;
+    }
+
+    .slider__block-button--txt {
+		font-size: 12px;
+        margin-left: 12px;
+        margin-right: 0px;
+    }
+
+    .advantages {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .top__slogan {
+        font-size: 62px;
+        padding-left: 0px;
+        max-width: 264px;
+        padding-top: 277px;
+    }
+
+    .advantages__img {
+        margin-left: 0px;
+    }
+
+    .advantages__img img {
+        max-height: 258px;
+    }
+
+    .advantages__txt {
+        margin: 0 20px;
+    }
+    .procedure__video--button{
+        background-size: 60px;
+        height: 62px;
+        width: 62px;
+    }
+    .strong-rating label {
+        font-size: 8px !important;
+    }
+    div.field-email {
+        margin-bottom: 18px !important;
+    }
+	.comment__autor-fact-block{
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+	.comment__autor__point-wrapper{
+		margin-left: 0px;
+	}
+	.slider__list-wrapper, .slider__video-list-wrapper, .slider__list-wrapper-kharkov, .slider__list-wrapper-lviv{
+		max-width: 300px;
+	}
+	.watch-action{
+		min-width: 189px;
+	}
+	.wpmtst-submit {
+		margin: auto;
+		margin-top: -11px;
+	}
+}

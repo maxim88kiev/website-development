@@ -1,0 +1,1 @@
+<img alt="podelu - сравнение банковских продуктов" src="/upload/medialibrary/85b/85b734ec1ac1ba4eec0470f0a3a90e19.png" title="Логотип в шапке">

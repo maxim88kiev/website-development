@@ -1,0 +1,6 @@
+<?
+$sSectionName = "Post";
+$arDirProperties = Array(
+
+);
+?>

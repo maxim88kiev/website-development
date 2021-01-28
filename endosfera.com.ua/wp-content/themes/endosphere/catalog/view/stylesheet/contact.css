@@ -1,0 +1,367 @@
+.top-contact__header {
+    background-image: url(../img/top__header.webp);
+    min-height: 401px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #59bfb6;
+}
+.top-contact__slogan {
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: 72px;
+    line-height: 1;
+    color: rgb( 255, 255, 255 );
+    padding-top: 98px;
+    max-width: 1127px;
+    margin: auto;
+    text-align: center;
+}
+.advantages-contact__map-block iframe{
+    height: 100%;
+}
+.place-card-large{
+    display: none !important;
+}
+
+.map-text-telefon .map__block-button{
+    margin-top: 0px;
+    width: 407px;
+}
+.map-text-telefon .map__block-button{
+    margin-left: 15px;
+}
+.map-text-telefon .map__block-button .slider__block-button--txt{
+    font-size: 22px;
+}
+
+.advantages-contact__map-block{
+    width: 567px;
+    height: 567px;
+    border: 22px solid #1eafa4;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 10;
+    /*background-image: url(../img/img_map.webp);*/
+    background-position: center;
+
+}
+.map-text-time__img, .map-text-telefon__img, .map-text-rayon__img{
+    background-color: #35d0c4;
+    height: 64px;
+    width: 149px;
+    border-radius: 15px;
+    background-position: 96px center;
+    background-repeat: no-repeat;
+}
+.map-text-rayon__img{
+    background-image: url(../img/map-text-rayon__img.png);
+}
+.map-text-time__img{
+    background-image: url(../img/map-text-time__img.png);
+}
+.map-text-telefon__img{
+    background-image: url(../img/map-text-telefon__img.png);
+}
+.advantages-contact__map{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -72px;
+}
+.map-text{
+    margin-left: -64px;
+}
+.map-text-rayon{
+    padding-bottom: 48px;
+}
+.map-text-time{
+    padding-bottom: 48px;
+}
+.map-text-rayon, .map-text-time, .map-text-telefon{
+    display: flex;
+    align-items: center;
+}
+.map-text-aparat__txt{
+    text-align: right;
+    font-size: 24px;
+    position: absolute;
+    top: 45px;
+    right: 34px;
+}
+.map-text-aparat{
+    position: relative;
+}
+
+.map-text-rayon__txt{
+    font-size: 30px;
+}
+
+.map-text-time__txt{
+    font-size: 24px;
+}
+
+.map-text-telefon__txt{
+    font-size: 29px;
+    font-weight: bold;
+}
+.map-text-aparat__txt span{
+    font-size: 24px;
+    font-weight: bold;
+}
+.map-text-telefon__txt, .map-text-time__txt, .map-text-rayon__txt{
+    padding-left: 14px;
+}
+.top-contact__line{
+    background-image: url(../img/advantages_line.jpg);
+    min-height: 4px;
+    background-repeat: repeat-x;
+}
+.advantages-contact__prise{
+    display: flex;
+    flex-direction: column;
+    max-width: 1140px;
+    margin: auto;
+    margin-top: 41px;
+    margin-bottom: 56px;
+}
+.prise-block-txt__bold{
+    font-weight: bold;
+}
+.prise-block-txt__format span:first-child{
+    text-decoration: line-through;
+}
+.prise-block-txt__format span:last-child{
+    color: #e24a8a;
+    padding-left: 5px;
+}
+.advantages-contact__prise-block div{
+    font-size: 15px;
+    color: rgb( 102, 102, 102 );
+    line-height: 1.125;
+}
+.advantages-contact__prise-block{
+    background-color: #f1fcfb;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 1px;
+    padding: 18px 0px;
+}
+.advantages-contact__prise-block-tabl{
+    padding: 9px 0;
+    display: flex;
+    justify-content: flex-start;
+    background-color: #f1fcfb;
+    margin-bottom: 1px;
+    font-size: 14px;
+    color: rgb( 0, 0, 0 );
+}
+.advantages-contact__prise-title{
+    text-align: center;
+}
+.advantages-contact__prise-title{
+    background-color: #b9eeea;
+    font-size: 36px;
+    color: rgb( 0, 0, 0 );
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 1;
+    padding: 16px 0px;
+    margin-bottom: 3px;
+}
+.advantages-contact__prise-block div:first-child{
+    padding-left: 53px;
+    min-width: 247px;
+}
+.advantages-contact__prise-block-tabl div:first-child{
+    min-width: 247px;
+    padding-left: 53px;
+}
+.advantages-contact__prise-block div:nth-child(2){
+    min-width: 580px;
+}
+.advantages-contact__prise-block-tabl div:nth-child(2){
+    min-width: 580px;
+}
+.advantages-contact__prise-block div:last-child{
+    min-width: 210px;
+}
+.advantages-contact__prise-block-tabl div:last-child{
+    min-width: 210px;
+}
+@media (max-width: 1200px){
+
+    .map-text-telefon .map__block-button{
+        margin-top: 0px;
+        width: 238px;
+    }
+
+    .map-text-telefon .map__block-button .slider__block-button--txt{
+        font-size: 12px;
+    }
+
+    .map-text-telefon .map__block-button .slider__block-button--img{
+        margin-left: -20px;
+    }
+
+
+    .advantages-contact__prise-block div:nth-child(2){
+        min-width: 493px;
+    }
+    .advantages-contact__prise-block div:last-child{
+        min-width: 165px;
+    }
+    .advantages-contact__prise-block-tabl div:nth-child(2){
+        min-width: 493px;
+    }
+    .advantages-contact__prise-block-tabl div:last-child{
+        min-width: 165px;
+    }
+    .advantages-contact__prise{
+        max-width: 958px;
+    }
+    .map-text-rayon__txt{
+        font-size: 18px;
+    }
+    .map-text-telefon__txt{
+        font-size: 22px;
+    }
+    .map-text-time__txt{
+        font-size: 18px;
+    }
+    .map-text-aparat__txt span{
+        font-size: 13px;
+    }
+    .map-text-aparat__txt{
+        right: -8px;
+    }
+}
+
+@media (max-width: 991px){
+    .advantages-contact__prise-block-tabl div:last-child{
+        min-width: 147px;
+    }
+    .advantages-contact__prise-block div:last-child{
+        min-width: 147px;
+    }
+    .advantages-contact__prise-block-tabl div:nth-child(2){
+        min-width: 436px;
+    }
+    .advantages-contact__prise-block div:nth-child(2){
+        min-width: 436px;
+    }
+    .advantages-contact__prise-block-tabl div:first-child{
+        padding-left: 22px;
+        min-width: 148px;
+    }
+    .advantages-contact__prise-block div:first-child{
+        padding-left: 22px;
+        min-width: 148px;
+    }
+    .advantages-contact__prise{
+        max-width: 753px;
+    }
+    .advantages-contact__map-block{
+        width: 330px;
+        height: 330px;
+    }
+    .map-text-rayon{
+        padding-bottom: 16px;
+    }
+    .map-text-time {
+        padding-bottom: 16px;
+    }
+    .advantages-contact__map{
+        margin-top: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .map-text-telefon .map__block-button .slider__block-button--txt {
+        font-size: 10px;
+        margin-left: 0px;
+    }
+    .map-text-telefon .map__block-button .slider__block-button--img {
+        display: none;
+    }
+
+    .map-text-telefon .map__block-button {
+        width: 172px;
+    }
+
+    .advantages-contact__prise-title{
+        font-size: 17px;
+    }
+    .advantages-contact__prise-block-tabl{
+        font-size: 10px;
+    }
+    .advantages-contact__prise-block div{
+        font-size: 9px;
+    }
+    .advantages-contact__prise-block-tabl div:last-child{
+        min-width: 99px;
+    }
+    .advantages-contact__prise-block div:last-child{
+        min-width: 99px;
+    }
+    .advantages-contact__prise-block-tabl div:nth-child(2){
+        min-width: 141px;
+    }
+    .advantages-contact__prise-block div:nth-child(2){
+        min-width: 141px;
+    }
+    .advantages-contact__prise-block-tabl div:first-child{
+        padding-left: 3px;
+        min-width: 72px;
+    }
+    .advantages-contact__prise-block div:first-child{
+        padding-left: 3px;
+        min-width: 72px;
+    }
+    .advantages-contact__prise{
+        max-width: 315px;
+    }
+
+
+    .map-text-aparat__txt{
+        font-size: 13px;
+        padding-top: 17px;
+    }
+    .map-text-telefon__txt {
+        font-size: 13px;
+    }
+    .map-text-time__txt {
+        font-size: 13px;
+    }
+    .map-text-rayon__txt{
+        font-size: 13px;
+    }
+    .advantages-contact__map-block{
+        width: 271px;
+        height: 271px;
+    }
+    .map-text{
+        margin-top: 20px;
+    }
+    .map-text-time__img, .map-text-telefon__img, .map-text-rayon__img{
+        width: 85px;
+        background-position: 25px center;
+    }
+    .advantages-contact__map{
+        flex-direction: column;
+    }
+    .map-text-aparat__txt{
+        position: initial;
+    }
+    .map-text{
+        margin-left: 0px;
+    }
+
+    .top-contact__header{
+        min-height: 258px;
+        background-position: right;
+    }
+    .top-contact__slogan{
+        font-size: 40px;
+    }
+}

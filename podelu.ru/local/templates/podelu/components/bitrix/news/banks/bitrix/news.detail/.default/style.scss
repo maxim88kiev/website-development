@@ -1,0 +1,64 @@
+div.news-detail
+{
+	word-wrap: break-word;
+}
+div.news-detail img.detail_picture
+{
+	float:left;
+	margin:0 8px 6px 1px;
+}
+.news-date-time
+{
+	color:#486DAA;
+}
+.section-title{
+	font-size:20px;
+}
+.header-title{
+	font-size:18px;
+}
+
+.sberbank-btn {
+	position: relative;
+	display: block;
+	width: calc(80% - 30px);
+	max-width: 991px;
+	margin: auto;
+	padding: 3px 0;
+
+	font-size: 16px;
+	font-weight: 700;
+	background: #005559;
+	color: #fff;
+
+	text-transform: uppercase;
+	text-decoration: none;
+	text-align: center;
+	border-radius: 4px;
+
+	transition: all .2s;
+
+	&:hover {
+		color: #fff;
+		background: lighten(#005559, 3%);
+		text-decoration: none;
+	}
+
+	@media (max-width: 480px) {
+		width: calc(100% - 30px);
+		font-size: 13px;
+	}
+
+	&:before {
+		content: '';
+		display: block;
+		width: calc(100% + 6px);
+		height: calc(100% + 6px);
+		border: 1px solid #005559;
+		border-radius: 4px;
+		position: absolute;
+		top: -3px;
+		left: -3px;
+
+	}
+}

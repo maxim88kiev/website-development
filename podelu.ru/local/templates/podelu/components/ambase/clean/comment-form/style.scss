@@ -1,0 +1,99 @@
+@import "../../../../scss/placeholders";
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+
+  max-width: 750px;
+  padding: 35px 50px;
+  box-sizing: border-box;
+  background: #F6F5FA;
+
+  &__title {
+    @extend %title;
+  }
+
+  &__field {
+    width: 100%;
+    margin: 20px 0 0;
+
+    input,
+    textarea {
+      width: 100%;
+    }
+
+    input {
+      max-width: 260px;
+    }
+
+    textarea {
+      height: 110px;
+    }
+  }
+
+  &__field-label {
+    display: block;
+    color: #808080;
+  }
+
+  &__field-control {
+    margin: 5px 0 0;
+    padding: 5px 20px 4px;
+    box-sizing: border-box;
+    line-height: 1.4;
+    border: 1px solid #b5bdc2;
+
+    resize: none;
+    outline: none;
+
+    &:focus {
+      border-color: #005559;
+    }
+  }
+
+  &__btn-list {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    margin: 20px 0 0;
+  }
+
+  &__btn {
+    width: 100%;
+    max-width: 165px;
+    line-height: 28px;
+
+    padding: 0;
+    box-sizing: border-box;
+
+    text-align: center;
+
+    color: #005559;
+    background: #ffffff;
+    border: 1px solid #005559;
+    border-radius: 40px;
+
+    outline: none;
+    cursor: pointer;
+    transition: all .2s;
+
+    &:hover {
+      color: #ffffff;
+      background: #005559;
+    }
+
+    &_cancel {
+      margin: 0 15px 0 0;
+
+      color: #808080;
+      border-color: #808080;
+
+      &:hover {
+        color: #005559;
+        background: #ffffff;
+        border-color: #005559;
+      }
+    }
+  }
+}

@@ -1,0 +1,211 @@
+# 1.To use URL Alias you need to be running apache with mod_rewrite enabled. 
+
+# 2. In your opencart directory rename htaccess.txt to .htaccess.
+
+# For any support issues please visit: http://www.opencart.com
+
+#Options +FollowSymlinks
+
+# Prevent Directoy listing 
+Options -Indexes
+
+# Prevent Direct Access to files
+<FilesMatch "(?i)((\.tpl|\.ini|\.log|(?<!robots)\.txt))">
+ Order deny,allow
+ Deny from all
+</FilesMatch>
+
+
+# If your opencart installation does not run on the main web folder make sure you folder it does run in ie. / becomes /shop/
+ 
+RewriteEngine On
+
+RewriteBase /
+RewriteRule ^sitemap.xml$ index.php?route=feed/google_sitemap [L]
+RewriteRule ^googlebase.xml$ index.php?route=feed/google_base [L]
+RewriteRule ^system/download/(.*) /index.php?route=error/not_found [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !.*\.(ico|gif|jpg|jpeg|png|js|css)
+RewriteRule ^([^?]*) index.php?_route_=$1 [L,QSA]
+
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteCond %{SERVER_PORT} ^443$ [OR]
+RewriteCond %{HTTPS} on
+RewriteRule .* https://garden-stones.com.ua%{REQUEST_URI} [R=301,L,QSA]
+
+RewriteCond %{QUERY_STRING} ^route=common/home$
+RewriteCond %{REQUEST_METHOD} !^POST$
+RewriteRule ^index\.php$ http://%{HTTP_HOST}? [R=301,L]
+
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTPS/
+RewriteRule ^index\.php$ https://garden-stones.com.ua [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^_route_=galka-mramornaya/thassos-white/$
+RewriteRule ^(.*)$ pebble/thassos-white? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=galka-mramornaya/$
+RewriteRule ^(.*)$ pebble? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=galka-polirovannaya/$
+RewriteRule ^(.*)$ pebble? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=galka-bolee100mm/$
+RewriteRule ^(.*)$ pebble? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=galka-dekorativnaya/$
+RewriteRule ^(.*)$ pebble? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=pebble/$
+RewriteRule ^(.*)$ pebble? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=mramornaya-kroshka/$
+RewriteRule ^(.*)$ mramornaya-kroshka? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=produktsiya/$
+RewriteRule ^(.*)$ pebble? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=valuny-bolee-50-kg/$
+RewriteRule ^(.*)$ dekorativnyie-kamni? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=fotogalereya_steklo/$
+RewriteRule ^(.*)$ dekorativnoe-steklo? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=blog/$
+RewriteRule ^(.*)$ index.php?route=information/news? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=valuny-do-50-kg/$
+RewriteRule ^(.*)$ dekorativnyie-kamni? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=fotogalereya_galka_mramornaya/$
+RewriteRule ^(.*)$ pebble? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=galka-mramornaya/bianco-carrara-2/$
+RewriteRule ^(.*)$ pebble/bianco-carrara-2? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=glyby/$
+RewriteRule ^(.*)$ dekorativnyie-kamni? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=kovrik-iz-galki-svoimi-rukami/$
+RewriteRule ^(.*)$ news? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=fotogalereya_kroshka_mramornaya/$
+RewriteRule ^(.*)$ mramornaya-kroshka? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=galka-mramornaya/rouge-royal/$
+RewriteRule ^(.*)$ pebble/rouge-royal? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=galka-mramornaya/verde-alpi/$
+RewriteRule ^(.*)$ pebble/verde-alpi? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=galka-mramornaya/verde-royal/$
+RewriteRule ^(.*)$ pebble/verde-royal? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=galka-granite-balls-100-300/$
+RewriteRule ^(.*)$ pebble/granite-balls? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=gnejs-photo/$
+RewriteRule ^(.*)$ mramornaya-kroshka/gnejs? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=galka-mramornaya/rosa-verona/$
+RewriteRule ^(.*)$ pebble/rosa-verona? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=galka-mramornaya/nero-marmo/$
+RewriteRule ^(.*)$ pebble? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=gravel-fix-i-gazonnaya-reshetka/$
+RewriteRule ^(.*)$ gravelfix? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=pebble/$
+RewriteRule ^(.*)$ pebble? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=mramornaya-kroshka/$
+RewriteRule ^(.*)$ mramornaya-kroshka? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=dekorativnyie-kamni/$
+RewriteRule ^(.*)$ dekorativnyie-kamni? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=dekorativnoe-steklo/$
+RewriteRule ^(.*)$ dekorativnoe-steklo? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=fontany/$
+RewriteRule ^(.*)$ fontany? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=bordyur-sadoviy/$
+RewriteRule ^(.*)$ bordyur-sadoviy? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=gravelfix/$
+RewriteRule ^(.*)$ gravelfix? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=stones_aquariums/$
+RewriteRule ^(.*)$ stones_aquariums? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^route=information/news$
+RewriteCond %{REQUEST_METHOD} !^POST$
+RewriteRule ^index\.php$ http://%{HTTP_HOST}/news? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=blog/$
+RewriteRule ^(.*)$ news? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^_route_=blog$
+RewriteRule ^(.*)$ news? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^route=information/news%3f$
+RewriteCond %{REQUEST_METHOD} !^POST$
+RewriteRule ^index\.php$ http://%{HTTP_HOST}/news? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^route=information/news&page=2$
+RewriteCond %{REQUEST_METHOD} !^POST$
+RewriteRule ^index\.php$ http://%{HTTP_HOST}/news&page=2? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^route=information/news&page=3$
+RewriteCond %{REQUEST_METHOD} !^POST$
+RewriteRule ^index\.php$ http://%{HTTP_HOST}/news&page=3? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^route=information/news&page=4$
+RewriteCond %{REQUEST_METHOD} !^POST$
+RewriteRule ^index\.php$ http://%{HTTP_HOST}/news&page=4? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^route=information/news&page=5$
+RewriteCond %{REQUEST_METHOD} !^POST$
+RewriteRule ^index\.php$ http://%{HTTP_HOST}/news&page=5? [R=301,L]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Additional Settings that may need to be enabled for some servers 
+### Uncomment the commands by removing the # sign in front of it.
+### If you get an "Internal Server Error 500" after enabling any of the following settings, restore the # as this means your host doesn't allow that.
+
+# 1. If your cart only allows you to add one item at a time, it is possible register_globals is on. This may work to disable it:
+# php_flag register_globals off
+
+# 2. If your cart has magic quotes enabled, This may work to disable it:
+# php_flag magic_quotes_gpc Off
+
+# 3. Set max upload file size. Most hosts will limit this and not allow it to be overridden but you can try
+# php_value upload_max_filesize 999M
+
+# 4. set max post size. uncomment this line if you have a lot of product options or are getting errors where forms are not saving all fields
+# php_value post_max_size 999M
+
+# 5. set max time script can take. uncomment this line if you have a lot of product options or are getting errors where forms are not saving all fields
+# php_value max_execution_time 200
+
+# 6. set max time for input to be recieved. Uncomment this line if you have a lot of product options or are getting errors where forms are not saving all fields
+# php_value max_input_time 200
+
+# 7. disable open_basedir limitations
+# php_admin_value open_basedir none

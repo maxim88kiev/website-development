@@ -1,0 +1,70 @@
+Options -Indexes 
+ErrorDocument 404 /404.php
+
+<IfModule mod_php5.c>
+	php_flag allow_call_time_pass_reference 1
+	php_flag session.use_trans_sid off
+
+	#php_value display_errors 1
+
+	#php_value mbstring.internal_encoding UTF-8
+</IfModule>
+
+<IfModule mod_rewrite.c>
+	Options +FollowSymLinks
+
+	# Позволяет обрабатывать файлы txt как php код
+	#AddType application/x-httpd-php phtml php txt
+
+	RewriteEngine On
+
+	# Редирект с http на https
+	# Также надо переименовать ниже где встречается http
+#	RewriteCond %{HTTPS} off
+#	RewriteCond %{HTTP:X-Forwarded-Proto} !https
+#	RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+	
+	# Редирект с www на без www
+	RewriteCond %{HTTP_HOST} ^www\.(.*) [NC]
+	RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+	# Редирект с системных адресов на основной домен
+	#RewriteCond %{HTTP_HOST} ^00.00.00.00 [NC,OR]
+	#RewriteCond %{HTTP_HOST} ^sitename-1.ru [NC,OR]
+	#RewriteCond %{HTTP_HOST} ^sitename-2.ru [NC]
+	#RewriteRule (.*) http://sitename.ru/$1 [R=301,L]
+
+	# Редирект без www на с www
+	#RewriteCond %{HTTP_HOST} !^www\.(.*) [NC]
+	#RewriteRule ^(.*)$ http://www.%1/$1 [R=301,L]
+
+	# Редирект с /index.php на /
+	RewriteCond %{REQUEST_METHOD} =GET 
+	RewriteCond %{REQUEST_URI} ^(.*)/index.php$ [NC,OR]
+	RewriteCond %{REQUEST_URI} ^(.*)/index.html$ [NC] 
+	RewriteRule ^(.*)$ http://%{HTTP_HOST}%1/ [R=301,L]
+
+	# Добавление / к запросу без точки в url
+	# Могут быть проблемы, зависит от настройки apache на хостинге
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_URI} !(.*)/$
+	RewriteCond %{REQUEST_URI} !\.([^/]*)$
+	RewriteRule ^(.*)$ http://%{HTTP_HOST}/$1/ [R=301,L]
+	
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-l
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !/bitrix/urlrewrite.php$
+	RewriteRule ^(.*)$ /bitrix/urlrewrite.php [L]
+	RewriteRule .* - [E=REMOTE_USER:%{HTTP:Authorization}]
+</IfModule>
+
+<IfModule mod_dir.c>
+	DirectoryIndex index.php index.html
+</IfModule>
+
+<IfModule mod_expires.c>
+	ExpiresActive on
+	ExpiresByType image/jpeg "access plus 3 day"
+	ExpiresByType image/gif "access plus 3 day"
+</IfModule>

@@ -1,0 +1,129 @@
+<div class="blogssearch">
+	<h2>{{ text_search }}</h2>
+	<div id="blogsearch" class="input-group">
+		<input type="text" name="search" value="{{ search }}" placeholder="{{ text_search }}" class="form-control" />
+		<span class="input-group-btn">
+			<button type="button" class="btn btn-default"><i class="fa fa-search"></i></button>
+		</span>
+	</div>
+</div>
+
+<div class="postright">
+	<ul class="nav nav-tabs">
+		{% if recentpoststatus %}
+		<li class="active"><a href="#tab-recentpost" data-toggle="tab">{{ recentposttitle }}</a></li>
+		{% endif %}
+		{% if popularstatus %}
+		<li><a href="#tab-popular" data-toggle="tab">{{ populartitle }}</a></li>
+		{% endif %}
+	</ul>
+	
+	<div class="tab-content">
+		<div class="tab-pane active in" id="tab-recentpost">
+			{% for recentpost in recentposts %}
+			
+			<div class="postbox">
+				<div class="userpic"><a href="{{ recentpost.href }}"><img src="{{ recentpost.thumb }}" alt="{{ recentpost.name }}" title="{{ recentpost.name }}" class="img-responsive" /></a></div>
+				<div class="comment">
+					<h5>{{ recentpost.name }}</h5>
+					<div class="pull-right"><a data-toggle="tooltip" title="{{ text_readmore }}" href="{{ recentpost.href }}"><i class="fa fa-plus-circle"></i></a>
+					</div>
+					<span><i>{{ recentpost.date_added }}</i></span><br/>
+					
+				</div>
+			</div>
+			
+			{% endfor %}
+		</div>
+		<div class="tab-pane" id="tab-popular">
+			{% for popular in popularpost %}
+			
+			<div class="postbox">
+				<div class="userpic"><a href="{{ popular.href }}"><img src="{{ popular.thumb }}" alt="{{ popular.name }}" title="{{ popular.name }}" class="img-responsive" /></a></div>
+				<div class="comment">
+					<h5>{{ popular.name }}</h5>
+					<div class="pull-right"><a data-toggle="tooltip" title="{{ text_readmore }}" href="{{ popular.href }}"><i class="fa fa-plus-circle"></i></a>
+						</div>
+					<span><i>{{ popular.date_added }}</i></span><br/>
+					
+				</div>
+			</div>
+			
+			{% endfor %}
+		</div>
+	</div>
+</div>
+	<div class="commentpage hide">
+		{% if commentstatus %}
+		<h2>{{ commenttitle }}</h2>
+		{% endif %}
+		<div id="comment">
+			{% for commen in comments %}
+			<div class="commentbox">
+			<div class="comment">
+			<div class="name">{{ commen.customer_name }}</div> 
+			
+			<div class="commnettext">{{ commen.comment }}
+			<div class="pull-right"><a data-toggle="tooltip" title="{{ text_readmore }}" href="{{ commen.href }}"><i class="fa fa-plus-circle"></i></a>
+			</div>
+			</div>
+			  <br class="clear"/>	
+			</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+	<div class="tags">
+		<h2>{{ text_tags }}</h2>
+			<ul class="list-inline">
+				
+				<li>
+				
+				{% for tag in tags %}
+				{% if tag.tag %}
+				<a href="{{ tag.href }}">{{ tag.tag }}</a>
+				
+				{% else %} 
+				<a style="display:none"></a>
+				{% endif %}
+				{% endfor %}
+				</li>
+				
+				
+				
+			</ul>
+	</div>
+
+<script type="text/javascript"><!--
+jQuery("document").ready(function($){
+	var nav = $('.postright');
+	$(window).scroll(function () {
+		if ($(this).scrollTop() > 750) {
+			nav.addClass("fnav");		
+		} else {
+			nav.removeClass("fnav");
+		}
+	});
+
+});
+--></script>
+<script>
+/* Search */
+	$('#blogsearch input[name=\'search\']').parent().find('button').on('click', function() {
+		var url = $('base').attr('href') + 'index.php?route=extension/allblogcategory';
+
+		var value = $('#blogsearch input[name=\'search\']').val();
+
+		if (value) {
+			url += '&search=' + encodeURIComponent(value);
+		}
+
+		location = url;
+	});
+
+	$('#blogsearch input[name=\'search\']').on('keydown', function(e) {
+		if (e.keyCode == 13) {
+			$('#blog-search input[name=\'search\']').parent().find('button').trigger('click');
+		}
+	});
+</script>

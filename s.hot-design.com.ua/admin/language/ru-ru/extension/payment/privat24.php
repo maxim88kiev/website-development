@@ -1,0 +1,23 @@
+<?php
+$_['heading_title']      = 'Приват24';
+$_['text_payment']       = 'Оплата';
+$_['text_extension']     = 'Расширения';
+$_['text_success']       = 'Успешно! Вы отредактировали модуль оплаты Приват24!';
+$_['text_pay']           = 'Приват24';
+$_['text_edit']          = 'Редактирование';
+$_['text_currency']      = 'Выбрать';
+$_['text_privat24'] 	 = '<a target="_blank" href="https://privat24.ua"><img src="view/image/payment/privat24.png" alt="Приват2424" title="Приват24" style="border: 1px solid #EEEEEE;" height="25px" /></a>';
+$_['entry_url']     	 = 'URL-адрес API Приватбанка';
+$_['entry_merchant']     = 'Мерчант ID';
+$_['entry_password']     = 'Пароль мерчанта';
+$_['entry_order_status'] = 'Статус заказа';
+$_['entry_geo_zone']     = 'Географическая зона:';
+$_['entry_status']       = 'Статус';
+$_['entry_sort_order']   = 'Сортировка';
+$_['entry_total']	 = 'Итого';
+$_['help_total']	 = 'Сумма заказа должна быть выше, прежде чем этот метод оплаты станет активным.';
+$_['error_permission']   = 'У Вас нет прав на редактирование модуля оплаты Приват24!';
+$_['error_url']		 = 'Введите URL-адрес API Приватбанка';
+$_['entry_merchant']     = 'Мерчант ID';
+$_['error_merchant']     = 'Введите Merchant ID!';
+$_['error_password']     = 'Введите пароль мерчанта!';

@@ -1,0 +1,110 @@
+#menu-keis {
+    margin-top: 0px !important;
+}
+
+#site-navigation {
+    padding-top: 0px !important;
+}
+
+.top_phone {
+    padding-top: 0px !important;
+}
+
+.phone_head {
+    margin-top: 0px !important;
+}
+
+.calk {
+    margin-top: 0px !important;
+	border-radius: 3px !important;
+}
+
+.site-logo {
+    margin-top: 0px !important;
+}
+
+#content {
+    margin-top: 67px;
+}
+
+.site-header {
+    padding-top: 21px !important;
+    padding-bottom: 21px !important;
+	background-position-y: 64px;
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	z-index: 1000000;
+	background-color: #fff;
+}
+
+.site-logo::before {
+	display: none;
+}
+
+.custom-logo-link{
+	display: none !important;
+}
+
+.logo_mob{
+	display: block !important;
+}
+
+#breadcrumbs {
+    position: absolute;
+    width: 1170px;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+
+#site-navigation .main-menu > li a {
+    color: #191A20 !important;
+}
+
+.phone_head a {
+	color: #191A20 !important;
+}
+
+.container__banner-block{
+	display: flex;
+	max-width: 1170px;
+	margin: auto;
+	min-height: 604px;
+	padding-top: 128px;
+	justify-content: space-between;
+}
+
+.calk {
+    background-color: #0066FF !important;
+}
+
+.site-logo:before{
+	content: '';
+	width: 234px;
+	height: 5px;
+	background-color: #fff;
+	position: absolute;
+	top: 55px;
+	left: -14px;
+}
+
+
+@media only screen and (max-width: 992px)  {
+	
+	.top_phone {
+		padding-top: 15px !important;
+	}
+	
+	.phone_head {
+		margin-top: -33px !important;
+	}
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,56 @@
+paths:
+    migrations: '%%PHINX_CONFIG_DIR%%/db/migrations'
+    seeds: '%%PHINX_CONFIG_DIR%%/db/seeds'
+    bootstrap: 'phinx-bootstrap.php'
+
+environments:
+    default_migration_table: phinxlog
+    default_database: development
+    development:
+        adapter: mysql
+        host: localhost
+        name: sitemanager
+        user: bitrix0
+        pass: bitrix0
+        port: 3306
+        charset: utf8
+        unix_socket: /var/lib/mysqld/mysqld.sock
+
+    staging:
+        adapter: mysql
+        host: localhost
+        name: bitrix_dev2
+        user: bitrix_dev2
+        pass: 'oax5AhjioxiThe3li'
+        port: 3306
+        charset: utf8
+
+    production:
+        adapter: mysql
+        host: localhost
+        name: dbpodelu
+        user: userpodelu
+        pass: 'Jme8Q)c&Cl5S-&n'
+        port: 3306
+        charset: utf8
+        unix_socket: /var/lib/mysqld/mysqld.sock
+
+    testing:
+        adapter: mysql
+        host: localhost
+        name: testing_db
+        user: root
+        pass: ''
+        port: 3306
+        charset: utf8
+
+    local:
+        adapter: mysql
+        host: 127.0.0.1
+        name: bitrix_dev1
+        user: bitrix_dev1
+        pass: 'qHw5TqQvYiWunmUk'
+        port: 3306
+        charset: utf8
+
+version_order: creation

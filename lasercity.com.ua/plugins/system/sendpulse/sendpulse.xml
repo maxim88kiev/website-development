@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * @copyright	Copyright (c) 2016 JIS. All rights reserved.
+ * @license		http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+ */
+-->
+<extension type="plugin" version="3.0" group="system" method="upgrade">
+	<name>plg_system_sendpulse</name>
+	<author>Vladislav Smirnov</author>
+	<creationDate>November 2016</creationDate>
+	<copyright>Copyright (c) 2016 Joomla Is Simple. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>develop@joomlaissimple.ru</authorEmail>
+	<authorUrl>https://joomlaissimple.ru</authorUrl>
+	<version>1.0.1</version>
+	<description>
+	<![CDATA[
+		<p>Плагин добавляет скрипт SendPulse, для подписки на push-уведомления.</p>
+		<p>Чтобы зарегистрироваться и начать пользоваться сервисом, можете воспользоваться партнерской ссылкой.</p>	
+		<p><a class="btn" href="https://sendpulse.com/ru/?ref=651129" itemprop="url" target="_blank">
+		<span class="icon-chevron-right"></span>Приглашение попробовать сервис SendPulse</a><p/>
+		<p></p>
+	]]>
+	</description>
+
+	<files>
+		<filename plugin="sendpulse">sendpulse.php</filename>
+		<filename>index.html</filename>
+	</files>
+
+	<languages>
+		<language tag="ru-RU">ru-RU.plg_system_sendpulse.ini</language>
+		<language tag="ru-RU">ru-RU.plg_system_sendpulse.sys.ini</language>
+	</languages>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="id" type="text" size="34" default="" label="PLG_SYSTEM_SENDPULSE_ID_LABEL" description="PLG_SYSTEM_SENDPULSE_ID_DISCRIPTION"/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

@@ -1,0 +1,546 @@
+{{ header }}{{ column_left }}
+<div id="content">
+  <div class="page-header">
+    <div class="container-fluid">
+      <div class="pull-right">
+        <button type="submit" form="form-gallery" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
+        <a href="{{ cancel }}" data-toggle="tooltip" title="{{ button_cancel }}" class="btn btn-default"><i class="fa fa-reply"></i></a></div>
+      <h1>{{ heading_title }}</h1>
+      <ul class="breadcrumb">
+        {% for breadcrumb in breadcrumbs %}
+        <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="container-fluid">
+    {% if error_warning %}
+    <div class="alert alert-danger alert-dismissible"><i class="fa fa-exclamation-circle"></i> {{ error_warning }}
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+    {% endif %}
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><i class="fa fa-pencil"></i> {{ text_edit }}</h3>
+      </div>
+      <div class="panel-body">
+        <form action="{{ action }}" method="post" enctype="multipart/form-data" id="form-gallery" class="form-horizontal">
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-name">{{ entry_name }}</label>
+            <div class="col-sm-10">
+              <input type="text" name="name" value="{{ name }}" placeholder="{{ entry_name }}" id="input-name" class="form-control" />
+              {% if error_name %}
+              <div class="text-danger">{{ error_name }}</div>
+              {% endif %}
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label"><span data-toggle="tooltip" title="{{ help_title }}">{{ entry_title }}</span></label>
+            <div class="col-sm-10">
+			  {% for language in languages %}
+              <div class="input-group"> <span class="input-group-addon"><img src="language/{{ language.code }}/{{ language.code }}.png" title="{{ language.name }}" /></span>
+                <input type="text" name="module_description[{{ language.language_id }}][title]" value="{{ module_description[language.language_id] ? module_description[language.language_id].title }}" placeholder="{{ entry_title }}" class="form-control" />
+              </div>
+			  {% endfor %}
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">{{ entry_loading_text }}</label>
+            <div class="col-sm-10">
+			  {% for language in languages %}
+              <div class="input-group"> <span class="input-group-addon"><img src="language/{{ language.code }}/{{ language.code }}.png" title="{{ language.name }}" /></span>
+                <input type="text" name="module_description[{{ language.language_id }}][loading_text]" value="{{ module_description[language.language_id] ? module_description[language.language_id].loading_text : text_loading_text }}" placeholder="{{ entry_loading_text }}" class="form-control" />
+              </div>
+			  {% endfor %}
+            </div>
+          </div>
+          <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-loading_text_color"><span data-toggle="tooltip" title="{{ help_color }}">{{ entry_loading_text_color }}</span></label>
+              <div class="input-group col-sm-10 sec-group color-picker">
+                <span class="input-group-addon"><i></i></span>
+                <input type="text" name="loading_text_color" value="{{ loading_text_color }}" placeholder="{{ entry_loading_text_color }}" id="input-loading_text_color" class="form-control" />
+                {% if error_loading_text_color %}
+                <div class="text-danger">{{ error_loading_text_color }}</div>
+				{% endif %}
+              </div>
+            </div>
+		  <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-banner">{{ entry_banner }}</label>
+            <div class="col-sm-10">
+              <select name="filter_banner_id" id="input-banner" class="form-control">
+                {% for banner in banners %}
+                {% if banner.banner_id == filter_banner_id %}
+                <option value="{{ banner.banner_id }}" selected="selected">{{ banner.name }}</option>
+                {% else %}
+                <option value="{{ banner.banner_id }}">{{ banner.name }}</option>
+                {% endif %}
+                {% endfor %}
+              </select>
+			  {% if error_banner %}
+              <div class="text-danger">{{ error_banner }}</div>
+			  {% endif %}
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-resize"><span data-toggle="tooltip" title="{{ help_resize }}">{{ entry_resize }}</span></label>
+            <div class="col-sm-10">
+              <select name="resize" id="input-resize" class="form-control" onchange="$('.resizevars').collapse('hide'); $('#resizevariables' + this.value).collapse('show');">
+				{% if resize %}
+                <option value="1" selected="selected">{{ text_yes }}</option>
+                <option value="0">{{ text_no }}</option>
+				{% else %}
+                <option value="1">{{ text_yes }}</option>
+                <option value="0" selected="selected">{{ text_no }}</option>
+				{% endif %}
+              </select>
+            </div>
+          </div>
+          <div class="collapse resizevars" id="resizevariables1">
+            <hr style="border-top: 1px solid #1e91cf;">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-10">{{ text_resize_options }}</div>
+            <br>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-gwidth">{{ entry_gwidth }}</label>
+              <div class="col-sm-10">
+                <input type="text" name="gwidth" value="{{ gwidth }}" placeholder="{{ entry_gwidth }}" id="input-gwidth" class="form-control" />
+				{% if error_gwidth %}
+                <div class="text-danger">{{ error_gwidth }}</div>
+ 				{% endif %}
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-gheight">{{ entry_gheight }}</label>
+              <div class="col-sm-10">
+                <input type="text" name="gheight" value="{{ gheight }}" placeholder="{{ entry_gheight }}" id="input-gheight" class="form-control" />
+				{% if error_gheight %}
+                <div class="text-danger">{{ error_gheight }}</div>
+                {% endif %}
+              </div>
+            </div>
+            <hr style="border-top: 1px solid #1e91cf;">
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-thumb_title"><span data-toggle="tooltip" title="{{ help_thumb_title }}">{{ entry_thumb_title }}</span></label>
+            <div class="col-sm-10">
+              <select name="thumb_title" id="input-thumb_title" class="form-control" onchange="$('.titlevars').collapse('hide'); $('#titlevariables' + this.value).collapse('show');">
+				{% if thumb_title %}
+                <option value="1" selected="selected">{{ text_yes }}</option>
+                <option value="0">{{ text_no }}</option>
+                {% else %}
+                <option value="1">{{ text_yes }}</option>
+                <option value="0" selected="selected">{{ text_no }}</option>
+				{% endif %}
+              </select>
+            </div>
+          </div>
+          <div class="collapse titlevars" id="titlevariables1">
+            <hr style="border-top: 1px solid #1e91cf;">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-10">{{ text_thumb_title_options }}</div><br>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-thumb_title_position"><span data-toggle="tooltip" title="{{ help_thumb_title_position }}">{{ entry_thumb_title_position }}</span></label>
+              <div class="col-sm-10">
+                <select name="thumb_title_position" id="input-thumb_title_position" class="form-control">
+				  {% for key, text_thumb_title_position in text_thumb_title_positions %}
+                  <option value="{{ key }}" {% if thumb_title_position == key %}{{ 'selected="selected"' }}{% endif %}>{{ text_thumb_title_position }}</option>
+                  {% endfor %}
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-thumb_title_display">{{ entry_thumb_title_display }}</label>
+              <div class="col-sm-10">
+                <select name="thumb_title_display" id="input-thumb_title_display" class="form-control">
+				  {% for key, text_thumb_title_display in text_thumb_title_displays %}
+                  <option value="{{ key }}" {% if thumb_title_display == key %}{{ 'selected="selected"' }}{% endif %}>{{ text_thumb_title_display }}</option>
+                  {% endfor %}
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-thumb_title_font_size">{{ entry_thumb_title_font_size }}</label>
+              <div class="col-sm-10">
+                <input type="text" name="thumb_title_font_size" value="{{ thumb_title_font_size }}" placeholder="{{ entry_thumb_title_font_size }}" id="input-thumb_title_font_size" class="form-control" />
+				{% if error_thumb_title_font_size %}
+                <div class="text-danger">{{ error_thumb_title_font_size }}</div>
+ 				{% endif %}
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-thumb_title_font_color"><span data-toggle="tooltip" title="{{ help_color }}">{{ entry_thumb_title_font_color }}</span></label>
+              <div class="input-group col-sm-10 sec-group color-picker">
+                <span class="input-group-addon"><i></i></span>
+                <input type="text" name="thumb_title_font_color" value="{{ thumb_title_font_color }}" placeholder="{{ entry_thumb_title_font_color }}" id="input-thumb_title_font_color" class="form-control" />
+				{% if error_thumb_title_font_color %}
+                <div class="text-danger">{{ error_thumb_title_font_color }}</div>
+ 				{% endif %}
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-thumb_title_background_color"><span data-toggle="tooltip" title="{{ help_color }}">{{ entry_thumb_title_background_color }}</span></label>
+              <div class="input-group col-sm-10 sec-group color-picker">
+                <span class="input-group-addon"><i></i></span>
+                <input type="text" name="thumb_title_background_color" value="{{ thumb_title_background_color }}" placeholder="{{ entry_thumb_title_background_color }}" id="input-thumb_title_background_color" class="form-control" />
+				{% if error_thumb_title_background_color %}
+                <div class="text-danger">{{ error_thumb_title_background_color }}</div>
+ 				{% endif %}
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-thumb_title_padding">{{ entry_thumb_title_padding }}</label>
+              <div class="col-sm-10">
+                <input type="text" name="thumb_title_padding" value="{{ thumb_title_padding }}" placeholder="{{ entry_thumb_title_padding }}" id="input-thumb_title_padding" class="form-control" />
+              </div>
+            </div>
+            <hr style="border-top: 1px solid #1e91cf;">
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-gallery_title"><span data-toggle="tooltip" title="{{ help_gallery_title }}">{{ entry_gallery_title }}</span></label>
+            <div class="col-sm-10">
+              <select name="gallery_title" id="input-gallery_title" class="form-control">
+				{% if gallery_title %}
+                <option value="1" selected="selected">{{ text_yes }}</option>
+                <option value="0">{{ text_no }}</option>
+                {% else %}
+                <option value="1">{{ text_yes }}</option>
+                <option value="0" selected="selected">{{ text_no }}</option>
+				{% endif %}
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-click_function"><span data-toggle="tooltip" title="{{ help_click_function }}">{{ entry_click_function }}</span></label>
+            <div class="col-sm-10">
+              <select name="click_function" id="input-click_function" class="form-control">
+				{% for key, text_click_function in text_click_functions %}
+                <option value="{{ key }}" {% if click_function == key %}{{ 'selected="selected"' }}{% endif %}>{{ text_click_function }}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-thumb_style">{{ entry_thumb_style }}</label>
+            <div class="col-sm-10">
+              <select name="thumb_style" id="input-thumb_style" class="form-control" onchange="$('.stylevars').hide('fast'); $('#stylevariables' + this.value).show('fast');">
+				{% for key, text_thumb_style in text_thumb_styles %}
+                <option value="{{ key }}" {% if thumb_style == key %}{{ 'selected="selected"' }}{% endif %}>{{ text_thumb_style }}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+          <div class="stylevars" id="stylevariables0">
+            <hr style="border-top: 1px solid #1e91cf;">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-10">{{ help_thumb_styles[0] }}</div>
+            <br>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-bwidth">{{ entry_bwidth }}</label>
+              <div class="col-sm-10">
+                <input type="text" name="bwidth" value="{{ bwidth }}" placeholder="{{ entry_bwidth }}" id="input-bwidth" class="form-control" />
+				{% if error_bwidth %}
+                <div class="text-danger">{{ error_bwidth }}</div>
+ 				{% endif %}
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-bheight">{{ entry_bheight }}</label>
+              <div class="col-sm-10">
+                <input type="text" name="bheight" value="{{ bheight }}" placeholder="{{ entry_bheight }}" id="input-bheight" class="form-control" />
+				{% if error_bheight %}
+                <div class="text-danger">{{ error_bheight }}</div>
+ 				{% endif %}
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-bmargin_bottom">{{ entry_bmargin_bottom }}</label>
+              <div class="col-sm-10">
+                <input type="text" name="bmargin_bottom" value="{{ bmargin_bottom }}" placeholder="{{ entry_bmargin_bottom }}" id="input-bmargin_bottom" class="form-control" />
+              </div>
+            </div>
+            <hr style="border-top: 1px solid #1e91cf;">
+          </div>
+          <div class="stylevars" id="stylevariables1">
+            <hr style="border-top: 1px solid #1e91cf;">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-10">{{ help_thumb_styles[1] }}</div>
+            <br><br>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-justify_row_height">{{ entry_justify_row_height }}</label>
+              <div class="col-sm-10">
+                <input type="text" name="justify_row_height" value="{{ justify_row_height }}" placeholder="{{ entry_justify_row_height }}" id="input-justify_row_height" class="form-control" />
+				{% if error_justify_row_height %}
+                <div class="text-danger">{{ error_justify_row_height }}</div>
+ 				{% endif %}
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-justify_effect">{{ entry_justify_effect }}</label>
+              <div class="col-sm-10">
+                <select name="justify_effect" id="input-justify_effect" class="form-control">
+				  {% for effect in text_collage_effects %}
+				  <option value="{{ effect }}" {% if justify_effect == effect %}{{ 'selected="selected"' }}{% endif %}>{{ effect }}</option>
+				  {% endfor %}
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-justify_direction">{{ entry_justify_direction }}</label>
+              <div class="col-sm-10">
+                <select name="justify_direction" id="input-justify_direction" class="form-control">
+				{% for key, direction in text_collage_directions %}
+                <option value="{{ key }}" {% if justify_direction == key %}{{ 'selected="selected"' }}{% endif %}>{{ direction }}</option>
+                {% endfor %}
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-justify_allow_parital">{{ entry_justify_allow_parital }}</label>
+              <div class="col-sm-10">
+                <select name="justify_allow_parital" id="input-justify_allow_parital" class="form-control">
+				{% if justify_allow_parital %}
+                <option value="1" selected="selected">{{ text_yes }}</option>
+                <option value="0">{{ text_no }}</option>
+                {% else %}
+                <option value="1">{{ text_yes }}</option>
+                <option value="0" selected="selected">{{ text_no }}</option>
+				{% endif %}
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-justify_margin">{{ entry_justify_margin }}</label>
+              <div class="col-sm-10">
+                <input type="text" name="justify_margin" value="{{ justify_margin }}" placeholder="{{ entry_justify_margin }}" id="input-justify_margin" class="form-control" />
+              </div>
+            </div>
+            <hr style="border-top: 1px solid #1e91cf;">
+          </div>
+          <div class="stylevars" id="stylevariables2">
+            <hr style="border-top: 1px solid #1e91cf;">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-10">{{ text_pinterest_options }}</div><br>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-pinto_width">{{ entry_pinto_width }}</label>
+              <div class="col-sm-10">
+                <input type="text" name="pinto_width" value="{{ pinto_width }}" placeholder="{{ entry_pinto_width }}" id="input-pinto_width" class="form-control" />
+				{% if error_pinto_width %}
+                <div class="text-danger">{{ error_pinto_width }}</div>
+ 				{% endif %}
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-pinto_gap_x">{{ entry_pinto_gap_x }}</label>
+              <div class="col-sm-10">
+                <input type="text" name="pinto_gap_x" value="{{ pinto_gap_x }}" placeholder="{{ entry_pinto_gap_x }}" id="input-pinto_gap_x" class="form-control" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-gap_y">{{ entry_pinto_gap_y }}</label>
+              <div class="col-sm-10">
+                <input type="text" name="pinto_gap_y" value="{{ pinto_gap_y }}" placeholder="{{ entry_pinto_gap_y }}" id="input-pinto_gap_y" class="form-control" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-pinto_align">{{ entry_pinto_align }}</label>
+              <div class="col-sm-10">
+                <select name="pinto_align" id="input-pinto_align" class="form-control">
+				  {% for align in text_pinto_aligns %}
+				  <option value="{{ align }}" {% if pinto_align == align %}{{ 'selected="selected"' }}{% endif %}>{{ align }}</option>
+				  {% endfor %}
+                </select>
+              </div>
+            </div>
+            <hr style="border-top: 1px solid #1e91cf;">
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-hover_animation">{{ entry_hover_animation }}</label>
+            <div class="col-sm-10">
+              <select name="hover_animation" id="input-hover_animation" class="form-control" onchange="$('.hovervars').collapse('hide'); $('#hovervariables' + this.value).collapse('show');">
+				{% if hover_animation %}
+                <option value="1" selected="selected">{{ text_yes }}</option>
+                <option value="0">{{ text_no }}</option>
+                {% else %}
+                <option value="1">{{ text_yes }}</option>
+                <option value="0" selected="selected">{{ text_no }}</option>
+				{% endif %}
+              </select>
+            </div>
+          </div>
+          <div class="collapse hovervars" id="hovervariables1">
+            <hr style="border-top: 1px solid #1e91cf;">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-10">{{ text_hover_animation_options ~ ', ' ~ help_css_transform }}</div><br>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-hover_animation_speed"><span data-toggle="tooltip" title="{{ help_speed }}">{{ entry_hover_animation_speed }}</span></label>
+              <div class="col-sm-10">
+                <input type="text" name="hover_animation_speed" value="{{ hover_animation_speed }}" placeholder="{{ entry_hover_animation_speed }}" id="input-hover_animation_speed" class="form-control" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-hover_animation_zoom"><span data-toggle="tooltip" title="{{ help_zoom }}">{{ entry_hover_animation_zoom }}</span></label>
+              <div class="col-sm-10">
+                <input type="text" name="hover_animation_zoom" value="{{ hover_animation_zoom }}" placeholder="{{ entry_hover_animation_zoom }}>" id="input-hover_animation_zoom" class="form-control" />
+				{% if error_hover_animation_zoom %}
+                <div class="text-danger">{{ error_hover_animation_zoom }}</div>
+ 				{% endif %}
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-hover_animation_rotate"><span data-toggle="tooltip" title="{{ help_css_transform_rotation }}">{{ entry_hover_animation_rotate }}</span></label>
+              <div class="col-sm-10">
+                <input type="text" name="hover_animation_rotate" value="{{ hover_animation_rotate }}" placeholder="{{ entry_hover_animation_rotate }}" id="input-hover_animation_rotate" class="form-control" />
+              </div>
+            </div>
+            <hr style="border-top: 1px solid #1e91cf;">
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-border">{{ entry_border }}</label>
+            <div class="col-sm-10">
+              <select name="border" id="input-border" class="form-control" onchange="$('.bordervars').collapse('hide'); $('#bordervariables' + this.value).collapse('show');">
+				{% if border %}
+                <option value="1" selected="selected">{{ text_yes }}</option>
+                <option value="0">{{ text_no }}</option>
+                {% else %}
+                <option value="1">{{ text_yes }}</option>
+                <option value="0" selected="selected">{{ text_no }}</option>
+				{% endif %}
+              </select>
+            </div>
+          </div>
+          <div class="collapse bordervars" id="bordervariables1">
+            <hr style="border-top: 1px solid #1e91cf;">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-10">{{ text_border_options ~ ', ' ~ help_border }}</div><br>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-border_radius_top_left">{{ entry_border_radius_top_left }}</label>
+              <div class="col-sm-10">
+                <input type="text" name="border_radius_top_left" value="{{ border_radius_top_left }}" placeholder="{{ entry_border_radius_top_left }}" id="input-border_radius_top_left" class="form-control" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-border_radius_top_right">{{ entry_border_radius_top_right }}</label>
+              <div class="col-sm-10">
+                <input type="text" name="border_radius_top_right" value="{{ border_radius_top_right }}" placeholder="{{ entry_border_radius_top_right }}" id="input-border_radius_top_right" class="form-control" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-border_radius_bottom_left">{{ entry_border_radius_bottom_left }}</label>
+              <div class="col-sm-10">
+                <input type="text" name="border_radius_bottom_left" value="{{ border_radius_bottom_left }}" placeholder="{{ entry_border_radius_bottom_left }}" id="input-border_radius_bottom_left" class="form-control" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-border_radius_bottom_right">{{ entry_border_radius_bottom_right }}</label>
+              <div class="col-sm-10">
+                <input type="text" name="border_radius_bottom_right" value="{{ border_radius_bottom_right }}" placeholder="{{ entry_border_radius_bottom_right }}" id="input-border_radius_bottom_right" class="form-control" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-border_width"><span data-toggle="tooltip" title="{{ help_border_width }}">{{ entry_border_width }}</span></label>
+              <div class="col-sm-10">
+                <input type="text" name="border_width" value="{{ border_width }}" placeholder="{{ entry_border_width }}" id="input-border_width" class="form-control" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-border_color"><span data-toggle="tooltip" title="{{ help_border_width }}">{{ entry_border_color }}</span></label>
+              <div class="input-group col-sm-10 sec-group color-picker">
+                <span class="input-group-addon"><i></i></span>
+                <input type="text" name="border_color" value="{{ border_color }}" placeholder="{{ entry_border_color }}" id="input-border_color" class="form-control" />
+				{% if error_border_color %}
+                <div class="text-danger">{{ error_border_color }}</div>
+ 				{% endif %}
+              </div>
+            </div>
+            <hr style="border-top: 1px solid #1e91cf;">
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-box_shadow">{{ entry_box_shadow }}</label>
+            <div class="col-sm-10">
+              <select name="box_shadow" id="input-box_shadow" class="form-control" onchange="$('.shadowvars').collapse('hide'); $('#shadowvariables' + this.value).collapse('show');">
+				{% if box_shadow %}
+                <option value="1" selected="selected">{{ text_yes }}</option>
+                <option value="0">{{ text_no }}</option>
+                {% else %}
+                <option value="1">{{ text_yes }}</option>
+                <option value="0" selected="selected">{{ text_no }}</option>
+				{% endif %}
+              </select>
+            </div>
+          </div>
+          <div class="collapse shadowvars" id="shadowvariables1">
+            <hr style="border-top: 1px solid #1e91cf;">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-10">{{ text_shadow_options ~ ', ' ~ help_box_shadow }}</div><br>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-box_shadow_horizontal_length"><span data-toggle="tooltip" title="{{ help_css_transform_rotation }}">{{ entry_box_shadow_horizontal_length }}</span></label>
+              <div class="col-sm-10">
+                <input type="text" name="box_shadow_horizontal_length" value="{{ box_shadow_horizontal_length }}" placeholder="{{ entry_box_shadow_horizontal_length }}" id="input-box_shadow_horizontal_length" class="form-control" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-box_shadow_vertical_lengths_top_right"><span data-toggle="tooltip" title="{{ help_css_transform_rotation }}">{{ entry_box_shadow_vertical_length }}</span></label>
+              <div class="col-sm-10">
+                <input type="text" name="box_shadow_vertical_length" value="{{ box_shadow_vertical_length }}" placeholder="{{ entry_box_shadow_vertical_length }}" id="input-box_shadow_vertical_length" class="form-control" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-box_shadow_blur_radius">{{ entry_box_shadow_blur_radius }}</label>
+              <div class="col-sm-10">
+                <input type="text" name="box_shadow_blur_radius" value="{{ box_shadow_blur_radius }}" placeholder="{{ entry_box_shadow_blur_radius }}" id="input-box_shadow_blur_radius" class="form-control" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-box_shadow_color"><span data-toggle="tooltip" title="{{ help_color }}">{{ entry_box_shadow_color }}</span></label>
+              <div class="input-group col-sm-10 sec-group color-picker">
+                <span class="input-group-addon"><i></i></span>
+                <input type="text" name="box_shadow_color" value="{{ box_shadow_color }}" placeholder="{{ entry_box_shadow_color }}" id="input-box_shadow_color" class="form-control" />
+				{% if error_box_shadow_color %}
+                <div class="text-danger">{{ error_box_shadow_color }}</div>
+ 				{% endif %}
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-box_shadow_spread_radius"><span data-toggle="tooltip" title="{{ help_css_transform_rotation }}">{{ entry_box_shadow_spread_radius }}</span></label>
+              <div class="col-sm-10">
+                <input type="text" name="box_shadow_spread_radius" value="{{ box_shadow_spread_radius }}" placeholder="{{ entry_box_shadow_spread_radius }}" id="box_shadow_spread_radius" class="form-control" />
+              </div>
+            </div>
+            <hr style="border-top: 1px solid #1e91cf;">
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-status">{{ entry_status }}</label>
+            <div class="col-sm-10">
+              <select name="status" id="input-status" class="form-control">
+				{% if status %}
+                <option value="1" selected="selected">{{ text_yes }}</option>
+                <option value="0">{{ text_no }}</option>
+                {% else %}
+                <option value="1">{{ text_yes }}</option>
+                <option value="0" selected="selected">{{ text_no }}</option>
+				{% endif %}
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+.sec-group {
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+</style>
+<script>
+$(".color-picker").colorpicker();
+$("#resizevariables" + {{ resize }}).collapse("show");
+$('.stylevars').hide();
+$("#stylevariables" + {{ thumb_style }}).show();
+$("#titlevariables" + {{ thumb_title }}).collapse("show");
+$("#hovervariables" + {{ hover_animation }}).collapse("show");
+$("#bordervariables" + {{ border }}).collapse("show");
+$("#shadowvariables" + {{ box_shadow }}).collapse("show");
+</script>
+{{ footer }}

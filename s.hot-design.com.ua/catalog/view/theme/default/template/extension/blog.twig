@@ -1,0 +1,387 @@
+{{ header }}
+<div class="container">
+<div id="latestpost">
+<ul class="breadcrumb">
+    {% for breadcrumb in breadcrumbs %}
+    <li><a href="{{ breadcrumb.href }}" class="txt123">{{ breadcrumb.text }}</a></li>
+    {% endfor %}
+  </ul>
+{% if tmdblogsetting_blogarticleimg %}
+            <div class="image listimg">
+			<!--<a href="{{ href }}"><img src="{{ thumb }}" alt="{{ thumb }}" title="{{ thumb }}" class="img-responsive" /></a>-->
+           
+	<div class="col-sm-12 padd col-xs-12">
+	<h1>{{ heading_title }}</h1>
+	
+	<!--<div class=" headtitle">
+		<div class="col-sm-2 inner pull-left col-xs-12">
+			<img src="catalog/view/theme/default/image/userimg.png"/>
+			{% if tmdblogsetting_blogfeedbackrow %}
+			<div class="feedback">
+				<ul class="list-inline">
+					{% if username %}
+					<li><span class="user">{{ username }}</span></li>
+					{% endif %}
+					{% if not username %}
+					<li><i></i></li>
+					{% endif %}
+					<li>{{ viewed }}</li>
+				</ul>
+			</div>
+			{% endif %}
+		</div>
+		<div class="col-sm-10 innerheader col-xs-12">
+			<h1>{{ heading_title }}</h1>
+			{% if tmdblogsetting_blogfeedbackrow %}
+			<div class="col-sm-12 feedbackrow padd col-xs-12">
+				<ul class="list-inline">-->
+				<!--<li><i>{{ date_added }}</i></li>-->
+				<!--<li class="commentadta">|&nbsp;&nbsp; <span class="commentcount">{{ comments }} </span> {{ text_coments }}</li>
+					
+					{% if username %}
+					{% endif %}
+					{% if not username %}
+					<li><i></i></li>
+					{% endif %}
+				</ul>
+				
+			</div>
+			{% endif %}
+			
+		</div>	
+	</div>-->
+	
+	</div>
+	 </div> 
+			{% endif %}
+  <div class="row">{{ column_left }}
+    {% if column_left and blog_right %}
+    {% set class = 'col-sm-6' %}
+    {% elseif column_left or blog_right %}
+    {% set class = 'col-sm-8 col-md-9' %}
+    {% else %}
+    {% set class = 'col-sm-12' %}
+    {% endif %}
+    <div id="content" class="{{ class }}">
+	  <div class="row all">
+		<div class="product-layout product-list col-xs-12">
+          <div class="product-thumb blog_txt">
+			
+
+            {% if tmdblogsetting_blogdescp %}<div class="description pull-left">{{ description }}</div>{% endif %}
+            
+            <div class="row">
+					<!--tags work static-->
+					{% if tags %}
+					<div class="col-sm-12 tagbox">
+					<h4>{{ text_tages }}</h4>
+						<ul class="list-inline">
+							{% for tag in tags %}
+							<li><a href="{{ tag.href }}" class="tag">{{ tag.tag }}</a></li>
+							{% endfor %}
+						</ul>
+					</div>	
+					{% endif %}
+					<!--tags work static-->
+				</div>
+	
+			<div class="col-sm-12 padd"><i>{{ date_added }}</i>
+				<div class="social-icons">
+							<ul class="list-inline">
+								<!-- AddThis Button BEGIN -->
+						
+							{% if tmdblogsetting_blogfacebook %}
+							<li><a  href="https://www.facebook.com/sharer/sharer.php?&u={{ href }}&display=popup&ref=plugin&src=share_button" onclick="return !window.open(this.href, 'Facebook', 'width=640,height=580')" class="addthis_button_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+							{% endif %}
+							{% if tmdblogsetting_bloggoogle %}
+							<li><a href="https://plus.google.com/share?url={{ href }}" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="addthis_button_email"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+							{% endif %}
+							{% if tmdblogsetting_blogpinterest %}
+							<li><a href="http://pinterest.com/pin/create/button/?url={{ href }}&media={{ thumb }}&description={{ heading_title }}" target="_blank"  class="addthis_button_pinterest_pinit"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li> 
+							{% endif %}
+							{% if tmdblogsetting_blogtwitter %}
+							<li><a href="https://twitter.com/intent/tweet?text={{ heading_title }}&url={{ href }}" class="addthis_button_twitter" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li> 
+							{% endif %}
+							</ul>
+						</div>
+						
+				
+          </div>
+			
+			
+			</div>
+        </div>
+		
+		{% if globalblogcoment %}
+		
+		
+		<div class="product-layout product-list col-xs-11" id="postfeedback">
+			<div class="commentheadr">
+				<div class="pull-left"><span class="commentcount">{{ comments }}</span>{{ text_coments }}</div>
+				
+			</div>
+			
+			<hr/>
+			{% if logged %}
+	
+		<div class="commentbox2 adddata">
+				<div class="userpic"><img src="catalog/view/theme/default/image/user_img.png"/></div>
+				<div class="inputbox">
+				<input type="hidden" name="blog_id" value="{{ blog_id }}"/>
+				<input type="hidden" name="image" id="image" value=""/>
+				
+				<input type="text" name="comment" class="form-control commenttextbox"/><br/>
+				
+				<a class="fileimage" data-toggle="tooltip" title="Add Image"><i class="fa fa-image"></i></a>
+				
+				<input type="button" value="Добавить коментарий" id="add-filetype" class="addbuton  btn btn-primary pull-right" data-toggle="tooltip" title="Добавить коментарий"/>
+				
+				<img style="display:none" src="" id="imagesrc">
+			
+			
+			
+				</div>
+				
+				
+			
+		</div>
+			{% else %}
+				<div class="col-sm-12">
+		<div class="logoutbox">{{ text_forcomment }}<a href="#" data-toggle="modal" data-target=".bs-example-modal-md">{{ text_login }}</a> </div>
+		</div>
+		
+		<div id="loginpop" class="modal fade bs-example-modal-md" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-md">
+			<div class='solid'></div>
+			<div class="modal-content col-sm-12">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<div class="logmain">
+			
+			 <div class="lognhead">{{ text_belogin }} </div>
+			 
+				<div class="form-group col-sm-12">
+					<input type="text" name="email" value="" id="email1" class="form-control emailerror" placeholder="{{ text_email }}"/>
+						<span class="name-icon fui-mail gray"></span>
+					
+			    </div>
+				<div class="form-group col-sm-12">
+					
+					  <input type="password" name="password" value="" id="password1" class="form-control" placeholder="{{ text_password }}"/>
+						<span class="name-icon fui-lock gray"></span>
+					
+			    </div>	
+				 <div class="form-group col-sm-12">
+					<div class="pull-right col-sm-12 margin-email">
+						<a><input class="btn-primary form-control" type="button" value="{{ button_signin }}" id="loginpage"/></a>
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<div class="pull-left forgot">
+						{{ text_register }}
+					</div>
+					<div class="pull-right forgot">
+						<a href="index.php?route=account/forgotten">{{ text_forgot }}</a>
+					</div>
+				</div>
+			</div>
+			</div>
+			
+		  </div>
+		 
+		</div>
+		{% endif %}
+		
+			<div class="loadcomment" style="clear:both">
+			<br/><br/>
+			
+			{% for info in comment_info %}
+			
+			<div class="commentbox pull-left col-sm-12 post">
+				<div class="col-sm-1 userbox">
+				<div id="button-upload"><img src="catalog/view/theme/default/image/user_img.png"/></div>
+				</div>
+				<div class="comment col-sm-10">
+					<span class="name">{{ info.username }}</span> <span class="time"><i>{{ info.date_added }}</i></span>
+					
+					<p>{{ info.comment }} </p>
+					{% if info.image %}
+					<div class="image-responsice"> <img class="img-responsive" src="{{ info.image }}" title="{{ info.comment }}" alt="{{ info.comment }}" /> </div>
+					{% endif %}
+				</div>
+			</div>
+				{% endfor %}
+				
+				
+			</div>
+			
+	
+			
+			
+			
+			
+		</div>
+		
+		{% endif %}
+		
+		
+	  </div>
+	  
+
+	
+	</div>
+	
+	{{ blog_right }}
+	</div>
+	
+	</div>
+	
+</div>
+
+<script>
+
+$('.fileimage').on('click', function() {
+	var node = this;
+
+	$('#form-upload').remove();
+
+	$('body').prepend('<form enctype="multipart/form-data" id="form-upload" style="display: none;"><input type="file" name="file" /></form>');
+
+	$('#form-upload input[name=\'file\']').trigger('click');
+
+	if (typeof timer != 'undefined') {
+    	clearInterval(timer);
+	}
+
+	timer = setInterval(function() {
+		if ($('#form-upload input[name=\'file\']').val() != '') {
+			clearInterval(timer);
+
+			$.ajax({
+				url: 'index.php?route=extension/blog/uploadcommentimage',
+				type: 'post',
+				dataType: 'json',
+				data: new FormData($('#form-upload')[0]),
+				cache: false,
+				contentType: false,
+				processData: false,
+				beforeSend: function() {
+					$(node).button('loading');
+				},
+				complete: function() {
+					$(node).button('reset');
+				},
+				success: function(json) {
+					$('.text-danger').remove();
+
+					if (json['error']) {
+						$('#image').after('<div class="text-danger">' + json['error'] + '</div>');
+					}
+
+					if (json['success']) {
+						alert(json['success']);
+
+						$('#image').attr('value', json['file']);
+						$('#imagesrc').attr('src', json['file1'] );
+						$('#imagesrc').css({ display: "block", padding: "10px" }); 
+					}
+				},
+				error: function(xhr, ajaxOptions, thrownError) {
+					alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+				}
+			});
+		}
+	}, 500);
+});
+
+
+$('.addbuton').bind('click', function() {
+	$.ajax({
+	url: 'index.php?route=extension/blog/addblogcomments',
+	type: 'post',
+	data: $('.adddata input[type=\'text\'],.adddata input[type=\'hidden\']'),
+	dataType: 'json',
+	success: function(json) {
+	$('.alert, .text-danger').remove();
+
+		
+		if (json['error']) {
+			
+			if(json['error']){
+			$('.product-thumb').after('<div class="alert alert-danger"><i class="fa fa-exclamation-circle" style="margin-right:5px;"></i>' + json['error']+'</div>');
+			}
+			
+						
+			$('.warning').fadeIn('slow');
+		}
+
+		if (json['success']) {
+				$('.product-thumb').after('<div class="alert alert-success">' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+				$('.success').fadeIn('slow');
+				$('input[name=comment]').val('');
+				$('input[name=image]').val('');
+				$('#imagesrc').attr('src', '');
+				$('#imagesrc').css({'display':'none'});
+				$('.loadcomment').load('index.php?route=extension/blog/loadblogcomment&blog_id={{ blog_id }}'); 
+				$('.commentcount').html(json['comments']);
+
+		}
+		}
+		});
+	});
+
+	
+	
+$(function(){
+ $(".commenttextbox").keyup(function (e) {
+  if (e.which == 13) {
+    $('.addbuton').trigger('click');
+  }
+ });
+});
+
+$('.loadcomment').load('index.php?route=extension/blog/loadblogcomment&blog_id={{ blog_id }}'); 
+
+
+$('#loginpage').bind('click', function() {
+	$.ajax({
+	url: 'index.php?route=extension/blog/addlogin',
+	type: 'post',
+	data: $('.modal-content input[type=\'text\'],.modal-content input[type=\'password\'], .modal-content input[type=\'hidden\'], .modal-content input[type=\'radio\']:checked, .modal-content input[type=\'checkbox\']:checked, .modal-content select, .modal-content textarea'),
+	dataType: 'json',
+	success: function(json) {
+	$('.alert, .text-danger').remove();
+
+		
+		if (json['error']) {
+			
+			if(typeof (json['error']['email'])!='undefined'){
+			$('.emailerror').parent('div').before('<div class="alert alert-danger"><i class="fa fa-exclamation-circle" style="margin-right:5px;"></i>' + json['error']['email'] + '</div>');
+			}
+			if(typeof (json['error']['password'])!='undefined'){
+			$('.emailerror').parent('div').before('<div class="alert alert-danger"> <i class="fa fa-exclamation-circle"></i>' + json['error']['password'] + '</div>');
+			}
+						
+			$('.warning').fadeIn('slow');
+		}
+
+		if (json['success']) {
+				$('.modal-content').before('<div class="alert alert-success">' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+				$('.success').fadeIn('slow');
+				window.location='index.php?route=extension/blog&blog_id={{ blog_id }}';
+
+		}
+		}
+		});
+	});
+
+</script>
+<style>
+#latestpost .product-thumb{background:none;}
+.pin_it_iframe_widget{
+	display:none;
+}
+</style>
+    
+{{ footer }}
+
+

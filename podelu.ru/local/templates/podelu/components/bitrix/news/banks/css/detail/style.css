@@ -1,0 +1,1 @@
+.anchor-list{display:flex;justify-content:space-between;flex-wrap:wrap;margin:-3px 0}@media (max-width: 479px){.anchor-list{flex-direction:column;justify-content:center;align-items:center;text-align:center}}.anchor-list__item{margin:3px 0;color:#909090;cursor:pointer;text-decoration:underline}.anchor-list__item:hover{text-decoration:none}.container__anchor-list{margin:0 0 15px}

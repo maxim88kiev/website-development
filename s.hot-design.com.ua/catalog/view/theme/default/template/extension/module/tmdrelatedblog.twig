@@ -1,0 +1,43 @@
+<div class="swiper-viewport relatedb">
+<h3>{{ heading_title }}</h3>
+<div id="relatedblog" class="swiper-container">
+<div class="swiper-wrapper"> 
+  {% for blog in blogss %}
+  <div class="swiper-slide">
+	<div class="product-thumb">
+		<div class="image"><a href="{{ blog.href }}"><img src="{{ blog.thumb }}" alt="{{ blog.name }}" title="{{ blog.name }}" class="img-responsive" /></a></div>
+		<div class="caption">
+			<h4><a href="{{ blog.href }}">{{ blog.name }}</a></h4>
+			<p>{{ blog.description }}</p>
+			<div class="icons1">
+				<div class="share">
+					<ul class="list-inline">
+					<li><i class="fa fa-comment"></i><span class="commentcount">{{ blog.comment }}</span></li>
+					<li><i class="fa fa-eye"></i>{{ blog.viewed }}</li>
+					</ul>
+				</div>
+				<div class="dateadded"><i>{{ blog.date_added }} </i></div>
+			</div>
+		</div>
+       </div>
+  </div>
+  {% endfor %}
+</div>
+</div>
+<div class="swiper-pager">
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+
+</div>
+<script type="text/javascript"><!--
+$('#relatedblog').swiper({
+	mode: 'horizontal',
+	slidesPerView: 3,
+	nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+	autoplay: false,
+		loop: true,
+	spaceBetween: 20
+});
+--></script>

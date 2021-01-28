@@ -1,0 +1,98 @@
+{{ header }}
+<div class="container">
+<div id="latestpost">
+  <ul class="breadcrumb">
+    {% for breadcrumb in breadcrumbs %}
+    <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+    {% endfor %}
+  </ul>
+  <div class="row">{{ column_left }}
+    {% if column_left and blog_right %}
+    {% set class = 'col-sm-6' %}
+    {% elseif column_left or blog_right %}
+    {% set class = 'col-sm-8 col-md-9' %}
+    {% else %}
+    {% set class = 'col-sm-12' %}
+    {% endif %}
+    <div id="content" class="{{ class }}">
+     <div class="row">
+		{% for allblogcat in allblogcategorys %}
+		<div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+			<div class="product-layout product-list">
+				<div class="product-thumb product-thumb_blog">
+					<div class="datebox">
+					</div>
+					{% if tmdblogsetting_articleimg %}<div class="image listimg"><a href="{{ allblogcat.href }}"><img src="{{ allblogcat.thumb }}"  alt="{{ allblogcat.name }}" title="{{ allblogcat.name }}" class="img-responsive" /></a></div>
+					{% endif %}	
+					{% if tmdblogsetting_article %}<a href="{{ allblogcat.href }}"><h4 class="txt_blogs">{{ allblogcat.name }}</h4></a>{% endif %}
+					{% if tmdblogsetting_feedbackrow %}
+					<div class="feedback">
+						<ul class="list-inline">
+							{% if allblogcat.username %}
+							<li>{{ text_posted }} <span class="user">{{ allblogcat.username }}</span></li>
+							{% endif %}
+							{% if not allblogcat.username %}
+							<li></li>
+							{% endif %}
+						</ul>
+					</div>
+					{% endif %}
+					{% if tmdblogsetting_feedbackrow %}
+					<div class="pull-right feedbackrow padd">
+					<i>{{ allblogcat.date_added }}</i>
+							<ul class="list-inline">
+							<li><i class="fa fa-comment"></i>{{ allblogcat.comment }}  </li>
+							<li><i class="fa fa-eye"></i>{{ allblogcat.viewed }} </li>
+						</ul>
+					</div>
+					{% endif %}
+					<div class="detail">
+						{% if tmdblogsetting_descp %}<div class="description pull-left">{{ allblogcat.description }}</div>{% endif %}	
+					</div>
+					<br/><br/>
+			
+					<div class="col-sm-12 padd">
+						<div class="social-icons">
+							<ul class="list-inline">
+								<!-- AddThis Button BEGIN -->
+						
+							{% if tmdblogsetting_facebook %}
+							<li><a  href="https://www.facebook.com/sharer/sharer.php?&u={{ allblogcat.href }} &display=popup&ref=plugin&src=share_button" onclick="return !window.open(this.href, 'Facebook', 'width=640,height=580')" class="addthis_button_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+							{% endif %}
+							{% if tmdblogsetting_google %}
+							<li><a href="https://plus.google.com/share?url={{ allblogcat.href }}" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="addthis_button_email"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+							{% endif %}
+							{% if tmdblogsetting_pinterest %}
+							<li><a href="http://pinterest.com/pin/create/button/?url={{ allblogcat.href }}&media={{ allblogcat.thumb }}&description={{ allblogcat.name }}" target="_blank"  class="addthis_button_pinterest_pinit"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li> 
+							{% endif %}
+							{% if tmdblogsetting_twitter %}
+							<li><a href="https://twitter.com/intent/tweet?text={{ allblogcat.name }}&url={{ allblogcat.href }}" class="addthis_button_twitter" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>  
+							{% endif %}
+							</ul>
+						</div>
+						
+						<div class="pull-right btnread"><a href="{{ allblogcat.href }}">{{ text_readmore }}</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+		</div>
+
+	   <div class="row">
+        <div class="col-sm-6 text-left">{{ pagination }}</div>
+        <div class="col-sm-6 text-right">{{ results }}</div>
+      </div>
+
+	
+	</div>
+	{{ blog_right }}
+	</div>
+	</div>
+</div>
+{{ footer }}
+<style>
+.pin_it_iframe_widget{
+	display:none;
+}
+</style>

@@ -1,0 +1,221 @@
+{{ header }}{{ column_left }}
+<div id="content">
+  <div class="page-header">
+    <div class="container-fluid">
+      <div class="pull-right">
+        <button type="submit" form="form-module" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
+        <a href="{{ cancel }}" data-toggle="tooltip" title="{{ button_cancel }}" class="btn btn-default"><i class="fa fa-reply"></i></a></div>
+      <h1>{{ heading_title }}</h1>
+      <ul class="breadcrumb">
+        {% for breadcrumb in breadcrumbs %}
+        <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="container-fluid">
+    {% if error_warning %}
+    <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> {{ error_warning }}
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+    {% endif %}
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><i class="fa fa-pencil"></i> {{ text_edit }}</h3>
+      </div>
+      <div class="panel-body">
+        <form action="{{ action }}" method="post" enctype="multipart/form-data" id="form-module" class="form-horizontal">
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-name">{{ entry_name }}</label>
+            <div class="col-sm-10">
+              <input type="text" name="name" value="{{ name }}" placeholder="{{ entry_name }}" id="input-name" class="form-control" />
+              {% if error_name %}
+              <div class="text-danger">{{ error_name }}</div>
+              {% endif %}
+            </div>
+          </div>
+		  <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-name">{{ entry_moduletitle }}</label>
+            <div class="col-sm-10">
+              <input type="text" name="moduletitle" value="{{ moduletitle }}" placeholder="{{ entry_moduletitle }}" id="input-name" class="form-control" />
+            </div>
+          </div>
+		  <div class="form-group">
+				<label class="col-sm-2 control-label" for="input-status">{{ entry_status }}</label>
+				<div class="col-sm-10">
+				  <select name="status" id="input-status" class="form-control">
+					{% if status %}
+					<option value="1" selected="selected">{{ text_enabled }}</option>
+                <option value="0">{{ text_disabled }}</option>
+                {% else %}
+                <option value="1">{{ text_enabled }}</option>
+                <option value="0" selected="selected">{{ text_disabled }}</option>
+                {% endif %}
+				  </select>
+				</div>
+			
+			</div>		
+				
+				
+				
+						
+								<ul class="nav nav-tabs">
+									<li  class="active"><a href="#tab-recentpost" data-toggle="tab">{{ tab_recentpost }}</a></li>
+									<li><a href="#tab-popular" data-toggle="tab">{{ tab_popular }}</a></li>
+									<li><a href="#tab-comment" data-toggle="tab">{{ tab_comment }}</a></li>
+								</ul>
+						
+						
+								<div class="tab-content">
+									<div class="tab-pane active in" id="tab-recentpost">
+										<div class="form-group">
+											<label class="col-sm-2 control-label" for="input-limit">{{ entry_limit }}</label>
+											<div class="col-sm-10">
+												<input type="text" name="recentpostlimit" value="{{ recentpostlimit }}" placeholder="{{ entry_limit }}" id="input-limit" class="form-control" />
+											</div>
+										</div>
+										
+										<div class="form-group required">
+											<label class="col-sm-2 control-label" for="input-recentposttitle">{{ entry_title }}</label>
+											<div class="col-sm-10">
+											{% for language in languages %}
+											<div class="input-group pull-left"><span class="input-group-addon"><img src="language/{{ language.code }}/{{ language.code }}.png" title="{{ language.name }}" /> </span>
+												<input type="text" name="module_title[{{ language.language_id }}][recentposttitle]" value="{{ module_title[language.language_id] ? module_title[language.language_id].recentposttitle }}" placeholder="{{ entry_title }}" class="form-control" />
+											</div>
+											{% endfor %}
+											</div>
+										</div>
+										
+										<div class="form-group">
+											<label class="col-sm-2 control-label" for="input-width">{{ entry_width }}</label>
+											<div class="col-sm-10">
+											  <input type="text" name="recentpostwidth" value="{{ recentpostwidth }}" placeholder="{{ entry_width }}" id="input-width" class="form-control" />
+											  {% if error_recentpostwidth %}
+											  <div class="text-danger">{{ error_recentpostwidth }}</div>
+											  {% endif %}
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-2 control-label" for="input-height">{{ entry_height }}</label>
+											<div class="col-sm-10">
+											  <input type="text" name="recentpostheight" value="{{ recentpostheight }}" placeholder="{{ entry_height }}" id="input-height" class="form-control" />
+											  {% if error_recentpostheight %}
+											  <div class="text-danger">{{ error_recentpostheight }}</div>
+											  {% endif %}
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-2 control-label" for="input-status">{{ entry_status }}</label>
+											<div class="col-sm-10">
+											  <select name="recentpoststatus" id="input-status" class="form-control">
+												{% if recentpoststatus %}
+												<option value="1" selected="selected">{{ text_enabled }}</option>
+												<option value="0">{{ text_disabled }}</option>
+												{% else %}
+												<option value="1">{{ text_enabled }}</option>
+												<option value="0" selected="selected">{{ text_disabled }}</option>
+												{% endif %}
+											  </select>
+											</div>
+										</div>
+									</div>
+									<div class="tab-pane" id="tab-popular">
+										<div class="form-group">
+										<label class="col-sm-2 control-label" for="input-limit">{{ entry_limit }}</label>
+										<div class="col-sm-10">
+										  <input type="text" name="popularlimit" value="{{ popularlimit }}" placeholder="{{ entry_limit }}" id="input-limit" class="form-control" />
+										</div>
+									  </div>
+									  <div class="form-group required">
+											<label class="col-sm-2 control-label" for="input-populartitle">{{ entry_title }}</label>
+											<div class="col-sm-10">
+											{% for language in languages %}
+											<div class="input-group pull-left"><span class="input-group-addon"><img src="language/{{ language.code }}/{{ language.code }}.png" title="{{ language.name }}" /> </span>
+												<input type="text" name="module_title[{{ language.language_id }}][populartitle]" value="{{ module_title[language.language_id] ? module_title[language.language_id].populartitle }}" placeholder="{{ entry_title }}" class="form-control" />
+											</div>
+											{% endfor %}
+											</div>
+										</div>
+									  
+									 
+										  <div class="form-group">
+											<label class="col-sm-2 control-label" for="input-width">{{ entry_width }}</label>
+											<div class="col-sm-10">
+											  <input type="text" name="popularwidth" value="{{ popularwidth }}" placeholder="{{ entry_width }}" id="input-width" class="form-control" />
+											  {% if error_popularwidth %}
+											  <div class="text-danger">{{ error_popularwidth }}</div>
+											  {% endif %}
+											</div>
+										  </div>
+									  <div class="form-group">
+										<label class="col-sm-2 control-label" for="input-height">{{ entry_height }}</label>
+										<div class="col-sm-10">
+										  <input type="text" name="popularheight" value="{{ popularheight }}" placeholder="{{ entry_height }}" id="input-height" class="form-control" />
+										  {% if error_popularheight %}
+										  <div class="text-danger">{{ error_popularheight }}</div>
+										  {% endif %}
+										</div>
+									  </div>
+										<div class="form-group">
+											<label class="col-sm-2 control-label" for="input-status">{{ entry_status }}</label>
+											<div class="col-sm-10">
+											  <select name="popularstatus" id="input-status" class="form-control">
+												{% if popularstatus %}
+												<option value="1" selected="selected">{{ text_enabled }}</option>
+												<option value="0">{{ text_disabled }}</option>
+												{% else %}
+												<option value="1">{{ text_enabled }}</option>
+												<option value="0" selected="selected">{{ text_disabled }}</option>
+												{% endif %}
+											  </select>
+											</div>
+										
+										</div>
+									</div>
+									<div class="tab-pane" id="tab-comment">
+										<div class="form-group">
+											<label class="col-sm-2 control-label" for="input-limit">{{ entry_limit }}</label>
+											<div class="col-sm-10">
+												<input type="text" name="commentlimit" value="{{ commentlimit }}" placeholder="{{ entry_limit }}" id="input-limit" class="form-control" />
+											</div>
+										</div>
+										
+										<div class="form-group required">
+											<label class="col-sm-2 control-label" for="input-commenttitle">{{ entry_title }}</label>
+											<div class="col-sm-10">
+											{% for language in languages %}
+											<div class="input-group pull-left"><span class="input-group-addon"><img src="language/{{ language.code }}/{{ language.code }}.png" title="{{ language.name }}" /> </span>
+												<input type="text" name="module_title[{{ language.language_id }}][commenttitle]" value="{{ module_title[language.language_id] ? module_title[language.language_id].commenttitle }}" placeholder="{{ entry_title }}" class="form-control" />
+											</div>
+											{% endfor %}
+											</div>
+										</div>
+									  
+										
+										
+										<div class="form-group">
+											<label class="col-sm-2 control-label" for="input-status">{{ entry_status }}</label>
+											<div class="col-sm-10">
+											  <select name="commentstatus" id="input-status" class="form-control">
+												{% if commentstatus %}
+												<option value="1" selected="selected">{{ text_enabled }}</option>
+												<option value="0">{{ text_disabled }}</option>
+												{% else %}
+												<option value="1">{{ text_enabled }}</option>
+												<option value="0" selected="selected">{{ text_disabled }}</option>
+												{% endif %}
+											  </select>
+											</div>
+										</div>
+									</div>
+								</div>
+							
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+<script type="text/javascript"><!--
+$('#language a:first').tab('show');
+//--></script>
+{{ footer }}

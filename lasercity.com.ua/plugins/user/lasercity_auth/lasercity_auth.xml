@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="content" method="upgrade">
+    <name>Обработка авторизации LaserCity</name>
+    <author>Kreng Coder</author>
+    <creationDate>31.10.2018</creationDate>
+    <copyright>@copyright</copyright>
+    <license>GNU</license>
+    <authorEmail>ihor.lischuk@gmail.com</authorEmail>
+    <version>1.0.0</version>
+    <description>Плагтн для обработки авторизации LaserCity</description>
+    <files>
+        <filename plugin="lasercity_auth">lasercity_auth.php</filename>
+    </files>
+</extension>

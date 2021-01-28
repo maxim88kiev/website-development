@@ -1,0 +1,31 @@
+.see-also {
+  &__title {
+    font-size: 18px;
+    font-family: 'FreeSet Demi Bold', sans-serif;
+  }
+
+  &__links {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @media (max-width: 767px) {
+      flex-direction: column;
+    }
+  }
+
+  &__link {
+    color: #005559;
+    text-decoration: underline;
+
+    @media (max-width: 767px) {
+      margin-top: 10px;
+    }
+
+    &:hover {
+      color: #005559;
+      text-decoration: none;
+    }
+  }
+}

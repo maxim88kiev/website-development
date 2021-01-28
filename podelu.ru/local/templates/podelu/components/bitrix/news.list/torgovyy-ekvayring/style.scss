@@ -1,0 +1,59 @@
+$md: 1023px;
+
+@mixin media($size) {
+  @media (max-width: $size) {
+    @content;
+  }
+}
+
+@import "scss/style";
+@import "scss/acquiring";
+
+.section-title-ekvayring {
+  font-size: 24px !important;
+  font-weight: bold;
+
+  color: #010101;
+
+  text-align: center;
+  text-transform: uppercase;
+
+  span {
+    white-space: nowrap;
+
+    @include media($md) {
+      color: #f34942;
+    }
+  }
+
+
+  @include media($md) {
+    font-size: 16px;
+  }
+}
+
+.show-mobile {
+  @media (min-width: 1024px) {
+    display: none;
+  }
+}
+
+.hide-mobile {
+  @media (max-width: 1023px) {
+    display: none;
+  }
+}
+
+.mfp-content .acquiring__bank-link-detail {
+  display: none;
+}
+
+.mfp-acquiring-bank {
+  .mfp-content {
+    max-width: 360px;
+  }
+
+  .acquiring__bank-detail {
+    padding-top: 26px;
+  }
+}

@@ -1,0 +1,22 @@
+<br/><br/>
+
+{% for info in comment_info %}
+	
+	<div class="commentbox pull-left col-sm-12">
+	<div class="col-sm-2 userbox">
+		<img src="catalog/view/theme/default/image/user_img.png"/>
+		</div>
+		
+		<div class="comment col-sm-10">
+			<span class="name">{{ info.username }}</span> <span class="time">{{ info.date_added }}</span>
+		<p>{{ info.comment }}</p>
+						{% if info.image %}
+					<div class="image-responsice"> <img class="img-responsive" src="{{ info.image }}" title="{{ info.comment }}" alt="{{ info.comment }}" /> </div>
+					{% endif %}
+		
+			
+		</div>
+	</div>
+	
+	{% endfor %}
+

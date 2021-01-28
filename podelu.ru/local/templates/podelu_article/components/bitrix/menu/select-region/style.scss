@@ -1,0 +1,140 @@
+
+.select-region-layer {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	top: 0px;
+	left: 0px;
+	background-color: rgba(0, 0, 0, 0.48);
+	z-index: 1101;
+	display: none;
+}
+
+.select-region {
+	position: fixed;
+	height: 300px;
+	width: 480px;
+	top: 50%;
+	left: 48%;
+	margin-top: -150px;
+	margin-left: -180px;
+	background: white;
+	-webkit-box-shadow: 0px 0px 18px 0px rgba(0, 85, 89, 0.53);
+	-moz-box-shadow: 0px 0px 18px 0px rgba(0, 85, 89, 0.53);
+	box-shadow: 0px 0px 18px 0px rgba(0, 85, 89, 0.53);
+	z-index: 1102;
+	padding: 10px 40px;
+	display: none;
+
+	@media (max-width: 760px) {
+		position:fixed;
+		height: auto;
+		max-width: 400px;
+		top: 50%;
+		left: 45%;
+		margin-top: -150px;
+		margin-left: -180px;
+		background: white;
+		-webkit-box-shadow: 0px 0px 18px 0px rgba(0,85,89,0.53);
+		-moz-box-shadow: 0px 0px 18px 0px rgba(0,85,89,0.53);
+		box-shadow: 0px 0px 18px 0px rgba(0,85,89,0.53);
+		z-index: 1102;
+		padding: 10px 29px;
+		display: none
+	}
+}
+
+.select-region h3 {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	color: black;
+
+	@media (max-width: 760px) {
+		font-size: 16px
+	}
+}
+
+.select-region input {
+	border: 1px solid #ededed;
+	height: 40px;
+	width: 100%;
+	padding: 0 15px;
+	margin: 0 0 10px 0;
+	border-radius: 0;
+	font-size: 13px;
+	color: #000000;
+	border-radius: 30px;
+	background-color: #ededed;
+	font-weight: bold;
+}
+
+.select-region input:focus {
+	border: none;
+	outline: none;
+}
+
+.select-region p {
+	color: #292929;
+	font-size: 14px;
+	text-transform: uppercase;
+	font-family: 'FreeSet Book';
+	margin: 0px;
+	display: block;
+}
+
+.select-region ul {
+	list-style-type: none;
+	padding: 0px;
+	margin: 0px;
+	overflow: hidden;
+	overflow-y: scroll;
+	height: 170px;
+}
+
+.select-region ul li {
+	line-height: 21px;
+	padding-left: 10px;
+}
+
+.select-region ul li a,
+.select-region ul li span {
+	font-size: 13px;
+	color: black;
+	cursor: pointer;
+}
+.select-region ul li span:hover {
+	text-decoration: underline;
+}
+
+
+.city-close {
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	width: 25px;
+	height: 25px;
+	opacity: 1;
+	cursor: pointer;
+}
+
+.city-close:after,
+.city-close:before {
+	position: absolute;
+	left: 12px;
+	content: ' ';
+	height: 25px;
+	width: 1px;
+	background-color: #bcbcbc;
+}
+
+.city-close:after {
+	-webkit-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+.city-close:before {
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}

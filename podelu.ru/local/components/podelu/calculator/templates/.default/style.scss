@@ -1,0 +1,10 @@
+@import "scss/calculator-rko";
+
+.section-title{
+    margin: 35px;
+}
+@media (min-width: 767px) {
+    .header.calc-page {
+        display: none;
+    }
+}

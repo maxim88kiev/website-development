@@ -1,0 +1,176 @@
+2020-04-24 21:32:27 - ----------------------------------------------------------------
+MOD: OC 3: Новая Почта c калькулятором + отделения
+MISSING FILE!
+/home/hotdesig/hot-design.com.ua/s/catalog/model/tool/simpleapimain.php
+
+
+MOD: OC 3: Новая Почта c калькулятором + отделения
+NOT FOUND!
+CODE: $('#collapse-payment-address select[name=\'zone_id\']').html(html);
+FILE: catalog/view/theme/default/template/checkout/guest_shipping.twig
+----------------------------------------------------------------
+MOD: OC 3: Новая Почта c калькулятором + отделения (перевод)
+MISSING FILE!
+/home/hotdesig/hot-design.com.ua/s/catalog/language/*/checkout/shipping.php
+
+
+MOD: OC 3: Новая Почта c калькулятором + отделения (перевод)
+NOT FOUND!
+CODE: (.*entry_city.*)
+FILE: catalog/language/en-gb/account/register.php
+
+
+MOD: OC 3: Новая Почта c калькулятором + отделения (перевод)
+NOT FOUND!
+CODE: (.*entry_city.*)
+FILE: catalog/language/ru-ru/account/register.php
+
+
+MOD: OC 3: Новая Почта c калькулятором + отделения (перевод)
+NOT FOUND!
+CODE: (.*entry_city.*)
+FILE: catalog/language/en-gb/affiliate/register.php
+
+
+MOD: OC 3: Новая Почта c калькулятором + отделения (перевод)
+NOT FOUND!
+CODE: (.*entry_city.*)
+FILE: catalog/language/ru-ru/affiliate/register.php
+----------------------------------------------------------------
+MOD: OC 3: Новая Почта c калькулятором + отделения (перевод)
+MISSING FILE!
+/home/hotdesig/hot-design.com.ua/s/admin/language/*/sale/customer.php
+
+
+MOD: OC 3: Новая Почта c калькулятором + отделения (перевод)
+NOT FOUND!
+CODE: (.*text_city.*)
+FILE: admin/language/en-gb/sale/order.php
+
+
+MOD: OC 3: Новая Почта c калькулятором + отделения (перевод)
+NOT FOUND!
+CODE: (.*text_city.*)
+FILE: admin/language/ru-ru/sale/order.php
+
+
+MOD: OC 3: Новая Почта c калькулятором + отделения (перевод)
+NOT FOUND!
+CODE: (.*text_city.*)
+FILE: admin/language/ua-uk/sale/order.php
+----------------------------------------------------------------
+MOD: OC 3: Новая Почта c калькулятором + отделения (перевод)
+MISSING FILE!
+/home/hotdesig/hot-design.com.ua/s/admin/language/*/common/menu.php
+----------------------------------------------------------------
+MOD: OCFilter Modification
+MISSING FILE!
+/home/hotdesig/hot-design.com.ua/s/catalog/controller/{common,startup}/seo_pro.php
+----------------------------------------------------------------
+MOD: OCFilter Modification
+MISSING FILE!
+/home/hotdesig/hot-design.com.ua/s/catalog/controller/{common,startup}/seo_pro.php
+
+
+MOD: Product Special Tag
+NOT FOUND!
+CODE: <h2>{{ special }}</h2>
+FILE: catalog/view/theme/default/template/product/product.twig
+----------------------------------------------------------------
+MOD: Product Special Tag
+MISSING FILE!
+/home/hotdesig/hot-design.com.ua/s/catalog/controller/extension/module/productcategory.php
+----------------------------------------------------------------
+MOD: Product Special Tag
+MISSING FILE!
+/home/hotdesig/hot-design.com.ua/s/catalog/view/theme/*/template/extension/module/productcategory.twig
+----------------------------------------------------------------
+MOD: Product Special Tag
+MISSING FILE!
+/home/hotdesig/hot-design.com.ua/s/catalog/controller/extension/module/random.php
+----------------------------------------------------------------
+MOD: Product Special Tag
+MISSING FILE!
+/home/hotdesig/hot-design.com.ua/s/catalog/view/theme/*/template/extension/module/random.twig
+
+
+MOD: TMD Blog Module
+NOT FOUND!
+CODE: // Locale
+FILE: catalog/language/ru-ru/ru-ru.php
+----------------------------------------------------------------
+MOD: Авторизация через соцсети
+MISSING FILE!
+/home/hotdesig/hot-design.com.ua/s/catalog/controller/checkout/simplecheckout_customer.php
+----------------------------------------------------------------
+MOD: Авторизация через соцсети
+MISSING FILE!
+/home/hotdesig/hot-design.com.ua/s/catalog/controller/account/simpleregister.php
+----------------------------------------------------------------
+MOD: Авторизация через соцсети
+MISSING FILE!
+/home/hotdesig/hot-design.com.ua/s/catalog/controller/checkout/fastorder/fastorder.php
+----------------------------------------------------------------
+MOD: Авторизация через соцсети
+MISSING FILE!
+/home/hotdesig/hot-design.com.ua/s/catalog/view/theme/*/template/account/simpleregister.twig
+----------------------------------------------------------------
+MOD: Авторизация через соцсети
+MISSING FILE!
+/home/hotdesig/hot-design.com.ua/s/catalog/view/theme/*/template/checkout/simplecheckout_customer.twig
+----------------------------------------------------------------
+MOD: Авторизация через соцсети
+MISSING FILE!
+/home/hotdesig/hot-design.com.ua/s/catalog/view/theme/*/template/checkout/fastorder/fastorder.twig
+
+
+MOD: Быстрый просмотр товара
+NOT FOUND!
+CODE: <div class="image">
+FILE: catalog/view/theme/default/template/product/category.twig
+
+
+MOD: Быстрый просмотр товара
+NOT FOUND!
+CODE: <div class="image">
+FILE: catalog/view/theme/default/template/product/manufacturer_info.twig
+
+
+MOD: Быстрый просмотр товара
+NOT FOUND!
+CODE: <div class="product-thumb">
+FILE: catalog/view/theme/default/template/product/manufacturer_list.twig
+
+
+MOD: Быстрый просмотр товара
+NOT FOUND!
+CODE: <div class="image">
+FILE: catalog/view/theme/default/template/product/special.twig
+
+
+MOD: Быстрый просмотр товара
+NOT FOUND!
+CODE: <div class="image">
+FILE: catalog/view/theme/default/template/product/search.twig
+----------------------------------------------------------------
+MOD: Кнопки Просмотр корзины и Оформить заказ
+MISSING FILE!
+/home/hotdesig/hot-design.com.ua/s/catalog/view/theme/*/template/common/cart.tpl
+
+
+MOD: Кнопки Просмотр корзины и Оформить заказ
+NOT FOUND!
+CODE: <p class="text-right"><a href="{{ cart }}"><strong><i class="fa fa-shopping-cart"></i> {{ text_cart }}</strong></a>&nbsp;&nbsp;&nbsp;<a href="{{ checkout }}"><strong><i class="fa fa-share"></i> {{ text_checkout }}</strong></a></p>
+FILE: catalog/view/theme/default/template/common/cart.twig
+
+
+MOD: Подкатегории с картинками
+NOT FOUND!
+CODE: {% if categories %}
+FILE: catalog/view/theme/default/template/product/category.twig
+
+
+MOD: Убрать/Скрыть кнопку "Добавить в корзину"
+NOT FOUND!
+CODE: <input type="text" name="quantity" value="{{ minimum }}" size="2" id="input-quantity" class="form-control" />
+FILE: catalog/view/theme/default/template/product/product.twig

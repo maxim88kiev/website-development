@@ -1,0 +1,27 @@
+.author-detail {
+  width: 100%;
+  max-width: 1170px;
+  margin: auto;
+  padding: 60px 15px 0;
+  box-sizing: border-box; }
+  .author-detail:after {
+    content: '';
+    display: block;
+    clear: both; }
+  .author-detail__info {
+    float: left;
+    width: 100%;
+    max-width: 270px;
+    padding: 0 24px 0 0; }
+    @media (max-width: 767px) {
+      .author-detail__info {
+        max-width: none; } }
+  .author-detail__articles {
+    float: left;
+    width: 100%;
+    max-width: calc(100% - 270px); }
+    @media (max-width: 767px) {
+      .author-detail__articles {
+        max-width: none; } }
+
+/*# sourceMappingURL=author-detail.css.map */

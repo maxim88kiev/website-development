@@ -1,0 +1,35 @@
+.header-geo {
+  display: block;
+  font: 400 16px Gerbera, sans-serif;
+  line-height: 1;
+  text-align: right;
+
+  cursor: pointer;
+  transition: transform .2s;
+
+  @media (max-width: 957px) {
+    font-weight: 700;
+  }
+
+  @media (max-width: 478px) {
+    display: none;
+  }
+
+  &:hover {
+    text-shadow: .25px 0 .1px, -.25px 0 .1px;
+  }
+
+  &:active {
+    transition: transform .2s;
+    transform: scale(0.8);
+  }
+
+  &__title {
+    color: #2EC4B6;
+  }
+
+  &__city {
+    color: #636363;
+  }
+}
+

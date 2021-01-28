@@ -1,0 +1,32 @@
+{
+    "name": "podelu/site",
+    "type": "project",
+    "authors": [
+        {
+            "name": "AMBase",
+            "email": "milnikovalexei@gmail.com"
+        }
+    ],
+    "require": {
+        "robmorgan/phinx": "^0.11.4",
+        "php-di/php-di": "^6.0",
+        "sentry/sdk": "2.1.0",
+        "spatie/image-optimizer": "^1.2",
+        "symfony/var-dumper": "^4.4",
+        "ext-mysqli": "*",
+        "symfony/console": "^4.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.5"
+    },
+    "config": {
+        "platform": {
+            "php": "7.2.4"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": ""
+        }
+    }
+}
