@@ -1,0 +1,23 @@
+Disallow: /search/*
+Disallow: /*/*?page=*
+Disallow: /*route=account/
+Disallow: /*route=affiliate/
+Disallow: /*route=checkout/
+Disallow: /*route=product/search
+Disallow: /index.php?route=product/product*&manufacturer_id=
+Disallow: /admin
+Disallow: /catalog/controller/
+Disallow: /catalog/language/
+Disallow: /catalog/model/
+Disallow: /download
+Disallow: /system
+Disallow: /*?sort=
+Disallow: /*&sort=
+Disallow: /*?order=
+Disallow: /*&order=
+Disallow: /*?limit=
+Disallow: /index.php?route=product/product/review&product_id=*
+
+
+Host: https://talan.ua/
+Sitemap: https://talan.ua/sitemap.xml

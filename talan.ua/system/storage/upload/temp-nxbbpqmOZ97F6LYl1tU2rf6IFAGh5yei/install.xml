@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+  <name>Order Excel</name>
+  <code>orderexcel</code>
+  <version>2.0</version>
+  <author>matroskin92</author>
+  <link>http://www.matro.site/</link>
+
+  <file path="admin/controller/sale/order.php">
+		<operation>
+      <search>
+        <![CDATA[
+					$data['button_invoice_print'] = $this->language->get('button_invoice_print');
+				]]>
+      </search>
+      <add position="after">
+        <![CDATA[		
+        	$data['text_orderexcel_download'] = $this->language->get('text_orderexcel_download');
+        	$data['text_orderexcel_loading'] = $this->language->get('text_orderexcel_loading');
+				]]>
+      </add>
+    </operation>
+    <operation>
+      <search>
+        <![CDATA[
+					protected function getList() {
+				]]>
+      </search>
+      <add position="after">
+        <![CDATA[		
+        	// API login
+					$data['catalog'] = isset($this->request->server['HTTPS']) && (($this->request->server['HTTPS'] == 'on') || ($this->request->server['HTTPS'] == '1')) ? HTTPS_CATALOG : HTTP_CATALOG;
+				]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="admin/language/ru-ru/sale/order.php">
+		<operation>
+      <search>
+        <![CDATA[
+					$_['heading_title']
+				]]>
+      </search>
+      <add position="after">
+        <![CDATA[		
+					$_['text_orderexcel_download'] 	= 'Скачать Excel';
+					$_['text_orderexcel_loading'] 	= 'Скачивание...';
+				]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="admin/language/en-gb/sale/order.php">
+		<operation>
+      <search>
+        <![CDATA[
+					$_['heading_title']
+				]]>
+      </search>
+      <add position="after">
+        <![CDATA[		
+					$_['text_orderexcel_download'] 	= 'Download Excel';
+					$_['text_orderexcel_loading'] 	= 'Download...';
+				]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="admin/view/template/sale/order_info.tpl">
+		<operation>
+      <search>
+        <![CDATA[
+					<a href="<?php echo $invoice; ?>" target="_blank" data-toggle="tooltip" title="<?php echo $button_invoice_print; ?>" class="btn btn-info">
+				]]>
+      </search>
+      <add position="replace">
+        <![CDATA[		
+
+					<button class="btn btn-success" id="orderexcel-excel" data-loading-text="<?php echo $text_orderexcel_loading; ?>">
+						<span class="fa fa-file"></span> <?php echo $text_orderexcel_download; ?>
+					</button>
+
+					<script>
+						$(document).delegate('#orderexcel-excel', 'click', function(){
+							$.ajax({
+								url: '<?php echo $catalog; ?>index.php?route=extension/module/orderexcel/get',
+								dataType: 'json',
+								data: {"order_id": <?php echo $order_id; ?> },
+								beforeSend: function(){
+									$('#orderexcel-excel').button('loading');
+								},
+								success: function(json) {
+									if (json['error']) {
+										console.log(json['error']);
+									} else {
+										window.open(json.route);
+									}
+								},
+								complete: function(json) {
+									$('#orderexcel-excel').button('reset');
+								},
+								error: function(xhr, ajaxOptions, thrownError) {
+									console.log(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+								}
+							});	
+						}); 
+					</script>
+
+					<a href="<?php echo $invoice; ?>" target="_blank" data-toggle="tooltip" title="<?php echo $button_invoice_print; ?>" class="btn btn-info">
+
+				]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="admin/view/template/sale/order_list.tpl">
+		<operation>
+    	<search>
+				<![CDATA[
+					<button type="submit" id="button-shipping" form="form-order" formaction="<?php echo $shipping; ?>" formtarget="_blank" data-toggle="tooltip" title="<?php echo $button_shipping_print; ?>" class="btn btn-info"><i class="fa fa-truck"></i></button>
+				]]>
+			</search>
+			<add position="before">
+				<![CDATA[
+
+				<button class="btn btn-success" id="orderexcel-excel" data-loading-text="<?php echo $text_orderexcel_loading; ?>">
+					<span class="fa fa-file"></span> <?php echo $text_orderexcel_download; ?>
+				</button>
+
+				<script>
+
+					$('#orderexcel-excel').on('click', function(){
+
+						let orderexcel = [];
+
+						$('input[name^=\'selected\']:checked').each(function (i, elem) {
+							orderexcel[i] = $(elem).val();
+						});
+						
+						const orderexcel_data = {"orders": orderexcel};
+						
+						if (orderexcel.length > 0) {
+							$.ajax({
+								url: '<?php echo $catalog; ?>index.php?route=extension/module/orderexcel/get',
+								dataType: 'json',
+								data: orderexcel_data,
+								beforeSend: function(){
+									$('#orderexcel-excel').button('loading');
+								},
+								success: function(json) {
+									if (json['error']) {
+										console.log(json['error']);
+									} else {
+										window.open(json.route);
+									}
+								},
+								complete: function(json) {
+									$('#orderexcel-excel').button('reset');
+								},
+								error: function(xhr, ajaxOptions, thrownError) {
+									console.log(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+								}
+							});
+						}
+							
+					}); 
+
+				</script>
+				]]>
+			</add>
+    </operation>
+    <operation>
+      <search>
+        <![CDATA[
+					$('#button-shipping, #button-invoice').prop('disabled', true);
+				]]>
+		  </search>
+		  <add position="replace">
+				<![CDATA[
+					$('#button-shipping, #button-invoice, #orderexcel-excel').prop('disabled', true);
+				]]>
+			</add>
+    </operation>
+    <operation>
+      <search>
+        <![CDATA[
+					$('#button-invoice').prop('disabled', false);
+				]]>
+		  </search>
+		  <add position="replace">
+				<![CDATA[
+					$('#button-invoice, #orderexcel-excel').prop('disabled', false);
+				]]>
+			</add>
+    </operation>
+  </file>
+
+  <file path="catalog/controller/checkout/success.php">
+		<operation>
+      <search>
+        <![CDATA[
+					public function index() {
+				]]>
+      </search>
+      <add position="after">
+        <![CDATA[
+					$this->load->model('setting/setting');
+					$cartexcel = $this->model_setting_setting->getSetting('orderexcel');
+					if ($cartexcel['orderexcel_email']['status']) {
+						$result = $this->load->controller('extension/module/orderexcel/sendEmail', $this->session->data['order_id']);
+					}
+				]]>
+      </add>
+    </operation>
+  </file>
+
+</modification>

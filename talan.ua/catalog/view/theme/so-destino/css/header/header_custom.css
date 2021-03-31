@@ -1,0 +1,79 @@
+@media screen and (min-width: 1100px){
+  
+  .my-search .icon-search.hidden-lg{
+    display: none;
+  }
+
+  .header-container{   
+    background: #353a40;   
+    width: 100%;   
+    height: 0;   
+    padding-bottom: 10%;   
+    position: relative; 
+  } 
+  div.logo{   
+    width: 20%;
+    height: 100%;
+
+  }  
+  .header-container-flex{   
+    width: 100%;   
+    height: 100%;
+    position: absolute; 
+  }  
+
+  .my-search{
+    float: left;
+    width: 25%;
+    margin: 0 8.333%;
+    position: relative;
+  }
+  div.telephone{
+    text-align: center;
+    padding-top: 10px;
+  }
+  div.telephone a:link{
+    font-size: 25px;
+    color: #da6b24;
+    line-height: 25px;
+    padding: 100% 0 0 0;
+  }
+
+
+  .typeheader-7 .my-search #search0{
+    margin: 0 auto;
+    padding: 3% 0;
+  }
+
+  .typeheader-7 #sosearchpro .search span.input-group-btn{
+    top: unset;
+  }
+
+  .typeheader-7 .my-search #sosearchpro .search:hover input, .typeheader-7 .my-search #sosearchpro .search input:hover{
+    border-color: unset;
+  }
+  .typeheader-7 .my-main-menu .container-megamenu.horizontal ul.megamenu > li > a{
+    padding: 15px 25px;
+    color: #dfdfe0;
+  }
+  
+
+  div.languages{
+    width: 5%;
+  }
+
+  header{
+    width: 100%;
+  }
+
+  ul.megamenu > li:nth-child(n + 2) {
+    border-left: 2px #dfdfe0 solid;
+  }
+
+  ul.megamenu > li a:link{
+    color: yellow;
+  }
+
+
+    
+}

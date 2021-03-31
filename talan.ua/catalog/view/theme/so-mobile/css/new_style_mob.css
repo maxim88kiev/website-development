@@ -1,0 +1,313 @@
+.production div.modcontent div.cat-wrap.theme2 div.row div.item div.inner div.content-cats div.cat-title a {
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: 700;
+    color: #000;
+    font-family: "Roboto", sans-serif;
+}
+
+.production div.modcontent div.cat-wrap.theme2 div.row div.item div.inner div.content-cats div.cat-title {
+    text-align: center;
+}
+
+.production div.modcontent div.cat-wrap.theme2 div.row div.item div.inner div.parent-cat div.image-cat {
+    text-align: center;
+}
+
+.production h3.modtitle, .news-block h3.modtitle span{
+    font-size: 35px;
+    padding: 30px 0;
+    margin-bottom: 0;
+    color: #000;
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+}
+
+.news-block h3.modtitle, .mob_new_arrivals > h3.modtitle{
+    text-align: center !important;
+}
+
+.mob_new_arrivals > h3.modtitle > span{
+	margin-bottom: 0;
+    color: #000;
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+	font-size: 22px;
+	padding: 0;
+}
+
+.production div.modcontent div.cat-wrap.theme2 div.row div.item div.inner {
+    text-align: center;
+    padding: 0 8% 16%;
+}
+
+.bottom_bar{
+	display: none;
+}
+
+#bottom_bar{
+	display: none;
+}
+
+.production_mob > .modcontent > .theme2 > .row{
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 280px;
+	margin: auto;
+}
+
+.production_mob > .modcontent > .theme2 > .row > .item{
+	max-width: 134px;
+	margin: 3px 3px;
+	border: 1px solid #e8e8e8;
+	box-shadow: 0 6px 4px -4px rgba(0, 0, 0, .2);
+}
+
+.production_mob div.modcontent div.cat-wrap.theme2 div.row div.item div.inner div.content-cats div.cat-title a{
+	font-size: 12px;
+}
+
+.production_mob h3.modtitle, .news-block h3.modtitle span {
+    font-size: 22px;
+    padding: 0;
+}
+
+.typeheader-2 .navbar-menu .toggle-panel {
+    background: none;
+}
+
+.icon_bar{
+	width: 24px;
+	height: 14px;
+	background: url("../image/talan_img/icon_bar.svg") no-repeat center center;
+}
+
+.icon_login{
+	width: 17px;
+	height: 20px;
+	background: url("../image/talan_img/icon_login.svg") no-repeat center center;
+}
+
+.menu_block{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 74px;
+	padding: 0 12px;
+}
+
+.facebook_img{
+	width: 30px;
+	height: 30px;
+	background: url("../image/talan_img/facebook.png") no-repeat center center;
+	background-size: cover;
+}
+
+.insta_img{
+	width: 30px;
+	height: 30px;
+	background: url("../image/talan_img/insta.png") no-repeat center center;
+	background-size: cover;
+}
+
+.youtube_img{
+	width: 30px;
+	height: 30px;
+	background: url("../image/talan_img/youtube.png") no-repeat center center;
+	background-size: cover;
+}
+
+.social_img ul{
+	display: flex;
+	justify-content: space-around;
+	padding-bottom: 16px;
+}
+
+div.so-extraslider div.extraslider-inner div.owl2-controls div.owl2-nav div i.fa{
+	background-color: #4f7c68;
+	border-radius: 3px;
+	color: #fff;
+}
+
+.talan-numbers {
+    background: #fff;
+	border: 1px solid #B7BDD0;
+	box-sizing: border-box;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 7px;
+	height: 100%;
+	padding: 15px 10px 15px;
+	display: flex;
+	justify-content: space-around;
+	margin-bottom: 21px;
+	margin-top: 13px;
+}
+
+.talan_h3 {
+	font-size: 14px;
+	line-height: 20px;
+	margin-bottom: 18px;
+	color: #212529;
+}
+
+.talan_p {
+    font-weight: 300;
+	font-size: 13px;
+	line-height: 21px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.talan_p img {
+    margin-left: 0px;
+	margin-right: 4px;
+	height: 16px;
+}
+
+.talan_p a {
+    text-decoration: none;
+    color: #000;
+}
+
+.new_product_but{
+	background: rgba(83, 140, 117, 0.7);
+	color: #fff;
+	border-radius: 4px;
+	padding: .375rem .75rem;
+	display: inline-block;
+}
+
+.panel-left__top{
+	background: #63917C;
+}
+
+#panel-menu .content{
+	background: #4f7c68;
+}
+
+.panel-heading a{
+	font-style: normal;
+	font-weight: 500;
+	font-size: 20px;
+	color: #FFFFFF;
+}
+
+#panel-category{
+	margin-top: 27px;
+}
+
+.mob_menu_item{
+	font-style: normal;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 45px;
+	color: #FFFFFF;
+	font-family: "Roboto", sans-serif;
+}
+
+.mob_menu_items{
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 28px;
+	color: #FFFFFF;
+	font-family: "Roboto", sans-serif;
+}
+
+.mob__header-navbar{
+	padding-left: 31px;
+}
+
+.mob_menu_first{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	max-width: 197px;
+}
+
+.dropdown-mob{
+	position: inherit;
+	box-shadow: initial;
+	background-color: initial;
+	border: initial !important;
+}
+
+.mob_menu_drop{
+	font-style: normal;
+	font-weight: normal !important;
+	font-size: 13px;
+	line-height: 18px !important;
+	color: #FFFFFF !important;
+	font-family: "Roboto", sans-serif;
+}
+
+.mob_menu_drop:hover{
+	background-color: initial !important;
+}
+
+.mob_menu_items:active, .mob_menu_items:focus, .mob_menu_items:active, .mob_menu_items:focus, .mob_menu_item:active, .mob_menu_items:focus {
+    color: initial !important;
+}
+
+#mob_menu_submenu::before {
+    content: '';
+	width: 12px;
+	height: 7px;
+	background: url("../image/talan_img/img_menu2.svg") no-repeat center center;
+	background-size: auto;
+	background-size: cover;
+	position: absolute;
+	left: 128px;
+	top: 9px;
+}
+
+#mob_menu_submenu.open::before {
+    content: '';
+	width: 12px;
+	height: 7px;
+	background: url("../image/talan_img/img_menu3.svg") no-repeat center center;
+	background-size: auto;
+	background-size: cover;
+	position: absolute;
+	left: 128px;
+	top: 9px;
+}
+
+#mob_menu_submenu{
+	position: relative;
+}
+
+.lang_menu_but{
+	display: flex;
+	width: 76px;
+	background: none;
+	border: none;
+	align-items: center;
+	font-family: "Roboto", sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 13px;
+	color: #FFFFFF;
+}
+
+.lang_menu_but img{
+	height: 20px;
+	padding-right: 5px;
+}
+
+.lang_menu{
+	display: flex;
+	width: 223px;
+	height: 40px;
+	background: #47705e;
+	border-radius: 100px;
+	align-items: center;
+}
+
+#sohomepage-slider1 .so-homeslider .item a[title="slider1"], 
+#sohomepage-slider1 .so-homeslider .item a[title="slider2"], 
+#sohomepage-slider1 .so-homeslider .item a[title="slider3"]{
+	display: none;
+}
+

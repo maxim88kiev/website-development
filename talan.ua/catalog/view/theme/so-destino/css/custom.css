@@ -1,0 +1,22 @@
+/*Add Css Custom Here*/
+
+@media(min-width: 992px) {
+    .container-megamenu.horizontal ul.megamenu {
+        display: flex;
+    }
+    .container-megamenu.horizontal ul.megamenu > li {
+        flex-grow: 1;
+    }
+    .header-container-flex div.languages {
+        position: static;
+    }
+}
+/**/
+._b {
+    font-weight: 700;
+}
+.products-list.grid .product-layout .product-item-container .right-block .caption .h4 {
+    margin: 5px 0 2px 0;
+    font-weight: 400;
+    font-size: 15px;
+}

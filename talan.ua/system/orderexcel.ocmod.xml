@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+  <name>NeoSeo Product Feed</name>
+  <version>79</version>
+  <code>neoseo-product-feed</code>
+  <author>NeoSeo</author>
+  <file path="catalog/controller/extension/module/orderexcel.php">
+    <operation>
+      <search><![CDATA[
+        $this->config->get('config_logo'),
+        ]]></search>
+        <add position="replace"><![CDATA[
+        "topline.png",
+       ]]></add>
+    </operation>
+  </file>
+</modification>
